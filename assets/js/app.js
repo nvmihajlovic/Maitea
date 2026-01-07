@@ -158,6 +158,7 @@ const i18n = {
         'contact.form.phone.placeholder': '+381 62 123 4567',
         'contact.form.message.label': 'Poruka *',
         'contact.form.message.placeholder': 'Opišite ukratko vaš događaj...',
+        'contact.form.message.autofill': 'Pozdrav,\n\nInteresuje me Vaša ponuda ketering usluga i želeo/želela bih da saznam više informacija.\n\nPlaniram događaj i želeo/želela bih da razgovaramo o mogućnostima, meniju i cenama.\n\nHvala unapred na odgovoru!',
         'contact.form.submit': 'Pošaljite upit',
         'contact.form.success': 'Hvala! Vaša poruka je uspešno poslata. Kontaktiraćemo vas uskoro.',
         'contact.form.error.required': 'Ovo polje je obavezno',
@@ -328,6 +329,7 @@ const i18n = {
         'contact.form.phone.placeholder': '+381 62 123 4567',
         'contact.form.message.label': 'Message *',
         'contact.form.message.placeholder': 'Briefly describe your event...',
+        'contact.form.message.autofill': 'Hello,\n\nI am interested in your catering services and would like to learn more.\n\nI am planning an event and would like to discuss options, menu, and pricing.\n\nThank you in advance for your response!',
         'contact.form.submit': 'Send Inquiry',
         'contact.form.success': 'Thank you! Your message has been sent successfully. We\'ll contact you soon.',
         'contact.form.error.required': 'This field is required',
@@ -376,6 +378,18 @@ function switchLanguage(lang) {
         translatePage();
         updateLanguageButtons();
         document.documentElement.lang = lang;
+        
+        // Update auto-fill message if on contact form
+        if (window.location.hash === '#contact-form') {
+            const messageField = document.getElementById('message');
+            // Only update if it contains one of the default messages
+            if (messageField && (
+                messageField.value.includes('Interesuje me') || 
+                messageField.value.includes('I am interested')
+            )) {
+                messageField.value = translations[lang]['contact.form.message.autofill'];
+            }
+        }
     }
 }
 
@@ -832,14 +846,9 @@ function initContactFormAutoFill() {
         const messageField = document.getElementById('message');
         
         if (messageField && !messageField.value) {
-            // Polite, formal pre-filled message
-            const defaultMessage = `Pozdrav,
-
-Interesuje me Vaša ponuda ketering usluga i želeo/želela bih da saznam više informacija.
-
-Planiram događaj i želeo/želela bih da razgovaramo o mogućnostima, meniju i cenama.
-
-Hvala unapred na odgovoru!`;
+            // Get translated auto-fill message
+            const currentLang = localStorage.getItem('language') || 'sr';
+            const defaultMessage = translations[currentLang]['contact.form.message.autofill'];
             
             messageField.value = defaultMessage;
             
