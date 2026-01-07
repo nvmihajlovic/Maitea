@@ -1,0 +1,364 @@
+/* ========================================
+   SERVICES PAGE REFINEMENT
+   Hierarchy, Rhythm & Premium Feel
+   ======================================== */
+
+/* ========================================
+   PAGE HEADER - IMPROVED AUTHORITY
+   ======================================== */
+
+.page-intro {
+    font-size: clamp(1rem, 2.5vw, 1.15rem);
+    line-height: 1.7;
+    color: #4a4a4a;
+    font-weight: 400;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* ========================================
+   SERVICE DETAILS - CLEAR HIERARCHY
+   ======================================== */
+
+.services-list {
+    padding: 3rem 1.5rem;
+}
+
+.service-detail {
+    margin-bottom: 5rem;
+}
+
+.service-detail:last-child {
+    margin-bottom: 0;
+}
+
+/* Service Content Layout */
+.service-detail-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+}
+
+/* Service Text Hierarchy */
+.service-detail-text {
+    max-width: 100%;
+}
+
+/* TITLE - Most Dominant */
+.service-detail-title {
+    font-family: 'Raleway', sans-serif;
+    font-size: clamp(1.75rem, 5vw, 2.5rem);
+    font-weight: 400;
+    letter-spacing: -0.01em;
+    line-height: 1.2;
+    color: #1a1a1a;
+    margin-bottom: 1.25rem;
+}
+
+/* LEAD - Intentional & Prominent */
+.service-detail-lead {
+    font-size: clamp(1.05rem, 2.5vw, 1.2rem);
+    font-weight: 400;
+    line-height: 1.65;
+    color: #2a2a2a;
+    margin-bottom: 1.5rem;
+}
+
+/* Supporting Paragraphs - Lighter & Calmer */
+.service-detail-text > p:not(.service-detail-lead) {
+    font-size: clamp(0.95rem, 2vw, 1.05rem);
+    line-height: 1.75;
+    color: #5a5a5a;
+    font-weight: 300;
+    margin-bottom: 2rem;
+}
+
+/* Subtitle - Reduced Dominance */
+.service-detail-subtitle {
+    font-family: 'Manrope', sans-serif;
+    font-size: clamp(0.85rem, 2vw, 0.95rem);
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: #7a7a7a;
+    margin: 2.5rem 0 1rem 0;
+}
+
+/* Lists - Supporting, Not Competing */
+.service-detail-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.service-detail-list li {
+    font-size: clamp(0.9rem, 2vw, 1rem);
+    line-height: 1.8;
+    color: #6a6a6a;
+    font-weight: 300;
+    padding-left: 1.5rem;
+    position: relative;
+    margin-bottom: 0.75rem;
+}
+
+.service-detail-list li:last-child {
+    margin-bottom: 0;
+}
+
+.service-detail-list li::before {
+    content: '—';
+    position: absolute;
+    left: 0;
+    color: #d4af37;
+    opacity: 0.4;
+    font-weight: 300;
+}
+
+/* Images - Visual Balance */
+.service-detail-image {
+    width: 100%;
+    overflow: hidden;
+}
+
+.service-detail-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+
+/* ========================================
+   WORK PROCESS - SUBTLE & MINIMAL
+   ======================================== */
+
+.work-process {
+    padding: 5rem 1.5rem;
+    background: rgba(250, 248, 245, 0.4);
+}
+
+.work-process .section-title {
+    font-weight: 300;
+    margin-bottom: 3.5rem;
+}
+
+.process-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.process-step {
+    padding: 0;
+}
+
+/* Step Numbers - Subtle, Not Decorative */
+.step-number {
+    font-family: 'Raleway', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 300;
+    letter-spacing: 0.2em;
+    color: #d4af37;
+    opacity: 0.5;
+    margin-bottom: 0.75rem;
+}
+
+.step-title {
+    font-size: clamp(1.25rem, 3vw, 1.5rem);
+    font-weight: 400;
+    margin-bottom: 0.75rem;
+    letter-spacing: -0.01em;
+    color: #1a1a1a;
+}
+
+.step-text {
+    font-size: clamp(0.9rem, 2vw, 1rem);
+    line-height: 1.75;
+    color: #5a5a5a;
+    font-weight: 300;
+    margin: 0;
+}
+
+/* ========================================
+   CTA - CONFIDENT & DELIBERATE
+   ======================================== */
+
+.cta-secondary {
+    padding: 6rem 1.5rem;
+    background: linear-gradient(180deg, transparent 0%, rgba(212, 175, 55, 0.02) 100%);
+}
+
+.cta-content {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.cta-secondary .cta-title {
+    font-size: clamp(1.75rem, 5vw, 2.75rem);
+    font-weight: 300;
+    letter-spacing: -0.01em;
+    line-height: 1.3;
+    color: #1a1a1a;
+    margin-bottom: 1.5rem;
+}
+
+.cta-secondary .cta-text {
+    font-size: clamp(1rem, 2vw, 1.125rem);
+    line-height: 1.7;
+    color: #5a5a5a;
+    font-weight: 300;
+    max-width: 600px;
+    margin: 0 auto 2.25rem;
+}
+
+.cta-secondary .btn {
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    font-size: clamp(0.9rem, 2vw, 1rem);
+}
+
+.cta-secondary .btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12), 0 4px 12px rgba(212, 175, 55, 0.15);
+}
+
+/* ========================================
+   TABLET (min-width: 768px)
+   ======================================== */
+
+@media (min-width: 768px) {
+    .services-list {
+        padding: 4rem 2rem;
+    }
+
+    .service-detail {
+        margin-bottom: 6rem;
+    }
+
+    .service-detail-content {
+        flex-direction: row;
+        align-items: center;
+        gap: 4rem;
+    }
+
+    /* Alternate layout */
+    .service-detail:nth-child(even) .service-detail-content {
+        flex-direction: row-reverse;
+    }
+
+    .service-detail-text {
+        flex: 1;
+        max-width: 50%;
+    }
+
+    .service-detail-image {
+        flex: 1;
+        max-width: 50%;
+    }
+
+    .service-detail-image img {
+        height: 400px;
+        object-fit: cover;
+    }
+
+    .work-process {
+        padding: 6rem 2rem;
+    }
+
+    .process-steps {
+        flex-direction: row;
+        gap: 3rem;
+    }
+
+    .process-step {
+        flex: 1;
+    }
+
+    .cta-secondary {
+        padding: 7rem 2rem;
+    }
+}
+
+/* ========================================
+   DESKTOP (min-width: 1024px)
+   ======================================== */
+
+@media (min-width: 1024px) {
+    .services-list {
+        padding: 5rem 3rem;
+    }
+
+    .service-detail {
+        margin-bottom: 7rem;
+    }
+
+    .service-detail-content {
+        gap: 5rem;
+    }
+
+    .service-detail-title {
+        font-size: 2.5rem;
+    }
+
+    .service-detail-lead {
+        font-size: 1.2rem;
+    }
+
+    .service-detail-text > p:not(.service-detail-lead) {
+        font-size: 1.05rem;
+    }
+
+    .service-detail-image img {
+        height: 450px;
+    }
+
+    .work-process {
+        padding: 7rem 3rem;
+    }
+
+    .process-steps {
+        gap: 4rem;
+    }
+
+    .cta-secondary {
+        padding: 8rem 3rem;
+    }
+
+    .cta-secondary .cta-title {
+        font-size: 2.75rem;
+    }
+
+    .cta-secondary .cta-text {
+        font-size: 1.125rem;
+    }
+}
+
+/* ========================================
+   LARGE DESKTOP (min-width: 1440px)
+   ======================================== */
+
+@media (min-width: 1440px) {
+    .services-list {
+        padding: 6rem 4rem;
+    }
+
+    .service-detail {
+        margin-bottom: 8rem;
+    }
+
+    .service-detail-content {
+        gap: 6rem;
+        max-width: 1400px;
+        margin: 0 auto;
+    }
+
+    .work-process {
+        padding: 8rem 4rem;
+    }
+
+    .cta-secondary {
+        padding: 9rem 4rem;
+    }
+}

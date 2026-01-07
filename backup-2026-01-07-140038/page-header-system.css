@@ -1,0 +1,147 @@
+/**
+ * PAGE HEADER SYSTEM - UNUTRAŠNJE STRANICE
+ * Kompaktan, elegantan, informativan dizajn
+ * Mobile-first pristup
+ * 
+ * Primenjuje se na: O nama, Naše usluge, Galerija, Kontakt
+ * NE primenjuje se na: Index (naslovna)
+ */
+
+/* ============================================
+   PAGE HEADER - Kompaktan & Elegantan
+============================================ */
+
+.page-header {
+    padding: 3rem 1.5rem 2.5rem;
+    text-align: center;
+    position: relative;
+    background: linear-gradient(
+        180deg,
+        transparent 0%,
+        rgba(250, 248, 245, 0.4) 100%
+    );
+}
+
+/* Suptilan vizuelni akcenat - tanka gold linija */
+.page-header::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 1px;
+    background: linear-gradient(
+        90deg,
+        transparent 0%,
+        rgba(212, 175, 55, 0.2) 50%,
+        transparent 100%
+    );
+}
+
+/* ============================================
+   NASLOV (H1) - Elegantan, ne previše bold
+============================================ */
+
+.page-title {
+    font-family: 'Raleway', sans-serif;
+    font-size: clamp(2rem, 6vw, 2.75rem);
+    font-weight: 300;
+    letter-spacing: -0.015em;
+    line-height: 1.2;
+    color: #1a1a1a;
+    margin: 0 0 1rem;
+}
+
+/* ============================================
+   KONTEKSTUALNA REČENICA - Smislena, ne marketing
+============================================ */
+
+.page-intro,
+.page-subtitle {
+    font-family: 'Manrope', sans-serif;
+    font-size: clamp(0.95rem, 2vw, 1.05rem);
+    font-weight: 400;
+    line-height: 1.6;
+    color: #5a5a5a;
+    margin: 0 auto;
+    max-width: 560px;
+}
+
+/* ============================================
+   RESPONSIVE - Tablet (min-width: 768px)
+============================================ */
+
+@media (min-width: 768px) {
+    .page-header {
+        padding: 3.5rem 2rem 3rem;
+    }
+    
+    .page-title {
+        font-size: clamp(2.25rem, 5vw, 3rem);
+        margin: 0 0 1.25rem;
+    }
+    
+    .page-intro,
+    .page-subtitle {
+        font-size: 1.08rem;
+        max-width: 600px;
+    }
+}
+
+/* ============================================
+   RESPONSIVE - Desktop (min-width: 1024px)
+============================================ */
+
+@media (min-width: 1024px) {
+    .page-header {
+        padding: 4rem 2rem 3.5rem;
+    }
+    
+    .page-title {
+        font-size: 3rem;
+    }
+    
+    .page-intro,
+    .page-subtitle {
+        font-size: 1.1rem;
+        line-height: 1.65;
+    }
+    
+    .page-header::after {
+        width: 48px;
+    }
+}
+
+/* ============================================
+   ANIMACIJE - Blage i diskretne
+============================================ */
+
+.page-title {
+    animation: fadeInUp 0.5s ease-out;
+}
+
+.page-intro,
+.page-subtitle {
+    animation: fadeInUp 0.6s ease-out 0.1s backwards;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+    .page-title,
+    .page-intro,
+    .page-subtitle {
+        animation: none;
+    }
+}

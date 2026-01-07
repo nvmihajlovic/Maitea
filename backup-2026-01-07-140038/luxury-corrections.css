@@ -1,0 +1,765 @@
+/**
+ * MAITEA LUXURY CORRECTIONS - MASTER FILE
+ * 
+ * Vraća footer na DARK, popravlja mobile menu overlay,
+ * ujednačava page headers, spacing, buttons - SVE stranice
+ * 
+ * PRAVILA:
+ * - NE MENJA boje (koristi originalne varijable)
+ * - NE MENJA fontove
+ * - NE MENJA sadržaj
+ * Samo: spacing, typography scale, alignment, consistency
+ */
+
+/* ============================================
+   1. FOOTER - VRATI NA DARK (KRITIČNO!)
+   Originalnoје taman: #1a1a1a gradient
+============================================ */
+
+@media (max-width: 1023px) {
+    .footer {
+        background: linear-gradient(180deg, #1a1a1a 0%, #161616 100%) !important;
+        color: #e8e6e2 !important;
+        padding: 4.5rem 6vw 3rem 6vw !important;
+    }
+}
+
+@media (min-width: 1024px) {
+    .footer {
+        background: linear-gradient(180deg, #1a1a1a 0%, #161616 100%) !important;
+        padding: 5rem 3rem 3rem 3rem !important;
+    }
+}
+
+/* Footer spacing & typography improvements */
+.footer-content {
+    gap: 3.5rem !important;
+}
+
+@media (min-width: 768px) {
+    .footer-content {
+        gap: 4.5rem !important;
+    }
+}
+
+@media (min-width: 1024px) {
+    .footer-content {
+        flex-direction: row !important;
+        gap: 5.5rem !important;
+    }
+}
+
+@media (min-width: 1280px) {
+    .footer-content {
+        gap: 7rem !important;
+    }
+}
+
+/* Footer section alignment */
+@media (max-width: 1023px) {
+    .footer-section {
+        text-align: center !important;
+    }
+}
+
+@media (min-width: 1024px) {
+    .footer-section {
+        text-align: left !important;
+    }
+}
+
+/* Footer wordmark */
+.footer-section .wordmark {
+    font-size: 1.25rem !important;
+    letter-spacing: 0.18em !important;
+    color: #e8e6e2 !important;
+}
+
+/* Footer tagline */
+.footer-tagline {
+    font-size: 0.875rem !important;
+    line-height: 1.6 !important;
+    color: rgba(232, 230, 226, 0.7) !important;
+    margin-bottom: 0.5rem !important;
+}
+
+/* Footer brand statement */
+.footer-brand-statement {
+    font-size: 0.8125rem !important;
+    line-height: 1.65 !important;
+    letter-spacing: 0.04em !important;
+    color: rgba(232, 230, 226, 0.5) !important;
+}
+
+/* Footer titles - better hierarchy */
+.footer-title {
+    font-size: 0.8125rem !important;
+    font-weight: 500 !important;
+    letter-spacing: 0.12em !important;
+    text-transform: uppercase !important;
+    color: rgba(232, 230, 226, 0.6) !important;
+    margin-bottom: 1.25rem !important;
+}
+
+/* Footer links - better spacing */
+.footer-links,
+.footer-contact {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 0.875rem !important;
+}
+
+.footer-links a,
+.footer-contact a {
+    font-size: 0.9375rem !important;
+    line-height: 1.6 !important;
+    color: rgba(232, 230, 226, 0.8) !important;
+}
+
+.footer-links a:hover,
+.footer-contact a:hover {
+    color: #d4af37 !important;
+}
+
+/* Footer contact non-link */
+.footer-contact li:not(:has(a)) {
+    font-size: 0.9375rem !important;
+    line-height: 1.6 !important;
+    color: rgba(232, 230, 226, 0.65) !important;
+}
+
+/* Footer bottom - better line-height */
+.footer-bottom {
+    padding-top: 2.5rem !important;
+    margin-top: 3rem !important;
+}
+
+.footer-bottom p {
+    font-size: 0.8125rem !important;
+    line-height: 1.75 !important;
+    color: rgba(232, 230, 226, 0.5) !important;
+}
+
+.footer-bottom a {
+    color: rgba(232, 230, 226, 0.65) !important;
+}
+
+.footer-bottom a:hover {
+    color: #d4af37 !important;
+}
+
+/* Footer social icons - better alignment */
+.footer-social {
+    display: flex !important;
+    gap: 1.25rem !important;
+    margin: 1.75rem 0 !important;
+}
+
+@media (max-width: 1023px) {
+    .footer-social {
+        justify-content: center !important;
+    }
+}
+
+@media (min-width: 1024px) {
+    .footer-social {
+        justify-content: flex-start !important;
+    }
+}
+
+.footer-social a {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 40px !important;
+    height: 40px !important;
+    border-radius: 50% !important;
+    background: rgba(232, 230, 226, 0.08) !important;
+    transition: all 0.22s ease !important;
+}
+
+.footer-social a:hover {
+    background: rgba(212, 175, 55, 0.15) !important;
+}
+
+.footer-social a svg {
+    width: 19px !important;
+    height: 19px !important;
+    fill: rgba(232, 230, 226, 0.75) !important;
+}
+
+.footer-social a:hover svg {
+    fill: #d4af37 !important;
+}
+
+/* Footer CTA button */
+.footer-cta {
+    margin-top: 1.75rem !important;
+}
+
+.footer-cta .btn {
+    width: 100% !important;
+    max-width: 280px !important;
+    height: 48px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    font-size: 0.8125rem !important;
+    font-weight: 500 !important;
+    letter-spacing: 0.08em !important;
+    text-transform: uppercase !important;
+    background: transparent !important;
+    color: #e8e6e2 !important;
+    border: 1px solid rgba(232, 230, 226, 0.25) !important;
+    border-radius: 2px !important;
+    transition: all 0.22s ease !important;
+}
+
+@media (max-width: 1023px) {
+    .footer-cta .btn {
+        margin: 0 auto !important;
+    }
+}
+
+.footer-cta .btn:hover {
+    background: rgba(232, 230, 226, 0.05) !important;
+    border-color: rgba(212, 175, 55, 0.4) !important;
+}
+
+/* ============================================
+   2. MOBILE MENU - FULLSCREEN OVERLAY IMPROVEMENTS
+   Već je fullscreen, ali dodajem body scroll lock garanciju
+============================================ */
+
+/* Body scroll lock kada je menu otvoren */
+body.menu-open {
+    position: fixed !important;
+    overflow: hidden !important;
+    width: 100% !important;
+    height: 100% !important;
+}
+
+/* Mobile menu overlay - ensure absolute fullscreen */
+@media (max-width: 1023px) {
+    .nav {
+        /* Already set in navigation-mobile-premium.css, but reinforcing */
+        position: fixed !important;
+        inset: 0 !important;
+        width: 100vw !important;
+        height: 100vh !important;
+        max-width: none !important;
+        overflow-y: auto !important;
+        overflow-x: hidden !important;
+        z-index: 9999 !important;
+    }
+    
+    /* Mobile nav spacing improvements */
+    .nav-list {
+        gap: 0.25rem !important; /* Slight gap between items */
+        padding: 6rem 2rem 10rem !important; /* More bottom padding for language switcher */
+    }
+    
+    .nav-list li {
+        max-width: 320px !important;
+    }
+    
+    .nav-link {
+        padding: 1.125rem 0 !important;
+        font-size: 1.25rem !important;
+        letter-spacing: 0.015em !important;
+    }
+    
+    /* Language switcher - more air below nav items */
+    .lang-switch {
+        margin-top: 2.5rem !important;
+        padding-top: 2rem !important;
+        border-top: 1px solid rgba(26, 26, 26, 0.06) !important;
+    }
+    
+    .lang-btn {
+        font-size: 0.875rem !important;
+        padding: 0.5rem 0.75rem !important;
+    }
+    
+    .lang-divider {
+        margin: 0 0.5rem !important;
+        color: rgba(26, 26, 26, 0.25) !important;
+    }
+}
+
+/* ============================================
+   3. PAGE HEADERS - UJEDNAČENO NA SVIM STRANICAMA
+   (o-nama, usluge, galerija, kontakt)
+============================================ */
+
+.page-header {
+    position: relative !important;
+    text-align: center !important;
+    background: transparent !important;
+}
+
+/* Mobile page header spacing */
+@media (max-width: 767px) {
+    .page-header {
+        padding: 4rem 6vw 2.5rem 6vw !important;
+    }
+}
+
+/* Tablet */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .page-header {
+        padding: 5rem 8vw 3rem 8vw !important;
+    }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+    .page-header {
+        padding: 6rem 3rem 3.5rem 3rem !important;
+    }
+}
+
+@media (min-width: 1280px) {
+    .page-header {
+        padding: 7rem 3rem 4rem 3rem !important;
+    }
+}
+
+/* Page title - veći, bolji line-height */
+.page-title {
+    font-size: clamp(2rem, 6vw, 3.25rem) !important;
+    font-weight: 300 !important;
+    letter-spacing: -0.015em !important;
+    line-height: 1.2 !important;
+    color: #1a1a1a !important;
+    margin-bottom: 1.25rem !important;
+}
+
+/* Page intro/subtitle - mirniji */
+.page-intro {
+    font-size: clamp(1rem, 2vw, 1.125rem) !important;
+    line-height: 1.7 !important;
+    color: #5a5a5a !important;
+    opacity: 0.9 !important;
+    max-width: 42ch !important;
+    margin: 0 auto !important;
+}
+
+/* Remove excessive gap after page header */
+.page-header + .section,
+.page-header + .content-image-section {
+    margin-top: 0 !important;
+    padding-top: 3rem !important;
+}
+
+@media (min-width: 1024px) {
+    .page-header + .section,
+    .page-header + .content-image-section {
+        padding-top: 4rem !important;
+    }
+}
+
+/* ============================================
+   4. KARTICE - UJEDNAČEN PADDING, SENKE
+   (Service cards, about values, etc.)
+============================================ */
+
+.service-card,
+.value-card,
+.feature-card {
+    border-radius: 2px !important;
+    transition: all 0.24s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+/* Mobile card padding */
+@media (max-width: 767px) {
+    .service-card,
+    .value-card,
+    .feature-card {
+        padding: 18px !important;
+    }
+}
+
+/* Desktop card padding */
+@media (min-width: 768px) {
+    .service-card,
+    .value-card,
+    .feature-card {
+        padding: 24px !important;
+    }
+}
+
+/* Softer shadows - premium */
+.service-card,
+.value-card,
+.feature-card {
+    box-shadow: 
+        0 1px 3px rgba(0, 0, 0, 0.04),
+        0 2px 8px rgba(0, 0, 0, 0.03) !important;
+}
+
+.service-card:hover,
+.value-card:hover,
+.feature-card:hover {
+    box-shadow: 
+        0 2px 6px rgba(0, 0, 0, 0.06),
+        0 8px 24px rgba(0, 0, 0, 0.04),
+        0 12px 32px rgba(212, 175, 55, 0.08) !important;
+    transform: translateY(-2px) !important;
+}
+
+/* Card titles - better hierarchy */
+.service-title,
+.value-title,
+.feature-title {
+    font-size: 1.125rem !important;
+    font-weight: 500 !important;
+    letter-spacing: -0.005em !important;
+    line-height: 1.4 !important;
+    color: #1a1a1a !important;
+    margin-bottom: 0.75rem !important;
+}
+
+/* Card text */
+.service-text,
+.value-text,
+.feature-text {
+    font-size: 0.9375rem !important;
+    line-height: 1.65 !important;
+    color: #5a5a5a !important;
+}
+
+/* "Saznajte više" links - refined */
+.service-link {
+    font-size: 0.8125rem !important;
+    font-weight: 500 !important;
+    letter-spacing: 0.04em !important;
+    color: #d4af37 !important;
+    text-decoration: none !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 0.375rem !important;
+    margin-top: 1rem !important;
+    transition: all 0.18s ease !important;
+}
+
+.service-link:hover {
+    color: #c4a144 !important;
+}
+
+.service-link:hover::after {
+    transform: translateX(3px) !important;
+}
+
+.service-link::after {
+    content: '→' !important;
+    display: inline-block !important;
+    transition: transform 0.18s ease !important;
+}
+
+/* ============================================
+   5. KAKO RADIMO - PREMIUM PROCESS STEPS
+============================================ */
+
+.process-section {
+    padding: 5rem 6vw !important;
+}
+
+@media (min-width: 1024px) {
+    .process-section {
+        padding: 7rem 3rem !important;
+    }
+}
+
+.process-steps {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 3rem !important;
+    max-width: 800px !important;
+    margin: 0 auto !important;
+}
+
+@media (min-width: 768px) {
+    .process-steps {
+        gap: 3.5rem !important;
+    }
+}
+
+.process-step {
+    position: relative !important;
+    padding: 0 !important;
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+/* Step divider - ultra subtle */
+.process-step:not(:last-child)::after {
+    content: '' !important;
+    position: absolute !important;
+    bottom: -1.5rem !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 1px !important;
+    background: rgba(26, 26, 26, 0.06) !important;
+}
+
+@media (min-width: 768px) {
+    .process-step:not(:last-child)::after {
+        bottom: -1.75rem !important;
+    }
+}
+
+/* Step number - bigger, lighter */
+.step-number {
+    font-family: 'Raleway', sans-serif !important;
+    font-size: 3rem !important;
+    font-weight: 200 !important;
+    letter-spacing: -0.02em !important;
+    color: rgba(26, 26, 26, 0.15) !important;
+    line-height: 1 !important;
+    margin-bottom: 1rem !important;
+}
+
+@media (min-width: 768px) {
+    .step-number {
+        font-size: 3.5rem !important;
+    }
+}
+
+/* Step title */
+.step-title {
+    font-size: 1.25rem !important;
+    font-weight: 500 !important;
+    letter-spacing: -0.01em !important;
+    line-height: 1.35 !important;
+    color: #1a1a1a !important;
+    margin-bottom: 0.75rem !important;
+}
+
+/* Step text */
+.step-text {
+    font-size: 0.9375rem !important;
+    line-height: 1.7 !important;
+    color: #5a5a5a !important;
+}
+
+/* ============================================
+   6. CTA DUGMAD - KONZISTENTNOST
+============================================ */
+
+.btn,
+.btn-primary,
+.btn-secondary {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    font-weight: 500 !important;
+    letter-spacing: 0.08em !important;
+    text-transform: uppercase !important;
+    text-decoration: none !important;
+    transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    cursor: pointer !important;
+}
+
+/* Mobile button sizing */
+@media (max-width: 767px) {
+    .btn,
+    .btn-primary,
+    .btn-secondary {
+        height: 48px !important;
+        padding: 0 1.75rem !important;
+        font-size: 0.8125rem !important;
+    }
+    
+    .btn-large {
+        height: 52px !important;
+        padding: 0 2rem !important;
+    }
+}
+
+/* Desktop button sizing */
+@media (min-width: 768px) {
+    .btn,
+    .btn-primary,
+    .btn-secondary {
+        height: 50px !important;
+        padding: 0 2rem !important;
+        font-size: 0.8125rem !important;
+    }
+    
+    .btn-large {
+        height: 54px !important;
+        padding: 0 2.25rem !important;
+    }
+}
+
+/* Primary button */
+.btn-primary {
+    background: #1a1a1a !important;
+    color: #faf8f5 !important;
+    border: none !important;
+    border-radius: 2px !important;
+}
+
+.btn-primary:hover {
+    background: #2a2a2a !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12) !important;
+}
+
+/* Secondary button */
+.btn-secondary {
+    background: transparent !important;
+    color: #1a1a1a !important;
+    border: 1px solid rgba(26, 26, 26, 0.2) !important;
+    border-radius: 2px !important;
+}
+
+.btn-secondary:hover {
+    background: rgba(26, 26, 26, 0.03) !important;
+    border-color: rgba(26, 26, 26, 0.3) !important;
+}
+
+/* ============================================
+   7. NAVIGATION - DESKTOP SPACING REFINEMENT
+============================================ */
+
+@media (min-width: 1024px) {
+    .nav-list {
+        gap: 0 !important;
+    }
+    
+    .nav-list li {
+        margin: 0 1.25rem !important;
+    }
+    
+    @media (min-width: 1280px) {
+        .nav-list li {
+            margin: 0 1.5rem !important;
+        }
+    }
+    
+    .nav-link {
+        font-size: 0.9rem !important;
+        letter-spacing: 0.03em !important;
+    }
+    
+    /* Language switcher alignment */
+    .lang-switch {
+        display: flex !important;
+        align-items: baseline !important;
+        gap: 0 !important;
+    }
+    
+    .lang-btn {
+        font-size: 0.75rem !important;
+        padding: 0.25rem 0.375rem !important;
+    }
+    
+    .lang-divider {
+        margin: 0 0.25rem !important;
+        opacity: 0.5 !important;
+    }
+}
+
+/* ============================================
+   8. SECTION SPACING - GLOBALNO UJEDNAČENJE
+============================================ */
+
+.section {
+    position: relative !important;
+}
+
+@media (max-width: 767px) {
+    .section {
+        padding: 4rem 6vw !important;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+    .section {
+        padding: 5rem 8vw !important;
+    }
+}
+
+@media (min-width: 1024px) {
+    .section {
+        padding: 6rem 3rem !important;
+    }
+}
+
+@media (min-width: 1440px) {
+    .section {
+        padding: 7rem 3rem !important;
+    }
+}
+
+/* Section titles - unified */
+.section-title {
+    font-size: 0.875rem !important;
+    font-weight: 400 !important;
+    letter-spacing: 0.18em !important;
+    text-transform: uppercase !important;
+    color: rgba(26, 26, 26, 0.45) !important;
+    text-align: center !important;
+    margin-bottom: 3rem !important;
+}
+
+@media (min-width: 1024px) {
+    .section-title {
+        font-size: 0.9375rem !important;
+        margin-bottom: 4rem !important;
+    }
+}
+
+/* ============================================
+   9. CONTENT IMAGES - BETTER SPACING
+============================================ */
+
+.content-image-section {
+    padding: 0 !important;
+    margin: 3rem 0 !important;
+}
+
+@media (min-width: 1024px) {
+    .content-image-section {
+        margin: 4rem 0 !important;
+    }
+}
+
+.content-image-wrapper {
+    max-width: 1400px !important;
+    margin: 0 auto !important;
+}
+
+/* ============================================
+   10. MICRO-REFINEMENTS
+============================================ */
+
+/* Link hover states - consistent */
+a {
+    transition: color 0.2s ease, opacity 0.2s ease !important;
+}
+
+/* Focus states - accessibility */
+a:focus-visible,
+button:focus-visible {
+    outline: 2px solid #d4af37 !important;
+    outline-offset: 3px !important;
+}
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto !important;
+    }
+    
+    * {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+    }
+}

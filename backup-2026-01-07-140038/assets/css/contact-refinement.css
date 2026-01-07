@@ -1,0 +1,297 @@
+/* ========================================
+   CONTACT PAGE REFINEMENT
+   Premium, Minimalist, Elegant
+   ======================================== */
+
+/* ========================================
+   PAGE INTRO - CONFIDENT TONE
+   ======================================== */
+
+.page-intro {
+    font-family: 'Manrope', sans-serif;
+    font-size: clamp(1rem, 2.5vw, 1.15rem);
+    line-height: 1.7;
+    color: #5a5a5a;
+    font-weight: 400;
+    max-width: 620px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* ========================================
+   CONTACT INFO CARDS - REFINED
+   ======================================== */
+
+.contact-info {
+    padding: 3rem 1.5rem;
+}
+
+.contact-cards {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.contact-card {
+    text-align: center;
+    padding: 2.5rem 2rem;
+    background: rgba(255, 255, 255, 0.5);
+    border: 1px solid rgba(212, 175, 55, 0.08);
+}
+
+.contact-icon {
+    font-size: 1.5rem;
+    color: #d4af37;
+    opacity: 0.6;
+    margin-bottom: 1rem;
+}
+
+.contact-card-title {
+    font-family: 'Raleway', sans-serif;
+    font-size: clamp(1.125rem, 2.5vw, 1.25rem);
+    font-weight: 400;
+    letter-spacing: 0.02em;
+    color: #1a1a1a;
+    margin-bottom: 0.75rem;
+}
+
+.contact-card-text {
+    margin-bottom: 0.5rem;
+}
+
+.contact-link {
+    font-size: clamp(1rem, 2vw, 1.125rem);
+    font-weight: 400;
+    color: #2a2a2a;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.contact-link:hover {
+    color: #d4af37;
+}
+
+.contact-card-note {
+    font-size: 0.875rem;
+    color: #7a7a7a;
+    font-weight: 300;
+}
+
+/* ========================================
+   CONTACT FORM - PREMIUM REFINEMENT
+   ======================================== */
+
+.contact-form-section {
+    padding: 4rem 1.5rem 6rem;
+    background: linear-gradient(180deg, transparent 0%, rgba(250, 248, 245, 0.4) 100%);
+}
+
+.form-wrapper {
+    max-width: 640px;
+    margin: 0 auto;
+}
+
+.contact-form-section .section-title {
+    font-weight: 300;
+    margin-bottom: 1rem;
+}
+
+.contact-form-section .section-intro {
+    font-size: clamp(0.95rem, 2vw, 1.05rem);
+    color: #5a5a5a;
+    font-weight: 300;
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+/* Form Groups */
+.form-group {
+    margin-bottom: 2rem;
+}
+
+.form-label {
+    display: block;
+    font-family: 'Manrope', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    color: #2a2a2a;
+    margin-bottom: 0.5rem;
+}
+
+/* Form Inputs - Refined & Minimal */
+.form-input,
+.form-textarea {
+    width: 100%;
+    font-family: 'Manrope', sans-serif;
+    font-size: 1rem;
+    font-weight: 300;
+    color: #2a2a2a;
+    background: #ffffff;
+    border: 1px solid rgba(42, 42, 42, 0.12);
+    border-radius: 1px;
+    padding: 0.875rem 1rem;
+    transition: all 0.2s ease;
+    outline: none;
+}
+
+/* Placeholder - Increased Contrast */
+.form-input::placeholder,
+.form-textarea::placeholder {
+    color: #8a8a8a;
+    opacity: 1;
+}
+
+.form-input:focus,
+.form-textarea:focus {
+    border-color: #d4af37;
+    background: #fdfcfa;
+    box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.08);
+}
+
+.form-textarea {
+    resize: vertical;
+    min-height: 140px;
+    line-height: 1.7;
+}
+
+/* Error States */
+.form-error {
+    display: none;
+    font-size: 0.85rem;
+    color: #c44;
+    margin-top: 0.5rem;
+}
+
+.form-group.has-error .form-input,
+.form-group.has-error .form-textarea {
+    border-color: #c44;
+}
+
+.form-group.has-error .form-error {
+    display: block;
+}
+
+/* Submit Button - More Refined */
+.form-actions {
+    margin-top: 2.5rem;
+}
+
+.contact-form .btn-primary {
+    width: 100%;
+    padding: 0.95rem 2rem;
+    font-size: 0.95rem;
+    font-weight: 400;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    border-radius: 1px;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.contact-form .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1), 0 3px 10px rgba(212, 175, 55, 0.12);
+}
+
+.contact-form .btn-primary:active {
+    transform: translateY(0);
+}
+
+/* Success Message */
+.form-success {
+    display: none;
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background: rgba(212, 175, 55, 0.08);
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    border-radius: 1px;
+    text-align: center;
+}
+
+.form-success[aria-hidden="false"] {
+    display: block;
+}
+
+.form-success span[aria-hidden="true"] {
+    display: block;
+    font-size: 2rem;
+    color: #d4af37;
+    margin-bottom: 0.5rem;
+}
+
+.form-success p {
+    font-size: 0.95rem;
+    color: #2a2a2a;
+    margin: 0;
+    line-height: 1.6;
+}
+
+/* ========================================
+   TABLET (min-width: 768px)
+   ======================================== */
+
+@media (min-width: 768px) {
+    .contact-info {
+        padding: 4rem 2rem;
+    }
+
+    .contact-cards {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2.5rem;
+    }
+
+    .contact-form-section {
+        padding: 5rem 2rem 7rem;
+    }
+
+    .contact-form .btn-primary {
+        width: auto;
+        min-width: 280px;
+    }
+
+    .form-actions {
+        text-align: center;
+    }
+}
+
+/* ========================================
+   DESKTOP (min-width: 1024px)
+   ======================================== */
+
+@media (min-width: 1024px) {
+    .contact-info {
+        padding: 5rem 3rem;
+    }
+
+    .contact-cards {
+        gap: 3rem;
+    }
+
+    .contact-form-section {
+        padding: 6rem 3rem 8rem;
+    }
+
+    .form-wrapper {
+        max-width: 680px;
+    }
+
+    .contact-form .btn-primary {
+        min-width: 320px;
+    }
+}
+
+/* ========================================
+   LARGE DESKTOP (min-width: 1440px)
+   ======================================== */
+
+@media (min-width: 1440px) {
+    .contact-info {
+        padding: 6rem 4rem;
+    }
+
+    .contact-form-section {
+        padding: 7rem 4rem 9rem;
+    }
+}

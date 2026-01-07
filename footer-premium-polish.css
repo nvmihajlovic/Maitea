@@ -1,0 +1,431 @@
+/**
+ * FOOTER - PREMIUM MINIMALIST REFINEMENT
+ * Luxurious Air, Subtle Hierarchy, Calm & Expensive Feel
+ * Focus: Breathing Room Between Columns, Lighter Typography, Subtle Separators
+ */
+
+/* ============================================
+   DESKTOP LAYOUT — LUXURIOUS HORIZONTAL SPACING
+   Increased column gaps for premium "air" effect
+============================================ */
+
+@media (min-width: 1024px) {
+    .footer-content {
+        gap: 5rem; /* Increased from default for luxury spacing */
+    }
+}
+
+@media (min-width: 1280px) {
+    .footer-content {
+        gap: 6.5rem; /* Even more breathing room on larger screens */
+    }
+}
+
+@media (min-width: 1440px) {
+    .footer-content {
+        gap: 7.5rem; /* Maximum luxury spacing */
+    }
+}
+
+/* ============================================
+   PART 1: BRAND SECTION — BREATHING ROOM
+   Left column vertical rhythm refinement
+============================================ */
+
+/* Group-based spacing for brand section */
+.footer-section:first-child {
+    gap: 0; /* Reset base gap, use precise margins */
+    position: relative;
+}
+
+/* MAITEA wordmark — stands alone with authority */
+.footer-section:first-child .wordmark {
+    color: #e8e6e2;
+    opacity: 1;
+    margin-bottom: 0.75rem; /* More breathing room to tagline */
+}
+
+/* Tagline — immediate descriptor */
+.footer-tagline {
+    color: rgba(232, 230, 226, 0.75);
+    opacity: 1;
+    margin-bottom: 2.5rem; /* Increased breathing room before brand statement */
+}
+
+/* Brand statement — clear separation from wordmark group */
+.footer-brand-statement {
+    color: rgba(232, 230, 226, 0.65); /* Refined opacity */
+    opacity: 1;
+    font-size: 0.75rem; /* Smaller for lightness */
+    letter-spacing: 0.12em; /* More air between characters */
+    font-weight: 300; /* Lighter weight */
+    margin-top: 0;
+    margin-bottom: 3.4rem; /* Increased breathing room before social icons */
+    line-height: 1.6;
+}
+
+/* Signature vertical accent line - REMOVED (appeared as error below social icons) */
+.footer-section:first-child::after {
+    display: none;
+}
+
+/* ============================================
+   PART 2: COLUMN TITLES — VISUALLY LIGHTER
+   Reduced weight and increased tracking for calm hierarchy
+============================================ */
+
+.footer-title {
+    font-size: 0.8rem; /* Slightly smaller for subtlety */
+    font-weight: 400; /* Lighter weight (down from 500 or 600) */
+    letter-spacing: 0.15em; /* Increased tracking for airiness */
+    text-transform: uppercase;
+    color: rgba(232, 230, 226, 0.7); /* Slightly more muted */
+    margin-bottom: 1.5rem;
+    opacity: 1;
+}
+
+/* ============================================
+   PART 3: SOCIAL ICONS — SUBTLE & DETACHED
+   Optional, not promotional
+============================================ */
+
+.footer-social {
+    display: flex;
+    align-items: center;
+    gap: 0.625rem; /* 10px spacing between icons */
+    margin-top: 0;
+    padding-top: 0;
+    border-top: none;
+}
+
+.footer-social a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    color: rgba(232, 230, 226, 0.6); /* 60% opacity default */
+    text-decoration: none;
+    transition: opacity 300ms ease; /* Only opacity transition */
+    border-radius: 50%;
+}
+
+.footer-social a:hover {
+    opacity: 1; /* 100% opacity on hover */
+}
+
+.footer-social a:focus-visible {
+    outline: 2px solid rgba(212, 175, 55, 0.5);
+    outline-offset: 3px;
+}
+
+.footer-social svg {
+    width: 16px;
+    height: 16px;
+    fill: currentColor;
+}
+
+/* ============================================
+   PART 4: MICRO-INTERACTIONS — "FELT, NOT SEEN"
+   Desktop hover refinements
+============================================ */
+
+/* Footer links — subtle underline fade */
+.footer-links a {
+    color: rgba(232, 230, 226, 0.62);
+    opacity: 1;
+    transition: color 240ms ease, opacity 240ms ease;
+    position: relative;
+    line-height: 1.7; /* Better breathing room */
+}
+
+.footer-links a::after {
+    transition: transform 240ms cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.footer-links a:hover {
+    color: rgba(232, 230, 226, 0.92);
+    opacity: 1;
+}
+
+/* Footer links list spacing */
+.footer-links {
+    line-height: 1.7; /* Increased line-height for balance */
+}
+
+/* Contact links — opacity shift only */
+.footer-contact a {
+    color: rgba(232, 230, 226, 0.62);
+    opacity: 1;
+    transition: color 240ms ease;
+    line-height: 1.7; /* Better breathing room */
+}
+
+.footer-contact a:hover {
+    color: rgba(232, 230, 226, 0.92);
+}
+
+.footer-contact li {
+    color: rgba(232, 230, 226, 0.62);
+    line-height: 1.7; /* Increased line-height for balance */
+}
+
+/* Pansoft credit — subtle golden tint on hover */
+.footer-credit a {
+    color: rgba(232, 230, 226, 0.56);
+    font-weight: 400;
+    transition: color 240ms ease;
+    opacity: 1;
+}
+
+.footer-credit a:hover {
+    color: rgba(212, 175, 55, 0.68); /* Understated gold */
+    opacity: 1;
+}
+
+/* ============================================
+   PART 4: MOBILE LAYOUT — AIRY & CALM
+   Increased vertical spacing, comfortable touch
+============================================ */
+
+@media (max-width: 767px) {
+    /* Increase mobile breathing room */
+    .footer-content {
+        gap: 3.5rem; /* More air between sections */
+        padding: 4.5rem 0 3.5rem; /* Generous top padding */
+    }
+
+    /* Brand section mobile spacing */
+    .footer-tagline {
+        margin-bottom: 2rem;
+    }
+
+    .footer-brand-statement {
+        margin-bottom: 3rem; /* Increased spacing to social icons on mobile */
+        line-height: 1.65; /* More readable on mobile */
+        font-size: 0.75rem; /* Maintain refined size on mobile */
+    }
+
+    /* Social icons mobile — clean spacing */
+    .footer-social {
+        border-top: none;
+        padding-top: 0;
+        margin-top: 0;
+        justify-content: flex-start;
+    }
+
+    /* Mobile CTA — generous touch target */
+    .footer-cta {
+        margin-top: 2rem;
+    }
+
+    .footer-cta .btn {
+        padding: 1rem 2rem; /* Comfortable touch target */
+        font-size: 0.8125rem;
+    }
+
+    /* Mobile section spacing */
+    .footer-section {
+        margin-bottom: 0;
+    }
+
+    /* Mobile footer bottom — kompaktno */
+    .footer-bottom {
+        padding-top: 1.75rem;
+        padding-bottom: 1rem;
+        margin-top: 1.5rem;
+    }
+    
+    .footer-bottom p {
+        font-size: 0.625rem; /* 10px on mobile */
+    }
+    
+    .footer-bottom::before {
+        max-width: 100%; /* Full width on mobile */
+    }
+}
+
+/* ============================================
+   DESKTOP REFINEMENTS — BALANCED COLUMNS
+============================================ */
+
+@media (min-width: 1024px) {
+    /* Desktop: align column tops, balanced rhythm */
+    .footer-content {
+        padding: 5.5rem 0 4.5rem; /* More generous desktop padding */
+    }
+
+    /* Brand column — control max-width for optimal reading */
+    .footer-section:first-child {
+        max-width: 340px;
+    }
+
+    .footer-brand-statement {
+        max-width: 100%; /* Let section control width */
+        line-height: 1.6;
+    }
+
+    /* Social icons — desktop refinement */
+    .footer-social {
+        padding-top: 0;
+        border-top: none;
+    }
+
+    /* Links section — consistent spacing */
+    .footer-links {
+        gap: 1.125rem; /* Calm rhythm */
+    }
+
+    /* Contact section — aligned with links */
+    .footer-contact {
+        gap: 1rem;
+    }
+
+    /* Footer bottom — desktop optimal spacing */
+    .footer-bottom {
+        padding-top: 2.25rem;
+        padding-bottom: 1.5rem;
+        margin-top: 2rem;
+    }
+
+    .footer-bottom p {
+        margin: 0;
+    }
+    
+    .footer-bottom::before {
+        max-width: 1200px; /* Contained width on desktop */
+    }
+}
+
+/* ============================================
+   LARGE DESKTOP — PREMIUM SPACING
+   Maximum luxury with increased horizontal gaps
+============================================ */
+
+@media (min-width: 1440px) {
+    .footer-content {
+        padding: 6.5rem 0 5rem; /* Luxurious vertical spacing */
+        gap: 7.5rem; /* Maximum column separation - increased from 5.5rem */
+    }
+
+    .footer-section:first-child {
+        max-width: 380px;
+    }
+
+    .footer-brand-statement {
+        font-size: 0.8125rem;
+        line-height: 1.6;
+    }
+
+    .footer-social {
+        padding-top: 0;
+        gap: 1rem;
+    }
+
+    .footer-links {
+        gap: 1.25rem;
+    }
+
+    .footer-contact {
+        gap: 1.125rem;
+    }
+}
+
+/* ============================================
+   FOOTER BOTTOM — TIHI ZAVRŠETAK
+   Compact, premium, subtle finish with lighter separator
+============================================ */
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 2rem; /* Compact spacing */
+    padding-bottom: 1.25rem; /* Close to bottom, not stuck */
+    margin-top: 2rem;
+    position: relative;
+}
+
+/* Horizontal separator line above bottom row - SUBTLER */
+.footer-bottom::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: 1200px;
+    height: 1px;
+    background: rgba(232, 230, 226, 0.08); /* Reduced from 0.12 to 0.08 for subtlety */
+    opacity: 1;
+}
+
+.footer-bottom p {
+    font-size: 0.6875rem; /* 11px - 1px manje od osnovnog footer teksta */
+    font-weight: 400;
+    letter-spacing: 0.06em; /* +0.02em */
+    color: rgba(232, 230, 226, 0.48); /* 48% opacity - tih, nenametljiv */
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* Separator - samo srednja tačka */
+.footer-separator {
+    opacity: 1; /* Inherit from parent color/opacity */
+    margin: 0 0.5rem;
+}
+
+/* Pansoft link - isti stil kao ostatak teksta, tihi */
+.footer-bottom a {
+    color: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    letter-spacing: inherit;
+    text-decoration: none;
+    transition: opacity 240ms ease;
+}
+
+.footer-bottom a:hover {
+    opacity: 0.8; /* Subtle dimming on hover */
+}
+
+/* Uklanjanje starih klasa */
+.footer-copyright,
+.footer-signature,
+.footer-credit {
+    display: none;
+}
+
+/* ============================================
+   ACCESSIBILITY — REDUCED MOTION
+============================================ */
+
+@media (prefers-reduced-motion: reduce) {
+    .footer-social a,
+    .footer-links a,
+    .footer-links a::after,
+    .footer-contact a,
+    .footer-credit a,
+    .footer-cta .btn {
+        transition: none;
+    }
+}
+
+/* ============================================
+   VERIFICATION CHECKLIST — UPDATED
+   
+   ✓ Leva kolona "diše" bolje — povećani vertikalni razmaci
+   ✓ MAITEA → Umetnički ketering: 0.75rem gap
+   ✓ Umetnički ketering → Slogan: 2.5rem gap
+   ✓ Slogan → Social icons: 2.75rem gap
+   ✓ Slogan lakši: 0.75rem font-size, 0.65 opacity, 300 weight
+   ✓ Signature element: vertikalna zlatna linija (1px, 28px visina, opacity 0.3)
+   ✓ Instagram/TikTok: male (16px), monohromatske (0.35 opacity), hover zlatna (0.85)
+   ✓ Srednja/desna kolona: line-height 1.7 za balans
+   ✓ Donji footer: diskretan, savršeno centriran, optički lak
+   ✓ Luksuzno, editorialno, smireno — bez template izgleda
+============================================ */
+
+@media (prefers-reduced-motion: reduce) {
+    .footer-social a {
+        transition: none;
+    }
+}

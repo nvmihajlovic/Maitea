@@ -1,0 +1,931 @@
+/* ========================================
+   GALLERY PAGE - PREMIUM REDESIGN
+   Luxurious, calm, symmetrical 3-column grid
+   ======================================== */
+
+/* ========================================
+   PAGE HEADER - Uniform with other pages
+   ======================================== */
+
+.page-header {
+    min-height: 32vh;
+    padding: clamp(3rem, 8vh, 5rem) 1.5rem clamp(2.5rem, 6vh, 4rem);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    background: linear-gradient(
+        180deg,
+        transparent 0%,
+        rgba(250, 248, 245, 0.4) 100%
+    );
+}
+
+/* Suptilan vizuelni akcenat - tanka gold linija */
+.page-header::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 1px;
+    background: linear-gradient(
+        90deg,
+        transparent 0%,
+        rgba(212, 175, 55, 0.2) 50%,
+        transparent 100%
+    );
+}
+
+.page-title {
+    font-family: 'Raleway', sans-serif;
+    font-size: clamp(2rem, 6vw, 2.75rem);
+    font-weight: 300;
+    letter-spacing: -0.015em;
+    line-height: 1.2;
+    color: #1a1a1a;
+    margin: 0 0 1rem;
+    animation: fadeInUp 0.5s ease-out;
+}
+
+.page-subtitle {
+    font-family: 'Manrope', sans-serif;
+    font-size: clamp(0.95rem, 2vw, 1.05rem);
+    font-weight: 400;
+    line-height: 1.75;
+    color: #5a5a5a;
+    margin: 0 auto;
+    max-width: 560px;
+    animation: fadeInUp 0.6s ease-out 0.1s backwards;
+}
+
+/* Blage animacije */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+    .page-title,
+    .page-subtitle {
+        animation: none;
+    }
+}
+
+/* ========================================
+   GALLERY SECTION
+   ======================================== */
+
+.gallery-section {
+    padding: 3.5rem 0 6rem;
+    background: rgba(250, 248, 245, 0.3);
+}
+
+.gallery-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+/* ========================================
+   GALLERY GRID - CLEAN 3-COLUMN LAYOUT
+   ======================================== */
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+    margin: 0;
+}
+
+/* ========================================
+   GALLERY ITEMS
+   ======================================== */
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 1px;
+    cursor: pointer;
+    aspect-ratio: 4 / 3;
+}
+
+.gallery-image-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.gallery-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Overlay */
+.gallery-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(26, 26, 26, 0.3);
+    opacity: 0;
+    transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    pointer-events: none;
+}
+
+/* Hover State */
+.gallery-item:hover .gallery-image-wrapper img {
+    transform: scale(1.04);
+}
+
+.gallery-item:hover .gallery-overlay {
+    opacity: 1;
+}
+
+/* Focus State */
+.gallery-item:focus {
+    outline: 2px solid #d4af37;
+    outline-offset: 4px;
+}
+
+/* ========================================
+   LIGHTBOX
+   ======================================== */
+
+.lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(26, 26, 26, 0.96);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 10000;
+    backdrop-filter: blur(8px);
+    animation: lightboxFadeIn 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.lightbox.active {
+    display: flex;
+}
+
+@keyframes lightboxFadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.lightbox-content {
+    max-width: 90vw;
+    max-height: 90vh;
+    position: relative;
+    animation: lightboxImageIn 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes lightboxImageIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.lightbox-image {
+    max-width: 100%;
+    max-height: 90vh;
+    width: auto;
+    height: auto;
+    display: block;
+    box-shadow: 0 16px 64px rgba(0, 0, 0, 0.4);
+}
+
+/* Lightbox Controls */
+.lightbox-close {
+    position: fixed;
+    top: 2rem;
+    right: 2rem;
+    width: 48px;
+    height: 48px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: #ffffff;
+    font-size: 2rem;
+    line-height: 1;
+    cursor: pointer;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    backdrop-filter: blur(8px);
+    z-index: 10001;
+}
+
+.lightbox-close:hover {
+    background: rgba(212, 175, 55, 0.2);
+    border-color: rgba(212, 175, 55, 0.4);
+    transform: scale(1.08);
+}
+
+.lightbox-prev,
+.lightbox-next {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 56px;
+    height: 56px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: #ffffff;
+    font-size: 2.5rem;
+    line-height: 1;
+    cursor: pointer;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    backdrop-filter: blur(8px);
+    z-index: 10001;
+}
+
+.lightbox-prev {
+    left: 2rem;
+}
+
+.lightbox-next {
+    right: 2rem;
+}
+
+.lightbox-prev:hover,
+.lightbox-next:hover {
+    background: rgba(212, 175, 55, 0.2);
+    border-color: rgba(212, 175, 55, 0.4);
+    transform: translateY(-50%) scale(1.08);
+}
+
+/* ========================================
+   TABLET (min-width: 768px, max-width: 1023px)
+   ======================================== */
+
+@media (min-width: 768px) and (max-width: 1023px) {
+    .page-header {
+        min-height: 38vh;
+        padding: clamp(4rem, 10vh, 6rem) 2rem clamp(3rem, 7vh, 4.5rem);
+    }
+    
+    .page-title {
+        font-size: clamp(2.25rem, 5vw, 3rem);
+        margin: 0 0 1.25rem;
+    }
+    
+    .page-subtitle {
+        font-size: 1.08rem;
+        max-width: 600px;
+    }
+    
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+    }
+
+    .gallery-container {
+        padding: 0 1.5rem;
+    }
+
+    .gallery-section {
+        padding: 4rem 0 5rem;
+    }
+}
+
+/* ========================================
+   MOBILE (max-width: 767px)
+   ======================================== */
+
+@media (max-width: 767px) {
+    .gallery-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+
+    .gallery-container {
+        padding: 0 1.25rem;
+    }
+
+    .gallery-section {
+        padding: 4rem 0 4.5rem;
+    }
+
+    .gallery-item {
+        aspect-ratio: 16 / 10;
+    }
+
+    /* Lightbox mobile adjustments */
+    .lightbox-close {
+        top: 1rem;
+        right: 1rem;
+        width: 44px;
+        height: 44px;
+    }
+
+    .lightbox-prev,
+    .lightbox-next {
+        width: 44px;
+        height: 44px;
+        font-size: 2rem;
+    }
+
+    .lightbox-prev {
+        left: 1rem;
+    }
+
+    .lightbox-next {
+        right: 1rem;
+    }
+
+    .lightbox-content {
+        max-width: 94vw;
+    }
+}
+
+/* ========================================
+   DESKTOP (min-width: 1024px)
+   ======================================== */
+
+@media (min-width: 1024px) {
+    .page-header {
+        min-height: 48vh;
+        padding: clamp(5rem, 12vh, 7rem) 2rem clamp(4rem, 9vh, 5.5rem);
+    }
+    
+    .page-title {
+        font-size: 3rem;
+    }
+    
+    .page-subtitle {
+        font-size: 1.1rem;
+        line-height: 1.65;
+    }
+    
+    .page-header::after {
+        width: 48px;
+    }
+    
+    .gallery-section {
+        padding: 4.5rem 0 6rem;
+    }
+}
+
+/* ========================================
+   LARGE DESKTOP (min-width: 1440px)
+   ======================================== */
+
+@media (min-width: 1440px) {
+    .gallery-container {
+        max-width: 1500px;
+        padding: 0 3rem;
+    }
+
+    .gallery-grid {
+        gap: 32px;
+    }
+
+    .gallery-section {
+        padding: 6rem 0 7rem;
+    }
+}
+
+/* ========================================
+   LOADING STATE
+   ======================================== */
+
+.gallery-image-wrapper {
+    background: linear-gradient(
+        135deg,
+        rgba(250, 248, 245, 0.8) 0%,
+        rgba(212, 175, 55, 0.05) 100%
+    );
+}
+
+.gallery-image-wrapper img {
+    opacity: 0;
+    animation: fadeInImage 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    animation-delay: 0.1s;
+}
+
+@keyframes fadeInImage {
+    to {
+        opacity: 1;
+    }
+}
+
+/* ========================================
+   ACCESSIBILITY
+   ======================================== */
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+    .gallery-image-wrapper img,
+    .gallery-overlay,
+    .lightbox,
+    .lightbox-content {
+        animation: none !important;
+        transition: none !important;
+    }
+
+    .gallery-item:hover .gallery-image-wrapper img {
+        transform: none;
+    }
+}
+
+/* Keyboard focus improvements */
+.gallery-item:focus-visible {
+    outline: 3px solid #d4af37;
+    outline-offset: 4px;
+}
+
+.lightbox-close:focus-visible,
+.lightbox-prev:focus-visible,
+.lightbox-next:focus-visible {
+    outline: 3px solid #d4af37;
+    outline-offset: 4px;
+}
+/* ========================================
+   MOBILE-FIRST OPTIMIZATION (375–430px)
+   ======================================== 
+   
+   Dizajnerska intencija:
+   Galerija kao "tiha izložba" — editorijalni tok,
+   ne Instagram feed.
+   
+   Cilj:
+   - Luksuzni meni restorana
+   - Portfolio studija
+   - Mirna, prostrana galerija
+   
+   Pravila:
+   - NE menjati font-family/font-weight
+   - NE menjati boje brenda
+   - Jedna kolona (jedna slika po redu)
+   - Ritam i "disanje" između slika
+   - UI mora biti "nevidljiv"
+   - Slike su glavni sadržaj
+   
+   Struktura:
+   A) Container & Global
+   B) Header & Navigation
+   C) Page Header (Hero)
+   D) Gallery Grid (Editorial Flow)
+   E) CTA Section
+   F) Footer
+   G) Lightbox (Mobile)
+   ======================================== */
+
+@media (max-width: 430px) {
+    
+    /* ========================================
+       A) CONTAINER & GLOBAL SPACING
+       ======================================== */
+    
+    .container,
+    .gallery-container {
+        max-width: 420px !important;
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+        margin: 0 auto !important;
+    }
+    
+    .section {
+        padding: 56px 0 !important;
+    }
+    
+    .gallery-section {
+        padding: 48px 0 56px 0 !important;
+        background: transparent !important;
+    }
+    
+    /* ========================================
+       B) HEADER & NAVIGATION (Premium Mobile)
+       ======================================== */
+    
+    .header {
+        padding: 16px 0 !important;
+        position: relative !important;
+        z-index: 100 !important;
+    }
+    
+    .header-content {
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+    }
+    
+    .logo .wordmark {
+        font-size: 1.125rem !important;
+        letter-spacing: 0.15em !important;
+    }
+    
+    /* Navigation styles removed - using hero-mobile-premium.css for consistency */
+    
+    /* ========================================
+       C) PAGE HEADER - Kompaktan Mobile
+       ======================================== */
+    
+    .page-header {
+        padding: 2.6rem 1.5rem 2.1rem !important;
+        text-align: center !important;
+    }
+    
+    .page-title {
+        font-size: 2rem !important;
+        font-weight: 300 !important;
+        line-height: 1.2 !important;
+        margin: 0 0 1rem 0 !important;
+    }
+    
+    .page-subtitle {
+        font-size: 0.95rem !important;
+        line-height: 1.6 !important;
+    }
+    
+    /* ========================================
+       D) GALLERY GRID (Editorial Flow)
+       ======================================== 
+       
+       Dizajn: Jedna kolona, ritam, "disanje"
+       Svaka 3-4 slike → veći razmak
+       Bez grid-a, bez zbijanja
+       ======================================== */
+    
+    .gallery-grid {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 0 !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+    
+    /* ========================================
+       GALLERY ITEMS - EDITORIAL RHYTHM
+       ======================================== */
+    
+    .gallery-item {
+        width: 100% !important;
+        aspect-ratio: 4 / 3 !important;
+        border-radius: 16px !important;
+        overflow: hidden !important;
+        background: transparent !important;
+        cursor: pointer !important;
+        
+        /* Standard spacing between images */
+        margin-bottom: 40px !important;
+    }
+    
+    /* Larger "breathing" space every 3rd image */
+    .gallery-item:nth-child(3),
+    .gallery-item:nth-child(6),
+    .gallery-item:nth-child(9) {
+        margin-bottom: 56px !important;
+    }
+    
+    /* Last item - no bottom margin */
+    .gallery-item:last-child {
+        margin-bottom: 0 !important;
+    }
+    
+    /* Image Wrapper */
+    .gallery-image-wrapper {
+        position: relative !important;
+        width: 100% !important;
+        height: 100% !important;
+        overflow: hidden !important;
+        border-radius: 16px !important;
+        background: transparent !important;
+    }
+    
+    /* Image - Premium Treatment */
+    .gallery-image-wrapper img {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;
+        display: block !important;
+        border-radius: 16px !important;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04) !important;
+        border: 1px solid rgba(26, 26, 26, 0.04) !important;
+        
+        /* Slike odmah vidljive - bez animacije */
+        opacity: 1 !important;
+        
+        /* NO transform on mobile - keep images static */
+        transform: none !important;
+        transition: none !important;
+    }
+    
+    /* ========================================
+       OVERLAY - DISABLED ON MOBILE
+       ======================================== */
+    
+    .gallery-overlay {
+        display: none !important;
+    }
+    
+    /* NO hover effects on mobile */
+    .gallery-item:hover .gallery-image-wrapper img {
+        transform: none !important;
+    }
+    
+    .gallery-item:hover .gallery-overlay {
+        opacity: 0 !important;
+        display: none !important;
+    }
+    
+    /* Focus State - Simplified for mobile */
+    .gallery-item:focus,
+    .gallery-item:focus-visible {
+        outline: 2px solid #d4af37 !important;
+        outline-offset: 4px !important;
+        border-radius: 16px !important;
+    }
+    
+    /* ========================================
+       E) CTA SECTION (Clearly Separated)
+       ======================================== */
+    
+    .cta-final {
+        padding: 64px 0 56px 0 !important;
+        background: transparent !important;
+    }
+    
+    .cta-content {
+        max-width: 360px !important;
+        margin: 0 auto !important;
+        padding: 28px 24px !important;
+        background: rgba(255, 255, 255, 0.6) !important;
+        border: 1px solid rgba(26, 26, 26, 0.04) !important;
+        border-radius: 18px !important;
+        text-align: center !important;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03) !important;
+    }
+    
+    .cta-title {
+        /* LOCKED: font-family (Raleway) & font-weight preserved */
+        font-size: 1.5rem !important; /* 24px */
+        line-height: 1.3 !important;
+        margin: 0 0 0.75rem 0 !important;
+    }
+    
+    .cta-text {
+        /* LOCKED: font-family (Manrope) preserved */
+        font-size: 0.9375rem !important; /* 15px */
+        line-height: 1.65 !important;
+        margin: 0 0 1.5rem 0 !important;
+        opacity: 0.85 !important;
+    }
+    
+    /* CTA Button - Same as other pages */
+    .cta-content .btn-primary,
+    .cta-content .btn-large {
+        width: 100% !important;
+        max-width: 320px !important;
+        height: 52px !important;
+        font-size: 0.9375rem !important;
+        border-radius: 12px !important;
+        margin: 0 auto !important;
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+    
+    /* ========================================
+       F) FOOTER (Compact & Elegant)
+       ======================================== */
+    
+    .footer {
+        padding: 56px 0 32px 0 !important;
+    }
+    
+    .footer-content {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 32px !important;
+        margin-bottom: 32px !important;
+    }
+    
+    .footer-section {
+        text-align: left !important;
+    }
+    
+    /* Footer Wordmark */
+    .footer .wordmark {
+        font-size: 1.25rem !important;
+        letter-spacing: 0.12em !important;
+    }
+    
+    .footer-tagline {
+        font-size: 0.8125rem !important;
+        margin: 0.5rem 0 0.25rem 0 !important;
+    }
+    
+    .footer-brand-statement {
+        font-size: 0.8125rem !important;
+        margin: 0 0 1rem 0 !important;
+    }
+    
+    /* Social Icons - Compact */
+    .footer-social {
+        display: flex !important;
+        gap: 16px !important;
+        margin: 1rem 0 1.5rem 0 !important;
+    }
+    
+    .footer-social a {
+        width: 36px !important;
+        height: 36px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        border-radius: 50% !important;
+        background: rgba(212, 175, 55, 0.08) !important;
+        transition: background-color 0.2s ease !important;
+    }
+    
+    .footer-social a:hover,
+    .footer-social a:focus {
+        background: rgba(212, 175, 55, 0.15) !important;
+    }
+    
+    .footer-social svg {
+        width: 20px !important;
+        height: 20px !important;
+        fill: #d4af37 !important;
+        opacity: 0.75 !important;
+    }
+    
+    /* Footer CTA - Secondary Button */
+    .footer-cta .btn {
+        width: auto !important;
+        padding: 12px 24px !important;
+        font-size: 0.875rem !important;
+        border-radius: 8px !important;
+    }
+    
+    /* Footer Links */
+    .footer-title {
+        font-size: 0.875rem !important;
+        margin: 0 0 1rem 0 !important;
+    }
+    
+    .footer-links,
+    .footer-contact {
+        list-style: none !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+    
+    .footer-links li,
+    .footer-contact li {
+        margin-bottom: 0.75rem !important;
+    }
+    
+    .footer-links a,
+    .footer-contact a,
+    .footer-contact li {
+        font-size: 0.875rem !important;
+        line-height: 1.5 !important;
+    }
+    
+    /* Footer Bottom - Compact */
+    .footer-bottom {
+        padding-top: 24px !important;
+        border-top: 1px solid rgba(26, 26, 26, 0.08) !important;
+        text-align: center !important;
+    }
+    
+    .footer-bottom p {
+        font-size: 0.75rem !important; /* 12px */
+        line-height: 1.6 !important;
+        opacity: 0.7 !important;
+        margin: 0 !important;
+    }
+    
+    .footer-separator {
+        display: inline !important;
+        margin: 0 0.5rem !important;
+    }
+    
+    .footer-bottom a {
+        font-size: 0.75rem !important;
+    }
+    
+    /* ========================================
+       G) LIGHTBOX (Mobile Optimized)
+       ======================================== */
+    
+    .lightbox {
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        bottom: 0 !important;
+        background: rgba(26, 26, 26, 0.98) !important;
+        z-index: 9999 !important;
+        padding: 20px !important;
+    }
+    
+    .lightbox-content {
+        width: 100% !important;
+        height: 100% !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+    
+    .lightbox-image {
+        max-width: 100% !important;
+        max-height: 100% !important;
+        width: auto !important;
+        height: auto !important;
+        object-fit: contain !important;
+        border-radius: 8px !important;
+    }
+    
+    /* Lightbox Controls */
+    .lightbox-close {
+        position: absolute !important;
+        top: 20px !important;
+        right: 20px !important;
+        width: 44px !important;
+        height: 44px !important;
+        font-size: 2rem !important;
+        background: rgba(250, 248, 245, 0.9) !important;
+        color: #1a1a1a !important;
+        border: none !important;
+        border-radius: 50% !important;
+        cursor: pointer !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        z-index: 10000 !important;
+    }
+    
+    .lightbox-prev,
+    .lightbox-next {
+        position: absolute !important;
+        top: 50% !important;
+        transform: translateY(-50%) !important;
+        width: 44px !important;
+        height: 44px !important;
+        font-size: 2rem !important;
+        background: rgba(250, 248, 245, 0.9) !important;
+        color: #1a1a1a !important;
+        border: none !important;
+        border-radius: 50% !important;
+        cursor: pointer !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        z-index: 10000 !important;
+    }
+    
+    .lightbox-prev {
+        left: 20px !important;
+    }
+    
+    .lightbox-next {
+        right: 20px !important;
+    }
+    
+    .lightbox-close:active,
+    .lightbox-prev:active,
+    .lightbox-next:active {
+        background: rgba(212, 175, 55, 0.2) !important;
+    }
+    
+} /* End @media (max-width: 430px) */
+
+/* ========================================
+   END MOBILE-FIRST OPTIMIZATION
+   ======================================== */

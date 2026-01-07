@@ -1,0 +1,878 @@
+/**
+ * MAITEA HOMEPAGE MICRO-POLISH
+ * Premium Minimalist Refinement Layer
+ * Mobile-first (360-430px → Desktop)
+ * 
+ * Focus: Spacing, typography hierarchy, micro-details,
+ * alignment, and "expensive" rhythm
+ */
+
+/* ============================================
+   SPACING SYSTEM (CSS VARIABLES)
+============================================ */
+
+:root {
+    /* Spacing scale */
+    --space-xs: 0.5rem;      /* 8px */
+    --space-sm: 1rem;        /* 16px */
+    --space-md: 1.5rem;      /* 24px */
+    --space-lg: 2.5rem;      /* 40px */
+    --space-xl: 4rem;        /* 64px */
+    --space-2xl: 6rem;       /* 96px */
+    --space-3xl: 8rem;       /* 128px */
+    
+    /* Section spacing */
+    --section-padding-mobile: 4rem;
+    --section-padding-tablet: 5rem;
+    --section-padding-desktop: 7rem;
+    
+    /* Container max-width */
+    --container-narrow: 700px;
+    --container-medium: 900px;
+    --container-wide: 1200px;
+    
+    /* Colors (preserve existing palette) */
+    --gold: #d4af37;
+    --gold-subtle: rgba(212, 175, 55, 0.12);
+    --gold-hairline: rgba(212, 175, 55, 0.25);
+    --text-primary: #1a1a1a;
+    --text-secondary: #5a5a5a;
+    --text-tertiary: #7a7a7a;
+    --border-subtle: rgba(42, 42, 42, 0.08);
+}
+
+/* ============================================
+   A) HERO SECTION - PREMIUM POLISH
+============================================ */
+
+.hero {
+    position: relative;
+    padding: 0;
+}
+
+/* Paper wave effect - light and shadow moving across hero */
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 120%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent 0%,
+        transparent 20%,
+        rgba(0, 0, 0, 0.08) 35%,
+        rgba(255, 255, 255, 0.6) 50%,
+        rgba(0, 0, 0, 0.08) 65%,
+        transparent 80%,
+        transparent 100%
+    );
+    pointer-events: none;
+    z-index: 1;
+    animation: paperWave 4s ease-in-out;
+    animation-fill-mode: forwards;
+}
+
+@keyframes paperWave {
+    0% {
+        left: -100%;
+    }
+    100% {
+        left: 100%;
+    }
+}
+
+.hero-scene {
+    position: relative;
+}
+
+/* Ensure content stays above animation */
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+/* ============================================
+   OPTICAL CENTERING - DESKTOP
+   Moving content upward for premium balance
+============================================ */
+
+/* Tablet: Subtle upward shift */
+@media (min-width: 768px) {
+    .hero-scene {
+        transform: translateY(-2.5rem);
+    }
+}
+
+/* Desktop: Optical centering (not mathematical) */
+@media (min-width: 1024px) {
+    .hero-scene {
+        transform: translateY(-3.5rem);
+    }
+}
+
+/* Large Desktop: More refined positioning */
+@media (min-width: 1440px) {
+    .hero-scene {
+        transform: translateY(-4rem);
+    }
+}
+
+/* Disable animation for users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    .hero-scene::after {
+        animation: none !important;
+        opacity: 0 !important;
+    }
+}
+
+/* Subtle radial highlight behind hero (barely visible) */
+.hero-scene::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    max-width: 600px;
+    height: 70%;
+    background: radial-gradient(
+        ellipse at center,
+        rgba(212, 175, 55, 0.03) 0%,
+        transparent 65%
+    );
+    pointer-events: none;
+    z-index: 0;
+}
+
+.hero-content {
+    padding: var(--space-3xl) var(--space-md) var(--space-2xl);
+    position: relative;
+    z-index: 2;
+}
+
+/* Eyebrow label: "MAITEA" */
+.hero-brand {
+    order: -1;
+    margin: 0 0 var(--space-md) 0;
+    opacity: 1 !important;
+    animation: none !important;
+}
+
+.brand-signature {
+    font-size: 0.75rem;
+    font-weight: 400;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--text-tertiary);
+    opacity: 0.65;
+    display: inline-block;
+    position: relative;
+    padding-right: 0.25em;
+}
+
+/* Main headline refinement */
+.hero-headline {
+    font-size: clamp(2.25rem, 8vw, 4.5rem);
+    font-weight: 200;
+    letter-spacing: -0.025em;
+    line-height: 1.12;
+    color: var(--text-primary);
+    margin: 0 0 var(--space-md) 0;
+    max-width: 720px;
+    margin-left: auto;
+    margin-right: auto;
+    opacity: 1 !important;
+    animation: none !important;
+}
+
+/* Subtle hairline accent under headline (micro detail) */
+.hero-headline::after {
+    content: '';
+    display: block;
+    width: 48px;
+    height: 1px;
+    background: linear-gradient(
+        90deg,
+        transparent 0%,
+        var(--gold-hairline) 50%,
+        transparent 100%
+    );
+    margin: var(--space-lg) auto 0;
+}
+
+/* Description - better readability */
+.hero-descriptor {
+    font-size: clamp(1rem, 2vw, 1.125rem);
+    font-weight: 400;
+    line-height: 1.75;
+    color: var(--text-secondary);
+    margin: var(--space-lg) 0 var(--space-xl) 0;
+    max-width: 520px;
+    margin-left: auto;
+    margin-right: auto;
+    opacity: 1 !important;
+    animation: none !important;
+}
+
+/* Primary CTA button refinement */
+.btn-hero {
+    display: inline-block;
+    padding: 1rem 2.5rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    background: var(--text-primary);
+    color: #faf8f5;
+    border: none;
+    border-radius: 1px;
+    text-decoration: none;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    opacity: 1 !important;
+    animation: none !important;
+}
+
+.btn-hero:hover {
+    transform: translateY(-2px);
+    box-shadow: 
+        0 4px 16px rgba(0, 0, 0, 0.12),
+        0 2px 8px rgba(212, 175, 55, 0.12);
+}
+
+.btn-hero:focus-visible {
+    outline: 2px solid var(--gold);
+    outline-offset: 4px;
+}
+
+/* ============================================
+   B) VALUES LINE - INTENTIONAL GRID
+============================================ */
+
+.philosophy-section {
+    padding: var(--section-padding-mobile) var(--space-md);
+    background: rgba(250, 248, 245, 0.5);
+    position: relative;
+}
+
+/* Subtle line under entire block */
+.philosophy-section::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 85%;
+    max-width: 600px;
+    height: 1px;
+    background: linear-gradient(
+        90deg,
+        transparent 0%,
+        var(--border-subtle) 50%,
+        transparent 100%
+    );
+}
+
+.philosophy-statements {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+    max-width: var(--container-medium);
+    margin: 0 auto;
+}
+
+.statement {
+    position: relative;
+    padding: var(--space-md) 0;
+    border: none;
+    text-align: center;
+    cursor: default;
+}
+
+.statement:hover .statement-title {
+    color: rgba(26, 26, 26, 0.75);
+}
+
+/* Hairline separator (not on last item) */
+.statement:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 24px;
+    height: 1px;
+    background: var(--gold-hairline);
+}
+
+.statement-title {
+    font-size: clamp(1.75rem, 5vw, 2.5rem);
+    font-weight: 400;
+    letter-spacing: 0.02em;
+    color: var(--text-primary);
+    margin: 0;
+    line-height: 1.25;
+    transition: color 0.4s ease;
+}
+
+/* ============================================
+   C) SECTION TITLES - UNIFIED STYLE
+============================================ */
+
+.section-title {
+    font-family: 'Raleway', sans-serif;
+    font-size: clamp(1.125rem, 3vw, 1.375rem);
+    font-weight: 400;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--text-primary);
+    text-align: center;
+    margin: 0 auto var(--space-xl);
+    position: relative;
+    display: inline-block;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Tiny gold hairline under title */
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 32px;
+    height: 1px;
+    background: var(--gold);
+}
+
+/* Consistent section spacing */
+.services-section,
+.process-section,
+.clients-section {
+    padding: var(--section-padding-mobile) var(--space-md);
+}
+
+.services-section {
+    background: transparent;
+}
+
+.process-section {
+    background: rgba(250, 248, 245, 0.3);
+}
+
+.clients-section {
+    background: transparent;
+}
+
+/* ============================================
+   D) SERVICE CARDS - PREMIUM REFINEMENT
+============================================ */
+
+.services-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+    max-width: var(--container-wide);
+    margin: 0 auto;
+}
+
+.service-card {
+    background: #fff;
+    border: 1px solid var(--border-subtle);
+    border-radius: 2px;
+    padding: var(--space-lg);
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: none;
+    display: flex;
+    flex-direction: column;
+    min-height: 280px;
+}
+
+.service-card:hover {
+    border-color: rgba(212, 175, 55, 0.4);
+    box-shadow: 
+        0 2px 12px rgba(0, 0, 0, 0.05),
+        0 8px 32px rgba(212, 175, 55, 0.12);
+    transform: translateY(-3px);
+}
+
+.service-card:hover .service-icon {
+    opacity: 1;
+    transform: scale(1.05);
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.service-icon {
+    width: 40px;
+    height: 40px;
+    margin-bottom: var(--space-md);
+    opacity: 0.9;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.service-title {
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.25rem;
+    font-weight: 400;
+    letter-spacing: -0.01em;
+    color: var(--text-primary);
+    margin: 0 0 var(--space-sm) 0;
+    line-height: 1.3;
+}
+
+.service-text {
+    font-size: 0.9375rem;
+    line-height: 1.7;
+    color: var(--text-secondary);
+    margin: 0 0 auto 0;
+    flex-grow: 1;
+}
+
+.service-link {
+    font-size: 0.875rem;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    color: var(--text-primary);
+    text-decoration: none;
+    display: inline-block;
+    margin-top: var(--space-md);
+    position: relative;
+    transition: color 0.25s ease;
+}
+
+.service-link::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: var(--gold-hairline);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.service-link:hover {
+    color: rgba(212, 175, 55, 0.9);
+}
+
+.service-link:hover::after {
+    transform: scaleX(1);
+    background: var(--gold);
+}
+
+.service-link:focus-visible {
+    outline: 2px solid var(--gold);
+    outline-offset: 3px;
+}
+
+/* ============================================
+   PROCESS STEPS - PREMIUM NARRATIVE FLOW
+============================================ */
+
+.process-section {
+    padding: var(--section-padding-mobile) var(--space-md);
+    background: rgba(250, 248, 245, 0.3);
+}
+
+.process-steps {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-2xl);
+    max-width: var(--container-wide);
+    margin: 0 auto;
+    position: relative;
+}
+
+/* Mobile: vertical connectors between steps */
+.process-step {
+    position: relative;
+    padding: var(--space-lg) var(--space-md);
+    text-align: center;
+    background: #fff;
+    border: 1px solid rgba(42, 42, 42, 0.04);
+    border-radius: 2px;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Subtle connecting dot after each step (mobile) */
+.process-step:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    bottom: calc(-1 * var(--space-2xl) / 2 - 3px);
+    left: 50%;
+    transform: translateX(-50%);
+    width: 4px;
+    height: 4px;
+    background: var(--gold);
+    border-radius: 50%;
+    opacity: 0.3;
+    z-index: 1;
+}
+
+/* Step number - large, elegant, integrated */
+.step-number {
+    font-family: 'Raleway', sans-serif;
+    font-size: 3rem;
+    font-weight: 200;
+    letter-spacing: 0.05em;
+    color: var(--gold);
+    opacity: 0.15;
+    margin: 0 0 var(--space-sm) 0;
+    line-height: 1;
+    display: block;
+}
+
+.step-title {
+    font-family: 'Raleway', sans-serif;
+    font-size: clamp(1.125rem, 3vw, 1.375rem);
+    font-weight: 400;
+    letter-spacing: 0.01em;
+    color: var(--text-primary);
+    margin: 0 0 var(--space-md) 0;
+    line-height: 1.25;
+}
+
+.step-text {
+    font-size: 0.875rem;
+    line-height: 1.7;
+    color: var(--text-secondary);
+    margin: 0;
+    max-width: 380px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Middle step (02) - subtle emphasis */
+.process-step:nth-child(2) {
+    border-color: rgba(212, 175, 55, 0.08);
+    background: rgba(255, 255, 255, 1);
+}
+
+.process-step:nth-child(2) .step-number {
+    opacity: 0.22;
+}
+
+.process-step:nth-child(2) .step-title {
+    font-weight: 500;
+}
+
+/* Hover state - subtle lift */
+.process-step:hover {
+    transform: translateY(-2px);
+    border-color: rgba(212, 175, 55, 0.12);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+}
+
+/* ============================================
+   E) CLIENT LOGOS - INTENTIONAL PLACEHOLDERS
+============================================ */
+
+.clients-strip {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-md);
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.client-logo {
+    height: 80px;
+    background: #fff;
+    border: 1px solid var(--border-subtle);
+    border-radius: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Manrope', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-tertiary);
+    opacity: 0.4;
+    transition: all 0.3s ease;
+}
+
+.client-logo:hover {
+    opacity: 0.7;
+    border-color: var(--gold-hairline);
+}
+
+/* ============================================
+   F) FINAL CTA - PREMIUM FRAMING
+============================================ */
+
+.cta-final {
+    padding: var(--space-2xl) var(--space-md);
+    background: linear-gradient(
+        180deg,
+        transparent 0%,
+        rgba(250, 248, 245, 0.5) 50%,
+        transparent 100%
+    );
+    position: relative;
+}
+
+/* Thin divider above */
+.cta-final::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60%;
+    max-width: 400px;
+    height: 1px;
+    background: linear-gradient(
+        90deg,
+        transparent 0%,
+        var(--border-subtle) 50%,
+        transparent 100%
+    );
+}
+
+.cta-content {
+    text-align: center;
+    max-width: var(--container-narrow);
+    margin: 0 auto;
+}
+
+.cta-title {
+    font-size: clamp(1.5rem, 4vw, 2.25rem);
+    font-weight: 300;
+    letter-spacing: -0.02em;
+    line-height: 1.35;
+    color: var(--text-primary);
+    margin: 0 0 var(--space-lg) 0;
+}
+
+.btn-large,
+.btn-primary {
+    display: inline-block;
+    padding: 1rem 2.5rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    background: var(--text-primary);
+    color: #faf8f5;
+    border: none;
+    border-radius: 1px;
+    text-decoration: none;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.btn-large:hover,
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 
+        0 4px 16px rgba(0, 0, 0, 0.12),
+        0 2px 8px rgba(212, 175, 55, 0.12);
+}
+
+.btn-large:focus-visible,
+.btn-primary:focus-visible {
+    outline: 2px solid var(--gold);
+    outline-offset: 4px;
+}
+
+/* ============================================
+   G) ACCESSIBILITY - FOCUS STYLES
+============================================ */
+
+a:focus-visible,
+button:focus-visible {
+    outline: 2px solid var(--gold);
+    outline-offset: 3px;
+    border-radius: 1px;
+}
+
+/* ============================================
+   TABLET BREAKPOINT (768px)
+============================================ */
+
+@media (min-width: 768px) {
+    :root {
+        --section-padding-mobile: var(--section-padding-tablet);
+    }
+    
+    /* Hero adjustments */
+    .hero-content {
+        padding: calc(var(--space-3xl) * 1.2) var(--space-lg) var(--space-2xl);
+    }
+    
+    .hero-headline {
+        font-size: clamp(3rem, 7vw, 4.5rem);
+    }
+    
+    .hero-descriptor {
+        font-size: 1.125rem;
+    }
+    
+    /* Values grid - 3 columns */
+    .philosophy-statements {
+        grid-template-columns: repeat(3, 1fr);
+        gap: var(--space-xl);
+    }
+    
+    .statement:not(:last-child)::after {
+        display: none;
+    }
+    
+    /* Add vertical separators */
+    .statement:not(:last-child) {
+        border-right: 1px solid var(--border-subtle);
+    }
+    
+    .statement {
+        padding: var(--space-md) var(--space-lg);
+    }
+    
+    /* Service cards - 2 columns */
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--space-xl);
+    }
+    
+    /* Process steps - horizontal flow with connectors */
+    .process-steps {
+        grid-template-columns: repeat(3, 1fr);
+        gap: var(--space-lg);
+        position: relative;
+    }
+    
+    /* Remove mobile dots */
+    .process-step::after {
+        display: none;
+    }
+    
+    /* Horizontal connecting lines between steps */
+    .process-step:not(:last-child)::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        right: calc(-1 * var(--space-lg) / 2 - 12px);
+        transform: translateY(-50%);
+        width: 24px;
+        height: 1px;
+        background: linear-gradient(
+            90deg,
+            rgba(212, 175, 55, 0.2) 0%,
+            rgba(212, 175, 55, 0.05) 100%
+        );
+        z-index: 0;
+    }
+    
+    /* Client logos - 4 columns */
+    .clients-strip {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    
+    .client-logo {
+        height: 100px;
+    }
+}
+
+/* ============================================
+   DESKTOP BREAKPOINT (1024px)
+============================================ */
+
+@media (min-width: 1024px) {
+    :root {
+        --section-padding-mobile: var(--section-padding-desktop);
+    }
+    
+    /* Hero */
+    .hero-content {
+        padding: calc(var(--space-3xl) * 1.5) var(--space-xl) calc(var(--space-2xl) * 1.2);
+    }
+    
+    .hero-headline {
+        font-size: clamp(3.5rem, 6vw, 5rem);
+        max-width: 800px;
+    }
+    
+    .hero-descriptor {
+        font-size: 1.125rem;
+        max-width: 600px;
+    }
+    
+    .btn-hero {
+        padding: 1.125rem 3rem;
+        font-size: 0.9375rem;
+    }
+    
+    /* Service cards - 4 columns (equal height) */
+    .services-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: var(--space-lg);
+    }
+    
+    .service-card {
+        min-height: 320px;
+    }
+    
+    /* Process steps - refined spacing and connectors */
+    .process-steps {
+        gap: var(--space-2xl);
+    }
+    
+    .process-step {
+        padding: var(--space-xl) var(--space-lg);
+    }
+    
+    /* Longer connecting lines on desktop */
+    .process-step:not(:last-child)::before {
+        width: 32px;
+        right: calc(-1 * var(--space-2xl) / 2 - 16px);
+    }
+    
+    /* Step numbers larger on desktop */
+    .step-number {
+        font-size: 4rem;
+    }
+    
+    /* Values - larger font */
+    .statement-title {
+        font-size: clamp(2rem, 4vw, 2.75rem);
+    }
+}
+
+/* ============================================
+   LARGE DESKTOP (1440px)
+============================================ */
+
+@media (min-width: 1440px) {
+    .hero-headline {
+        font-size: 5.5rem;
+    }
+    
+    .hero-descriptor {
+        font-size: 1.25rem;
+    }
+    
+    .section-title {
+        font-size: 1.5rem;
+    }
+    
+    .statement-title {
+        font-size: 3rem;
+    }
+}
+
+/* ============================================
+   REDUCED MOTION SUPPORT
+============================================ */
+
+@media (prefers-reduced-motion: reduce) {
+    * {
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+    }
+}

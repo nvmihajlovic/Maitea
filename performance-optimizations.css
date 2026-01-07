@@ -1,0 +1,214 @@
+/**
+ * PERFORMANCE & LOADING OPTIMIZATIONS
+ * Perceived performance, stability, premium loading behavior
+ * NO visual design changes — only loading/reveal behavior
+ */
+
+/* ============================================
+   FONT LOADING - Prevent FOUT/FOIT
+============================================ */
+
+/* Ensure text is visible during font load */
+body {
+    font-display: swap;
+}
+
+/* ============================================
+   SKELETON PLACEHOLDERS - Subtle, calm
+============================================ */
+
+.skeleton {
+    background: linear-gradient(
+        90deg,
+        rgba(250, 248, 245, 0.8) 0%,
+        rgba(245, 243, 240, 0.9) 100%
+    );
+    border: 1px solid rgba(42, 42, 42, 0.03);
+    border-radius: 2px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Image skeleton - aspect ratio preserved */
+.skeleton-image {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+}
+
+/* Fade out skeleton when content loads */
+.skeleton-loaded {
+    animation: skeletonFadeOut 0.3s ease-out forwards;
+}
+
+@keyframes skeletonFadeOut {
+    to {
+        opacity: 0;
+        pointer-events: none;
+    }
+}
+
+/* ============================================
+   SECTION REVEAL - Subtle entrance
+============================================ */
+
+/* Initial state: hidden but space reserved */
+.section-reveal {
+    opacity: 0;
+    transform: translateY(12px);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+/* Revealed state */
+.section-revealed {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Reduced motion: instant reveal */
+@media (prefers-reduced-motion: reduce) {
+    .section-reveal {
+        opacity: 1;
+        transform: none;
+    }
+    
+    .section-revealed {
+        animation: none;
+    }
+}
+
+/* ============================================
+   HERO STABILITY - Immediate render
+============================================ */
+
+/* Hero content must be visible immediately - override animation delays on first paint */
+.hero-headline,
+.hero-brand,
+.hero-descriptor,
+.btn-hero {
+    /* Ensure content is visible even if animations haven't started */
+    animation-fill-mode: backwards;
+}
+
+/* Hero headline visible by default (animation adds entrance) */
+.hero-headline {
+    opacity: 1;
+}
+
+/* Ensure hero takes minimum space even before animation */
+.hero {
+    min-height: 100vh;
+    contain: layout;
+}
+
+/* Hero scene must be immediately stable */
+.hero-scene {
+    min-height: 60vh;
+}
+
+/* ============================================
+   IMAGE LOADING - Prevent layout shift
+============================================ */
+
+/* Aspect ratio preservation for all images */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Image wrapper with reserved space */
+.img-wrapper {
+    position: relative;
+    overflow: hidden;
+    background: rgba(250, 248, 245, 0.5);
+}
+
+/* Fade in images smoothly when loaded */
+img[loading="lazy"] {
+    opacity: 0;
+    transition: opacity 0.3s ease-out;
+}
+
+img[loading="lazy"].loaded {
+    opacity: 1;
+}
+
+/* ============================================
+   LAYOUT STABILITY - CLS Prevention
+============================================ */
+
+/* Service cards - fixed min-height prevents shift */
+.service-card {
+    min-height: 280px;
+    contain: layout;
+}
+
+/* Client logos - fixed height prevents shift */
+.client-logo {
+    height: 80px;
+    contain: layout;
+}
+
+@media (min-width: 768px) {
+    .client-logo {
+        height: 100px;
+    }
+}
+
+/* Process steps - consistent spacing */
+.process-step {
+    contain: layout;
+}
+
+/* ============================================
+   CRITICAL CONTENT - Prioritize visibility
+============================================ */
+
+/* Hero text must render first */
+.hero-headline,
+.hero-descriptor,
+.btn-hero {
+    will-change: opacity;
+}
+
+/* Ensure CTA is always interactive */
+.btn-hero {
+    contain: layout style;
+}
+
+/* ============================================
+   SMOOTH TRANSITIONS - Premium feel
+============================================ */
+
+/* Global smooth reveal for dynamic content */
+.fade-in {
+    animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* ============================================
+   LOADING STATE - Footer stability
+============================================ */
+
+.footer {
+    contain: layout;
+}
+
+/* ============================================
+   PERFORMANCE HINTS
+============================================ */
+
+/* Hint browser about upcoming interactions */
+.nav-link,
+.service-card,
+.btn {
+    contain: layout style paint;
+}

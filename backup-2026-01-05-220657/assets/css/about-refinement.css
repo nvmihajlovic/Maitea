@@ -1,0 +1,176 @@
+/* ========================================
+   ABOUT PAGE REFINEMENT
+   Hierarchy, Readability & Warmth
+   ======================================== */
+
+/* ========================================
+   PAGE HEADER - STRENGTHENED
+   ======================================== */
+
+.page-intro {
+    font-size: clamp(1rem, 2.5vw, 1.2rem);
+    line-height: 1.7;
+    color: #4a4a4a;
+    font-weight: 400;
+    max-width: 720px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* ========================================
+   STORY SECTION - PROMINENT OPENING
+   ======================================== */
+
+.about-story .opening-paragraph {
+    font-size: clamp(1.05rem, 2.5vw, 1.2rem);
+    font-weight: 400;
+    line-height: 1.75;
+    color: #2a2a2a;
+    margin-bottom: 1.75rem;
+}
+
+.about-story .content-text p {
+    margin-bottom: 1.5rem;
+}
+
+.about-story .content-text p:last-child {
+    margin-bottom: 0;
+}
+
+/* ========================================
+   VALUES - PRIMARY VALUE HIERARCHY
+   ======================================== */
+
+.value-primary {
+    position: relative;
+}
+
+.value-primary .value-title {
+    font-size: clamp(1.25rem, 3vw, 1.5rem);
+    font-weight: 500;
+    color: #1a1a1a;
+    margin-bottom: 1rem;
+}
+
+.value-primary .value-text {
+    font-size: clamp(0.95rem, 2vw, 1.05rem);
+    color: #4a4a4a;
+    line-height: 1.75;
+}
+
+/* Secondary values remain as default */
+.value-item:not(.value-primary) .value-title {
+    font-weight: 400;
+    color: #2a2a2a;
+}
+
+.value-item:not(.value-primary) .value-text {
+    color: #5a5a5a;
+}
+
+/* ========================================
+   APPROACH SECTION - IMPROVED READABILITY
+   ======================================== */
+
+.approach-section .content-text {
+    max-width: 580px;
+}
+
+.approach-section .content-text p {
+    margin-bottom: 1.5rem;
+}
+
+.approach-section .content-text p:last-child {
+    margin-bottom: 0;
+}
+
+.approach-section .lead-text {
+    font-size: clamp(1.05rem, 2.5vw, 1.2rem);
+    font-weight: 400;
+    line-height: 1.75;
+    color: #2a2a2a;
+    margin-bottom: 1.75rem;
+}
+
+/* ========================================
+   CTA - WARMER & MORE CONVERSATIONAL
+   ======================================== */
+
+.cta-secondary .cta-title {
+    font-size: clamp(1.75rem, 5vw, 2.5rem);
+    font-weight: 300;
+    letter-spacing: -0.01em;
+    line-height: 1.3;
+    color: #2a2a2a;
+    margin-bottom: 1.25rem;
+}
+
+.cta-secondary .cta-text {
+    font-size: clamp(1rem, 2vw, 1.125rem);
+    line-height: 1.7;
+    color: #5a5a5a;
+    max-width: 600px;
+    margin: 0 auto 2rem;
+}
+
+.cta-secondary .btn {
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.cta-secondary .btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12), 0 4px 12px rgba(212, 175, 55, 0.15);
+}
+
+/* ========================================
+   TABLET (min-width: 768px)
+   ======================================== */
+
+@media (min-width: 768px) {
+    .page-intro {
+        max-width: 760px;
+    }
+
+    .approach-section .content-text {
+        max-width: 600px;
+    }
+
+    .cta-secondary .cta-text {
+        max-width: 640px;
+    }
+}
+
+/* ========================================
+   DESKTOP (min-width: 1024px)
+   ======================================== */
+
+@media (min-width: 1024px) {
+    .page-intro {
+        max-width: 800px;
+    }
+
+    .about-story .opening-paragraph {
+        font-size: 1.2rem;
+    }
+
+    .value-primary .value-title {
+        font-size: 1.5rem;
+    }
+
+    .approach-section .content-text {
+        max-width: 560px;
+    }
+
+    .approach-section .lead-text {
+        font-size: 1.2rem;
+    }
+
+    .cta-secondary .cta-title {
+        font-size: 2.5rem;
+    }
+
+    .cta-secondary .cta-text {
+        font-size: 1.125rem;
+        max-width: 620px;
+    }
+}

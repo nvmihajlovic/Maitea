@@ -1,0 +1,347 @@
+/* ========================================
+   MOBILE NAVIGATION - PREMIUM FULLSCREEN OVERLAY
+   Luxury, Editorial, Calm, Minimalist
+   Full-screen experience with refined animations
+   ======================================== */
+
+/* Mobile Only - Up to 1023px */
+@media (max-width: 1023px) {
+    
+    /* ============================================
+       OVERLAY CONTAINER - TRUE FULLSCREEN TAKEOVER
+       ============================================ */
+    
+    .nav {
+        /* Force fullscreen overlay */
+        position: fixed !important;
+        inset: 0 !important;
+        width: 100vw !important;
+        max-width: none !important;
+        height: 100vh !important;
+        height: 100dvh !important; /* Dynamic viewport height for mobile browsers */
+        
+        /* Reset any inherited constraints */
+        margin: 0 !important;
+        padding: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        top: 0 !important;
+        bottom: 0 !important;
+        
+        /* Visual styling */
+        background: #faf8f5 !important; /* Warm off-white matching site background */
+        backdrop-filter: none;
+        transform: none !important;
+        
+        /* Scrolling */
+        overflow-y: auto;
+        overflow-x: hidden;
+        -webkit-overflow-scrolling: touch;
+        
+        /* Highest z-index to cover everything */
+        z-index: 9999 !important;
+        
+        /* Hidden by default */
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        
+        /* Smooth fade-in transition */
+        transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+                    visibility 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    .nav.active {
+        opacity: 1 !important;
+        visibility: visible !important;
+        pointer-events: auto !important;
+    }
+    
+    /* ============================================
+       TOP BAR - LOGO AND CLOSE BUTTON
+       ============================================ */
+    
+    /* Mobile Menu Logo - Top Left */
+    .nav-mobile-logo {
+        position: fixed !important;
+        top: 2rem !important;
+        left: 1.5rem !important;
+        font-family: 'Raleway', sans-serif;
+        font-size: 1.25rem;
+        font-weight: 300;
+        letter-spacing: 0.15em;
+        color: #1a1a1a;
+        z-index: 10000 !important;
+        opacity: 0;
+        transform: translateY(-8px);
+        transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1) 0.1s,
+                    transform 0.3s cubic-bezier(0.4, 0, 0.2, 1) 0.1s;
+        pointer-events: none;
+    }
+    
+    .nav.active .nav-mobile-logo {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    
+    /* Hide logo on desktop */
+    @media (min-width: 1024px) {
+        .nav-mobile-logo {
+            display: none !important;
+        }
+    }
+    
+    /* Close Button - Replaces hamburger when menu is open */
+    .nav-toggle[aria-expanded="true"] {
+        position: fixed !important;
+        top: 2rem !important;
+        right: 1.5rem !important;
+        z-index: 10000 !important; /* Higher than overlay */
+        background: transparent !important;
+    }
+    
+    .nav-toggle[aria-expanded="true"] .hamburger {
+        background: transparent;
+    }
+    
+    .nav-toggle[aria-expanded="true"] .hamburger::before,
+    .nav-toggle[aria-expanded="true"] .hamburger::after {
+        background: #1a1a1a;
+        width: 20px;
+        height: 1.5px;
+        transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    .nav-toggle[aria-expanded="true"] .hamburger::before {
+        transform: rotate(45deg) translate(0, 0);
+        top: 0;
+    }
+    
+    .nav-toggle[aria-expanded="true"] .hamburger::after {
+        transform: rotate(-45deg) translate(0, 0);
+        top: 0;
+    }
+    
+    /* ============================================
+       NAVIGATION LIST - CENTERED VERTICAL
+       ============================================ */
+    
+    .nav-list {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        min-height: 100dvh;
+        padding: 6rem 2rem 8rem;
+        list-style: none;
+        gap: 0;
+    }
+    
+    .nav-list li {
+        border-bottom: none;
+        width: 100%;
+        max-width: 280px;
+        text-align: center;
+        opacity: 0;
+        transform: translateY(12px);
+        transition: opacity 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+                    transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    /* Staggered animation for menu items */
+    .nav.active .nav-list li:nth-child(1) { transition-delay: 0.08s; }
+    .nav.active .nav-list li:nth-child(2) { transition-delay: 0.12s; }
+    .nav.active .nav-list li:nth-child(3) { transition-delay: 0.16s; }
+    .nav.active .nav-list li:nth-child(4) { transition-delay: 0.20s; }
+    .nav.active .nav-list li:nth-child(5) { transition-delay: 0.24s; }
+    .nav.active .nav-list li:nth-child(6) { transition-delay: 0.28s; } /* Language switcher */
+    
+    .nav.active .nav-list li {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    
+    /* ============================================
+       NAVIGATION LINKS - REFINED TYPOGRAPHY
+       ============================================ */
+    
+    .nav-link {
+        display: block;
+        padding: 1.25rem 0;
+        font-family: 'Manrope', sans-serif;
+        font-size: 1.35rem;
+        font-weight: 400;
+        letter-spacing: 0.02em;
+        color: #2a2a2a;
+        text-decoration: none;
+        position: relative;
+        transition: color 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    /* Remove mobile-specific decorations from base styles */
+    .nav-link::after {
+        display: none;
+    }
+    
+    .nav-link.active::before {
+        content: '';
+        position: absolute;
+        left: 50%;
+        bottom: 0.75rem;
+        transform: translateX(-50%);
+        width: 32px;
+        height: 1px;
+        background: linear-gradient(90deg, 
+            rgba(212, 175, 55, 0.7) 0%, 
+            rgba(212, 175, 55, 0.9) 50%,
+            rgba(212, 175, 55, 0.7) 100%
+        );
+    }
+    
+    .nav-link.active {
+        color: #c4a144;
+    }
+    
+    .nav-link:active {
+        transform: none;
+    }
+    
+    /* ============================================
+       LANGUAGE SWITCHER - BOTTOM SECTION
+       ============================================ */
+    
+    .lang-switch {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        padding: 0;
+        margin-top: 3.5rem;
+        border: none;
+    }
+    
+    .lang-btn {
+        background: none;
+        border: none;
+        font-family: 'Manrope', sans-serif;
+        font-size: 0.8rem;
+        font-weight: 400;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: rgba(42, 42, 42, 0.4);
+        cursor: pointer;
+        padding: 0.5rem 0.75rem;
+        min-width: auto;
+        min-height: auto;
+        transition: color 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    .lang-btn.active {
+        color: rgba(212, 175, 55, 0.9);
+        font-weight: 500;
+    }
+    
+    .lang-btn:hover,
+    .lang-btn:focus {
+        color: rgba(42, 42, 42, 0.7);
+    }
+    
+    .lang-btn.active:hover,
+    .lang-btn.active:focus {
+        color: rgba(212, 175, 55, 1);
+    }
+    
+    .lang-divider {
+        color: rgba(42, 42, 42, 0.25);
+        font-size: 0.75rem;
+        font-weight: 200;
+    }
+    
+    /* ============================================
+       BODY SCROLL LOCK - PREVENT BACKGROUND SCROLL
+       Applies to all screen sizes when menu is open
+       ============================================ */
+    
+    body.menu-open {
+        overflow: hidden !important;
+        position: fixed !important;
+        width: 100% !important;
+        height: 100vh !important;
+        height: 100dvh !important;
+    }
+    
+    /* ============================================
+       ACCESSIBILITY & FOCUS STATES
+       ============================================ */
+    
+    .nav-link:focus-visible {
+        outline: 2px solid rgba(212, 175, 55, 0.5);
+        outline-offset: 4px;
+        border-radius: 2px;
+    }
+    
+    .lang-btn:focus-visible {
+        outline: 2px solid rgba(212, 175, 55, 0.5);
+        outline-offset: 3px;
+        border-radius: 2px;
+    }
+    
+    /* ============================================
+       REFINED HAMBURGER - DESKTOP OVERRIDE RESET
+       ============================================ */
+    
+    .nav-toggle {
+        display: block;
+        background: none;
+        border: none;
+        width: 44px;
+        height: 44px;
+        cursor: pointer;
+        position: relative;
+        z-index: 101;
+        padding: 10px;
+        transition: opacity 0.2s ease;
+    }
+    
+    .nav-toggle:active {
+        opacity: 0.7;
+    }
+    
+    .hamburger {
+        display: block;
+        width: 22px;
+        height: 1.5px;
+        background: #1a1a1a;
+        position: relative;
+        transition: background 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    .hamburger::before,
+    .hamburger::after {
+        content: '';
+        position: absolute;
+        width: 22px;
+        height: 1.5px;
+        background: #1a1a1a;
+        left: 0;
+        transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    .hamburger::before {
+        top: -6px;
+    }
+    
+    .hamburger::after {
+        top: 6px;
+    }
+    
+}
+
+/* Ensure desktop navigation is unaffected */
+@media (min-width: 1024px) {
+    body.menu-open {
+        overflow: auto;
+        height: auto;
+    }
+}

@@ -1,0 +1,259 @@
+/* ============================================
+   HERO REFINEMENTS - Mobile First
+   ============================================ */
+
+/* Vertical Rhythm System */
+:root {
+    --section-gap-mobile: 3rem;
+    --section-gap-tablet: 5rem;
+    --section-gap-desktop: 7rem;
+}
+
+/* Hero Section Updates */
+.hero {
+    min-height: auto;
+    padding: 1rem 0 var(--section-gap-mobile);
+}
+
+.hero-content {
+    padding: 1.5rem 0 0;
+}
+
+/* Hero Eyebrow */
+.hero-eyebrow {
+    display: block;
+    font-size: 0.7rem;
+    font-weight: 400;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #d4af37;
+    margin-bottom: 1rem;
+    opacity: 0.8;
+}
+
+/* Hero Headline */
+.hero-headline {
+    margin-bottom: 1.25rem;
+    letter-spacing: -0.03em;
+    line-height: 1.05;
+    font-weight: 200;
+}
+
+/* Hero Text */
+.hero-text {
+    margin: 0 auto 2rem;
+    font-size: 0.95rem;
+    color: #7a7a7a;
+    line-height: 1.8;
+    max-width: 540px;
+}
+
+/* CTA Hierarchy */
+.hero-cta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.btn-dominant {
+    padding: 1rem 2.5rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    min-width: 240px;
+}
+
+.hero-link-secondary {
+    font-size: 0.8rem;
+    color: #8a8a8a;
+    text-decoration: none;
+    letter-spacing: 0.05em;
+    transition: all 0.3s ease;
+    position: relative;
+    padding: 0.5rem 0;
+}
+
+.hero-link-secondary::after {
+    content: '';
+    position: absolute;
+    bottom: 0.3rem;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: #d4af37;
+    transition: width 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hero-link-secondary:hover {
+    color: #1a1a1a;
+}
+
+.hero-link-secondary:hover::after {
+    width: calc(100% - 1.5rem);
+}
+
+/* Paper Value Prop & Scope */
+.paper-value-prop {
+    font-size: 0.7rem;
+    color: #8a8a8a;
+    font-weight: 300;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    opacity: 1;
+    line-height: 1.6;
+    margin: 0.75rem 0 0.5rem;
+    padding-right: 0.2em;
+}
+
+.paper-scope {
+    font-size: 0.65rem;
+    color: #afafaf;
+    font-weight: 400;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    opacity: 1;
+    margin: 0;
+}
+
+.paper-animation[data-open="true"] .paper-value-prop,
+.paper-animation[data-open="true"] .paper-scope {
+    animation: taglineFadeIn 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    animation-delay: 1.6s;
+}
+
+/* Trust Strip */
+.trust-strip {
+    padding: 2.5rem 0;
+    background: linear-gradient(to bottom, rgba(250, 248, 245, 0) 0%, rgba(250, 248, 245, 0.4) 50%, rgba(250, 248, 245, 0) 100%);
+    border-top: 1px solid rgba(26, 26, 26, 0.04);
+}
+
+.trust-label {
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #afafaf;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-weight: 400;
+}
+
+.trust-logos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem 1.5rem;
+}
+
+.trust-logo {
+    font-size: 0.75rem;
+    color: #cfcfcf;
+    opacity: 0.6;
+    transition: opacity 0.3s ease;
+}
+
+.trust-logo:hover {
+    opacity: 1;
+}
+
+/* Section Rhythm & Separators */
+.section {
+    padding: var(--section-gap-mobile) 0;
+    position: relative;
+}
+
+/* Alternating subtle backgrounds */
+.why-section {
+    background: rgba(250, 248, 245, 0.3);
+}
+
+.services-preview {
+    background: transparent;
+}
+
+.process-section {
+    background: rgba(250, 248, 245, 0.3);
+    border-top: 1px solid rgba(26, 26, 26, 0.04);
+}
+
+.clients-section {
+    background: transparent;
+}
+
+.cta-final {
+    background: rgba(250, 248, 245, 0.5);
+    border-top: 1px solid rgba(26, 26, 26, 0.04);
+}
+
+/* Section Title Adjustments */
+.section-title {
+    margin-bottom: 1.5rem;
+}
+
+.section-intro {
+    margin-bottom: 2.5rem;
+}
+
+/* Tablet Breakpoint */
+@media (min-width: 768px) {
+    :root {
+        --section-gap-mobile: 4rem;
+    }
+    
+    .hero {
+        padding: 1.5rem 0 var(--section-gap-tablet);
+    }
+    
+    .hero-content {
+        padding: 2rem 0 0;
+    }
+    
+    .hero-cta {
+        flex-direction: row;
+        gap: 1.5rem;
+    }
+    
+    .trust-strip {
+        padding: 3rem 0;
+    }
+    
+    .trust-logos {
+        gap: 2.5rem 2rem;
+    }
+}
+
+/* Desktop Breakpoint */
+@media (min-width: 1024px) {
+    .hero {
+        padding: 2rem 0 var(--section-gap-desktop);
+    }
+    
+    .hero-content {
+        padding: 2.5rem 0 0;
+    }
+    
+    .hero-text {
+        font-size: 1rem;
+    }
+    
+    .trust-strip {
+        padding: 4rem 0;
+    }
+    
+    .section-title {
+        margin-bottom: 2rem;
+    }
+    
+    .section-intro {
+        margin-bottom: 3rem;
+    }
+}
+
+/* Large Desktop */
+@media (min-width: 1440px) {
+    .hero-content {
+        padding: 3rem 0 0;
+    }
+}

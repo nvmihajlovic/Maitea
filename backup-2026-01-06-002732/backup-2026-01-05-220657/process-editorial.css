@@ -1,0 +1,277 @@
+/**
+ * KAKO RADIMO - EDITORIAL REDESIGN
+ * Premium, Magazine-Style, Minimal
+ * Luksuzni catering estetika - MAITEA
+ */
+
+/* ============================================
+   SEKCIJA - ČISTA POZADINA, PUNO VAZDUHA
+============================================ */
+
+.process-section {
+    padding: 7rem 1.5rem 8rem;
+    background: transparent; /* Bez pozadine, samo bela */
+    position: relative;
+}
+
+/* Suptilna zlatna linija ispod sekcije (opciono) */
+.process-section::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 36px;
+    height: 1px;
+    background: linear-gradient(
+        90deg,
+        transparent 0%,
+        rgba(212, 175, 55, 0.3) 50%,
+        transparent 100%
+    );
+}
+
+/* ============================================
+   NASLOV SEKCIJE - MINIMALISTIČKI
+============================================ */
+
+.process-section .section-title {
+    font-family: 'Raleway', sans-serif;
+    font-size: 0.875rem;
+    font-weight: 400;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(26, 26, 26, 0.4);
+    margin-bottom: 5rem;
+    text-align: center;
+}
+
+/* ============================================
+   LAYOUT - TRI KOLONE BEZ KARTICA
+============================================ */
+
+.process-steps {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 4.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+}
+
+/* ============================================
+   KORAK - ČISTA STRUKTURA BEZ POZADINE
+============================================ */
+
+.process-step {
+    position: relative;
+    padding: 0;
+    text-align: center;
+    background: transparent; /* Bez pozadine */
+    border: none; /* Bez bordera */
+    border-radius: 0; /* Bez zaobljenja */
+    box-shadow: none; /* Bez senke */
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Uklanjanje connectors i dekoracija */
+.process-step::before,
+.process-step::after {
+    display: none;
+}
+
+/* ============================================
+   BROJ KORAKA - SUPTILAN, MALI, IZNAD NASLOVA
+============================================ */
+
+.step-number {
+    font-family: 'Manrope', sans-serif;
+    font-size: 0.8125rem; /* 13px */
+    font-weight: 400;
+    letter-spacing: 0.2em;
+    color: rgba(26, 26, 26, 0.35);
+    opacity: 1;
+    margin: 0 0 1.25rem 0;
+    line-height: 1;
+    display: block;
+    text-transform: uppercase;
+}
+
+/* ============================================
+   NASLOV KORAKA - ČIST, BEZ BOLDOVANJA
+============================================ */
+
+.step-title {
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.25rem; /* 20px */
+    font-weight: 400; /* Bez bold */
+    letter-spacing: 0.01em;
+    color: #1a1a1a;
+    margin: 0 0 1.5rem 0;
+    line-height: 1.3;
+}
+
+/* ============================================
+   OPIS - PROČITLJIVOST, VEĆI LINE-HEIGHT
+============================================ */
+
+.step-text {
+    font-family: 'Manrope', sans-serif;
+    font-size: 0.9375rem; /* 15px */
+    font-weight: 400;
+    line-height: 1.7;
+    color: #5a5a5a; /* Neutralna boja, ne crna */
+    margin: 0 auto;
+    max-width: 250px; /* Optimalna širina za čitanje */
+}
+
+/* ============================================
+   HOVER - BLAGI FADE, BEZ AGRESIVNIH EFEKATA
+============================================ */
+
+.process-step:hover {
+    opacity: 0.85;
+    transform: translateY(-2px);
+    border: none;
+    box-shadow: none;
+}
+
+/* Uklanjanje svih dodatnih hover efekata */
+.process-step:nth-child(2) {
+    border: none;
+    background: transparent;
+}
+
+.process-step:nth-child(2) .step-number {
+    opacity: 1;
+}
+
+.process-step:nth-child(2) .step-title {
+    font-weight: 400;
+}
+
+/* ============================================
+   TABLET - POVEĆANI SPACING
+============================================ */
+
+@media (min-width: 768px) {
+    .process-section {
+        padding: 8rem 2rem 9rem;
+    }
+
+    .process-section .section-title {
+        margin-bottom: 6rem;
+    }
+
+    .process-steps {
+        grid-template-columns: 1fr;
+        gap: 5.5rem;
+    }
+
+    .step-text {
+        max-width: 280px;
+    }
+}
+
+/* ============================================
+   DESKTOP - TRI KOLONE, LEBDE NA BELOM
+============================================ */
+
+@media (min-width: 1024px) {
+    .process-section {
+        padding: 9rem 2rem 10rem;
+    }
+
+    .process-section .section-title {
+        margin-bottom: 7rem;
+        font-size: 0.9375rem;
+        letter-spacing: 0.25em;
+    }
+
+    .process-steps {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 4rem; /* Horizontalni spacing između kolona */
+        max-width: 1100px;
+    }
+
+    .process-step {
+        padding: 0 1rem;
+    }
+
+    .step-number {
+        font-size: 0.875rem; /* 14px desktop */
+        margin-bottom: 1.5rem;
+    }
+
+    .step-title {
+        font-size: 1.375rem; /* 22px desktop */
+        margin-bottom: 1.75rem;
+    }
+
+    .step-text {
+        font-size: 1rem; /* 16px desktop */
+        line-height: 1.7;
+        max-width: 260px;
+    }
+}
+
+/* ============================================
+   LARGE DESKTOP - VIŠE PROSTORA
+============================================ */
+
+@media (min-width: 1440px) {
+    .process-section {
+        padding: 10rem 2rem 11rem;
+    }
+
+    .process-section .section-title {
+        margin-bottom: 8rem;
+    }
+
+    .process-steps {
+        gap: 5rem;
+        max-width: 1200px;
+    }
+
+    .step-number {
+        margin-bottom: 1.75rem;
+    }
+
+    .step-title {
+        font-size: 1.5rem; /* 24px large desktop */
+        margin-bottom: 2rem;
+    }
+
+    .step-text {
+        max-width: 280px;
+    }
+}
+
+/* ============================================
+   ACCESSIBILITY - REDUCED MOTION
+============================================ */
+
+@media (prefers-reduced-motion: reduce) {
+    .process-step,
+    .process-step:hover {
+        transition: none;
+        transform: none;
+    }
+}
+
+/* ============================================
+   DESIGN VERIFICATION CHECKLIST
+   
+   ✓ Bez kartica, senki, "app-like" izgleda
+   ✓ Čista editorial struktura sa puno praznog prostora
+   ✓ Tri kolone centrirane (desktop)
+   ✓ Transparent background - "lebde" na beloj pozadini
+   ✓ Brojevi: mali, suptilni (0.8125-0.875rem, opacity 0.35)
+   ✓ Naslovi: font-weight 400, bez boldovanja
+   ✓ Opis: max-width 250-280px, line-height 1.7
+   ✓ Veliki spacing: 4-5rem gap, 7-11rem padding
+   ✓ Tanka zlatna linija ispod sekcije (36px, opacity 0.3)
+   ✓ Blagi fade-in hover (opacity + translateY 2px)
+   ✓ Luksuzno, smireno, editorial
+   ✓ U skladu sa MAITEA brendom
+============================================ */

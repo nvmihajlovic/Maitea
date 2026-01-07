@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Upoznajte MAITEA tim - strast za detalje i autentični kulinarski doživljaj">
+    <title>O nama - MAITEA</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/about-refinement.css">
+    <link rel="stylesheet" href="about-page-polish.css">
+    <link rel="stylesheet" href="footer-refinement.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header" role="banner">
+        <div class="container header-content">
+            <a href="index.html" class="logo" aria-label="MAITEA - Naslovna">
+                <span class="wordmark">MAITEA</span>
+            </a>
+            
+            <button class="nav-toggle" aria-label="Otvori meni" aria-expanded="false" aria-controls="main-nav">
+                <span class="hamburger"></span>
+            </button>
+            
+            <nav class="nav" id="main-nav" role="navigation" aria-label="Glavna navigacija">
+                <ul class="nav-list">
+                    <li><a href="index.html" class="nav-link" data-i18n="nav.home">Naslovna</a></li>
+                    <li><a href="o-nama.html" class="nav-link active" data-i18n="nav.about">O nama</a></li>
+                    <li><a href="usluge.html" class="nav-link" data-i18n="nav.services">Naše usluge</a></li>
+                    <li><a href="galerija.html" class="nav-link" data-i18n="nav.gallery">Galerija</a></li>
+                    <li><a href="kontakt.html" class="nav-link" data-i18n="nav.contact">Kontakt</a></li>
+                    
+                    <li class="lang-switch">
+                        <button class="lang-btn active" data-lang="sr" aria-label="Srpski">SR</button>
+                        <span class="lang-divider">/</span>
+                        <button class="lang-btn" data-lang="en" aria-label="English">EN</button>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Page Header -->
+        <section class="page-header">
+            <div class="container">
+                <h1 class="page-title" data-i18n="about.page.title">O nama</h1>
+                <p class="page-intro" data-i18n="about.page.intro">Mi smo tim koji shvata vaš događaj ozbiljno — sa dušom, strukčnošću i poštovanjem prema svakom detalju.</p>
+            </div>
+        </section>
+
+        <!-- Hero Image -->
+        <section class="content-image-section">
+            <div class="container">
+                <div class="content-image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?w=1200&q=80" 
+                         alt="MAITEA team preparing gourmet dishes" 
+                         class="content-image"
+                         loading="lazy">
+                </div>
+            </div>
+        </section>
+
+        <!-- About Story -->
+        <section class="section about-story">
+            <div class="container">
+                <div class="content-with-image">
+                    <div class="content-text-column">
+                        <h2 class="section-title" data-i18n="about.story.title">Naša priča</h2>
+                        <div class="content-text">
+                            <p class="opening-paragraph" data-i18n="about.story.p1">MAITEA je nastao iz želje da ketering više ne bude samo hrana na stolu, već celovit kulinarski doživljaj koji govori priču.</p>
+                            <p data-i18n="about.story.p2">Verujemo da svaki događaj zaslužuje pažnju sličnu stvaranju umetničkog dela. Od biranja sastojaka do finalne prezentacije, svaki korak je promišljen.</p>
+                            <p data-i18n="about.story.p3">Naš tim čine iskusni profesionalci sa pozadinom u gastronomiji, event managementu i vizuelnim umetnostima. Zajedno stvaramo događaje koji nadmašuju očekivanja.</p>
+                        </div>
+                    </div>
+                    <div class="content-image-column">
+                        <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&q=80" 
+                             alt="Elegant catering setup" 
+                             class="side-image"
+                             loading="lazy">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Values Section -->
+        <section class="section values-section">
+            <div class="container">
+                <h2 class="section-title" data-i18n="about.values.title">Naše vrednosti</h2>
+                
+                <div class="values-grid">
+                    <!-- Value 1 -->
+                    <article class="value-item value-primary">
+                        <h3 class="value-title" data-i18n="about.values.quality.title">Kvalitet bez kompromisa</h3>
+                        <p class="value-text" data-i18n="about.values.quality.text">Koristimo isključivo sveže, lokalne i premium sastojke. Sarađujemo sa proverenim dobavljačima.</p>
+                    </article>
+                    
+                    <!-- Value 2 -->
+                    <article class="value-item">
+                        <h3 class="value-title" data-i18n="about.values.creativity.title">Kreativnost i inovacija</h3>
+                        <p class="value-text" data-i18n="about.values.creativity.text">Istražujemo nove ukuse, tehnike i prezentacije. Svaki meni je jedinstveno kreiran.</p>
+                    </article>
+                    
+                    <!-- Value 3 -->
+                    <article class="value-item">
+                        <h3 class="value-title" data-i18n="about.values.attention.title">Pažnja prema detalju</h3>
+                        <p class="value-text" data-i18n="about.values.attention.text">Od inicijalne konsultacije do poslednjeg jela, ništa nije slučajno. Svaki element je pažljivo osmišljen.</p>
+                    </article>
+                    
+                    <!-- Value 4 -->
+                    <article class="value-item">
+                        <h3 class="value-title" data-i18n="about.values.reliability.title">Profesionalnost i pouzdanost</h3>
+                        <p class="value-text" data-i18n="about.values.reliability.text">Precizna organizacija, blagovremena isporuka i transparentna komunikacija.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Approach Section -->
+        <section class="section approach-section">
+            <div class="container">
+                <div class="content-with-image">
+                    <div class="content-image-column">
+                        <img src="https://images.unsplash.com/photo-1555244162-803834f70033?w=800&q=80" 
+                             alt="Fine dining preparation with attention to detail" 
+                             class="side-image"
+                             loading="lazy">
+                    </div>
+                    <div class="content-text-column">
+                        <h2 class="section-title" data-i18n="about.approach.title">Naš pristup</h2>
+                        <div class="content-text">
+                            <p class="lead-text" data-i18n="about.approach.lead">Ketering shvatamo kao umetnost koja uključuje sva čula.</p>
+                            <p data-i18n="about.approach.p1">Fokusiramo se na autentičnost i originalnost. Ne pratimo trendove slepo – stvaramo časne, ukusne prezentacije koje odražavaju karakter vašeg događaja.</p>
+                            <p data-i18n="about.approach.p2">Cenimo jednostavnost i eleganciju, gde svaki element ima svoju svrhu. Koristimo sezonske sastojke i poštujemo kulinarske tradicije kroz moderan pristup.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="section cta-secondary">
+            <div class="container">
+                <div class="cta-content">
+                    <h2 class="cta-title" data-i18n="about.cta.title">Voleli bismo da vas upoznamo</h2>
+                    <p class="cta-text" data-i18n="about.cta.text">Razgovarajmo o vašem događaju. Slobodno nas kontaktirajte — ovde smo da slušamo.</p>
+                    <a href="kontakt.html" class="btn btn-primary" data-i18n="cta.button">Pošaljite upit</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <span class="wordmark">MAITEA</span>
+                    <p class="footer-tagline" data-i18n="footer.tagline">Umetnički ketering</p>
+                    <p class="footer-brand-statement">Estetika, ukus i pouzdanost — bez kompromisa.</p>
+                    <div class="footer-cta">
+                        <a href="kontakt.html" class="btn" data-i18n="footer.cta">Pošaljite upit</a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3 class="footer-title" data-i18n="footer.links.title">Linkovi</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html" data-i18n="nav.home">Naslovna</a></li>
+                        <li><a href="o-nama.html" data-i18n="nav.about">O nama</a></li>
+                        <li><a href="usluge.html" data-i18n="nav.services">Naše usluge</a></li>
+                        <li><a href="galerija.html" data-i18n="nav.gallery">Galerija</a></li>
+                        <li><a href="kontakt.html" data-i18n="nav.contact">Kontakt</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3 class="footer-title" data-i18n="footer.contact.title">Kontakt</h3>
+                    <ul class="footer-contact">
+                        <li><a href="tel:+381621234567">+381 62 123 4567</a></li>
+                        <li><a href="mailto:info@maitea.rs">info@maitea.rs</a></li>
+                        <li>Beograd, Srbija</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 MAITEA. <span data-i18n="footer.copyright">Sva prava zadržana.</span></p>
+                <div class="footer-credit">
+                    <p>Sajt dizajnirao i ručno izradio <a href="#" rel="noopener">Pansoft</a></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/app.js"></script>
+</body>
+</html>

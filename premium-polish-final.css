@@ -1,0 +1,432 @@
+/**
+ * MAITEA - PREMIUM POLISH FINAL
+ * 100% Super Premium Micro-Interactions & Luxury Details
+ * 
+ * CONSTRAINTS:
+ * - NO color changes
+ * - NO font changes
+ * - ONLY adds: shadows, animations, transitions, micro-interactions
+ * - Safe layer on top of existing CSS
+ */
+
+/* ============================================
+   LUXURY TIMING CURVES
+   Butter-smooth, expensive-feeling
+============================================ */
+
+:root {
+    --ease-luxury: cubic-bezier(0.16, 1, 0.3, 1);
+    --ease-butter: cubic-bezier(0.4, 0, 0.2, 1);
+    --ease-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+/* ============================================
+   1. LAYERED SHADOW SYSTEM
+   3-5 layer depth for cards & buttons
+============================================ */
+
+.service-card,
+.process-step,
+.value-card,
+.feature-card,
+.client-logo {
+    box-shadow: 
+        0 1px 2px rgba(0, 0, 0, 0.02),
+        0 2px 4px rgba(0, 0, 0, 0.02),
+        0 4px 8px rgba(0, 0, 0, 0.03),
+        0 8px 16px rgba(0, 0, 0, 0.03),
+        0 0 0 1px rgba(212, 175, 55, 0.04);
+    transition: box-shadow 0.32s var(--ease-luxury), transform 0.32s var(--ease-luxury);
+}
+
+.service-card:hover,
+.value-card:hover,
+.feature-card:hover {
+    box-shadow: 
+        0 2px 4px rgba(0, 0, 0, 0.03),
+        0 4px 8px rgba(0, 0, 0, 0.04),
+        0 8px 16px rgba(0, 0, 0, 0.05),
+        0 16px 32px rgba(0, 0, 0, 0.06),
+        0 0 0 1px rgba(212, 175, 55, 0.08),
+        0 0 20px rgba(212, 175, 55, 0.04);
+    transform: translateY(-3px) scale(1.01);
+}
+
+/* ============================================
+   2. BUTTON LUXURY ENHANCEMENTS
+   Shimmer effect + soft glow
+============================================ */
+
+.btn {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s var(--ease-butter);
+}
+
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.12),
+        transparent
+    );
+    transition: left 0.5s var(--ease-butter);
+}
+
+.btn:hover::before {
+    left: 100%;
+}
+
+.btn-primary {
+    box-shadow: 
+        0 2px 4px rgba(26, 26, 26, 0.08),
+        0 4px 8px rgba(26, 26, 26, 0.12),
+        0 8px 16px rgba(26, 26, 26, 0.08),
+        inset 0 1px 0 rgba(255, 255, 255, 0.05);
+    transition: all 0.28s var(--ease-luxury);
+}
+
+.btn-primary:hover {
+    box-shadow: 
+        0 4px 8px rgba(26, 26, 26, 0.12),
+        0 8px 16px rgba(26, 26, 26, 0.14),
+        0 16px 32px rgba(26, 26, 26, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.08);
+    transform: translateY(-1px) scale(1.01);
+}
+
+.btn-primary:active {
+    transform: translateY(0) scale(0.99);
+    transition-duration: 0.1s;
+}
+
+/* ============================================
+   3. FOCUS STATES - LUXURY GLOW
+   Accessible + premium
+============================================ */
+
+.btn:focus-visible,
+.nav-link:focus-visible,
+.service-link:focus-visible,
+input:focus,
+textarea:focus {
+    outline: none;
+    box-shadow: 
+        0 0 0 3px rgba(212, 175, 55, 0.15),
+        0 0 0 5px rgba(212, 175, 55, 0.08),
+        0 4px 12px rgba(212, 175, 55, 0.12);
+    transition: box-shadow 0.22s var(--ease-luxury);
+}
+
+/* ============================================
+   4. NAVIGATION MICRO-INTERACTIONS
+   Smooth scale + underline animation
+============================================ */
+
+.nav-link {
+    position: relative;
+    transition: all 0.24s var(--ease-luxury);
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 50%;
+    width: 0;
+    height: 1px;
+    background: currentColor;
+    opacity: 0.3;
+    transition: all 0.28s var(--ease-luxury);
+    transform: translateX(-50%);
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+.nav-link:hover {
+    transform: translateY(-1px);
+}
+
+.nav-link.active::after {
+    width: 100%;
+    opacity: 1;
+}
+
+/* ============================================
+   5. SERVICE ICONS - SUBTLE BOUNCE
+============================================ */
+
+.service-icon {
+    transition: transform 0.32s var(--ease-bounce);
+}
+
+.service-card:hover .service-icon {
+    transform: scale(1.08) translateY(-2px);
+}
+
+.service-icon svg {
+    transition: all 0.28s var(--ease-luxury);
+}
+
+.service-card:hover .service-icon svg {
+    filter: drop-shadow(0 4px 8px rgba(212, 175, 55, 0.2));
+}
+
+/* ============================================
+   6. TYPOGRAPHY SUBTLE DEPTH
+   Text shadows for headings
+============================================ */
+
+.hero-headline {
+    text-shadow: 
+        0 1px 2px rgba(0, 0, 0, 0.02),
+        0 2px 4px rgba(0, 0, 0, 0.01);
+}
+
+.section-title,
+.statement-title {
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.015);
+}
+
+/* ============================================
+   7. SERVICE LINKS - SMOOTH ANIMATION
+============================================ */
+
+.service-link {
+    position: relative;
+    display: inline-block;
+    transition: all 0.22s var(--ease-luxury);
+}
+
+.service-link:hover {
+    transform: translateX(3px);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+/* ============================================
+   8. PROCESS STEPS - HOVER ELEVATION
+============================================ */
+
+.process-step {
+    transition: all 0.28s var(--ease-luxury);
+}
+
+.process-step:hover {
+    transform: translateX(4px);
+    box-shadow: 
+        -4px 0 0 0 rgba(212, 175, 55, 0.15),
+        0 2px 8px rgba(0, 0, 0, 0.04),
+        0 4px 16px rgba(0, 0, 0, 0.04);
+}
+
+.step-number {
+    transition: all 0.3s var(--ease-luxury);
+}
+
+.process-step:hover .step-number {
+    transform: scale(1.1);
+    text-shadow: 0 2px 4px rgba(212, 175, 55, 0.2);
+}
+
+/* ============================================
+   9. FORM INPUTS - LUXURY FEEL
+============================================ */
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+textarea {
+    transition: all 0.24s var(--ease-luxury);
+    box-shadow: 
+        0 1px 2px rgba(0, 0, 0, 0.02),
+        0 0 0 1px rgba(0, 0, 0, 0.04);
+}
+
+input:hover,
+textarea:hover {
+    box-shadow: 
+        0 2px 4px rgba(0, 0, 0, 0.03),
+        0 0 0 1px rgba(0, 0, 0, 0.06);
+    transform: translateY(-1px);
+}
+
+/* ============================================
+   10. FOOTER SOCIAL ICONS - SCALE + GLOW
+============================================ */
+
+.footer-social a {
+    transition: all 0.26s var(--ease-bounce);
+}
+
+.footer-social a:hover {
+    transform: translateY(-3px) scale(1.12);
+    filter: drop-shadow(0 4px 8px rgba(212, 175, 55, 0.18));
+}
+
+/* ============================================
+   11. HERO CTA - PREMIUM PULSE
+   Subtle attention-grabbing animation
+============================================ */
+
+@keyframes premium-pulse {
+    0%, 100% {
+        box-shadow: 
+            0 2px 4px rgba(26, 26, 26, 0.08),
+            0 4px 8px rgba(26, 26, 26, 0.12),
+            0 8px 16px rgba(26, 26, 26, 0.08),
+            0 0 0 0 rgba(212, 175, 55, 0);
+    }
+    50% {
+        box-shadow: 
+            0 2px 4px rgba(26, 26, 26, 0.08),
+            0 4px 8px rgba(26, 26, 26, 0.12),
+            0 8px 16px rgba(26, 26, 26, 0.08),
+            0 0 0 6px rgba(212, 175, 55, 0.08);
+    }
+}
+
+.btn-hero {
+    animation: premium-pulse 3s ease-in-out infinite;
+}
+
+.btn-hero:hover {
+    animation: none;
+}
+
+/* ============================================
+   12. PHILOSOPHY STATEMENTS - SUBTLE LIFT
+============================================ */
+
+.statement {
+    transition: all 0.3s var(--ease-luxury);
+}
+
+.statement:hover {
+    transform: translateY(-2px);
+}
+
+.statement-title {
+    transition: all 0.28s var(--ease-luxury);
+}
+
+.statement:hover .statement-title {
+    transform: scale(1.02);
+    letter-spacing: 0.01em;
+}
+
+/* ============================================
+   13. GALLERY HOVER - SMOOTH SCALE
+============================================ */
+
+.client-logo {
+    transition: all 0.26s var(--ease-luxury);
+}
+
+.client-logo:hover {
+    transform: scale(1.05);
+    box-shadow: 
+        0 2px 8px rgba(0, 0, 0, 0.04),
+        0 4px 16px rgba(0, 0, 0, 0.06);
+}
+
+/* ============================================
+   14. SMOOTH SCROLL REVEAL
+   Enhance existing animations
+============================================ */
+
+.section-reveal {
+    transition: all 0.6s var(--ease-luxury);
+}
+
+/* ============================================
+   15. MOBILE SPECIFIC ENHANCEMENTS
+   Lighter effects for touch devices
+============================================ */
+
+@media (max-width: 1023px) {
+    .service-card:hover,
+    .value-card:hover,
+    .feature-card:hover {
+        transform: translateY(-2px) scale(1.005);
+    }
+    
+    .btn-primary:hover {
+        transform: translateY(-0.5px) scale(1.005);
+    }
+    
+    /* Reduce animations for better performance */
+    .btn::before {
+        display: none;
+    }
+    
+    /* Lighter shadows on mobile */
+    .service-card,
+    .process-step,
+    .value-card,
+    .feature-card {
+        box-shadow: 
+            0 1px 2px rgba(0, 0, 0, 0.02),
+            0 2px 4px rgba(0, 0, 0, 0.02),
+            0 4px 8px rgba(0, 0, 0, 0.03);
+    }
+}
+
+/* ============================================
+   16. REDUCE MOTION PREFERENCE
+   Respect accessibility
+============================================ */
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+    
+    .btn-hero {
+        animation: none !important;
+    }
+}
+
+/* ============================================
+   17. HOVER BRIGHTNESS ENHANCEMENT
+   Subtle brightness increase for premium feel
+============================================ */
+
+.service-card:hover,
+.process-step:hover,
+.btn:hover {
+    filter: brightness(1.02);
+}
+
+/* ============================================
+   18. CURSOR ENHANCEMENTS
+   Premium cursor states
+============================================ */
+
+.btn,
+.service-link,
+.nav-link,
+.footer-social a {
+    cursor: pointer;
+}
+
+.btn:active {
+    cursor: pointer;
+}
+
+/* ============================================
+   END PREMIUM POLISH
+   All effects are additive and safe
+============================================ */

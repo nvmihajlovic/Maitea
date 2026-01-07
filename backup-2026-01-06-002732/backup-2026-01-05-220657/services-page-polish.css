@@ -1,0 +1,558 @@
+/* ========================================
+   SERVICES PAGE - PREMIUM MICRO-POLISH
+   10/10 refinement maintaining MAITEA identity
+   ======================================== */
+
+/* ========================================
+   1. TYPOGRAPHY HIERARCHY REFINEMENT
+   ======================================== */
+
+/* Wedding title - match visual weight with Serbian titles */
+.service-detail:nth-child(3) .service-detail-title {
+    font-weight: 300; /* Lighter to match minimal aesthetic */
+    letter-spacing: 0.01em; /* Slightly more breathing room */
+}
+
+/* Page intro - enhanced readability */
+.page-intro {
+    font-size: clamp(1.05rem, 2.5vw, 1.18rem);
+    line-height: 1.75;
+    color: #3a3a3a;
+    letter-spacing: -0.005em;
+    opacity: 0.92;
+}
+
+/* Service lead - more distinction from body */
+.service-detail-lead {
+    font-size: clamp(1.08rem, 2.5vw, 1.25rem);
+    line-height: 1.68;
+    color: #1a1a1a;
+    font-weight: 400;
+    letter-spacing: -0.005em;
+    margin-bottom: 1.75rem;
+}
+
+/* Body paragraphs - optimal line length */
+.service-detail-text > p:not(.service-detail-lead) {
+    max-width: 42em; /* Optimal reading line length */
+    line-height: 1.8;
+    color: #4a4a4a;
+}
+
+/* Subtitle - refined hierarchy */
+.service-detail-subtitle {
+    font-size: clamp(0.82rem, 2vw, 0.92rem);
+    letter-spacing: 0.08em;
+    color: #6a6a6a;
+    margin: 2.75rem 0 1.25rem 0;
+}
+
+/* List items - improved vertical rhythm */
+.service-detail-list li {
+    line-height: 1.85;
+    color: #5a5a5a;
+    margin-bottom: 0.85rem;
+}
+
+.service-detail-list li::before {
+    opacity: 0.5;
+    font-size: 0.9em;
+}
+
+/* ========================================
+   2. GRID & LAYOUT STANDARDIZATION
+   ======================================== */
+
+/* Consistent column widths */
+@media (min-width: 768px) {
+    .service-detail-text {
+        flex: 1 1 48%;
+        max-width: 48%;
+    }
+
+    .service-detail-image {
+        flex: 1 1 48%;
+        max-width: 48%;
+    }
+
+    .service-detail-content {
+        gap: 4%;
+        align-items: flex-start; /* Top align for better text-image relationship */
+    }
+}
+
+@media (min-width: 1024px) {
+    .service-detail-content {
+        gap: 6%;
+    }
+
+    .service-detail-text {
+        flex: 1 1 47%;
+        max-width: 47%;
+    }
+
+    .service-detail-image {
+        flex: 1 1 47%;
+        max-width: 47%;
+    }
+}
+
+/* ========================================
+   3. IMAGE TREATMENT & CONSISTENCY
+   ======================================== */
+
+.service-detail-image {
+    border-radius: 2px;
+    overflow: hidden;
+    background: rgba(212, 175, 55, 0.03);
+}
+
+.service-detail-image img {
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Subtle hover effect */
+.service-detail:hover .service-detail-image img {
+    transform: scale(1.02);
+}
+
+/* Fixed heights for desktop consistency */
+@media (min-width: 768px) {
+    .service-detail-image img {
+        height: 380px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .service-detail-image img {
+        height: 420px;
+    }
+}
+
+@media (min-width: 1440px) {
+    .service-detail-image img {
+        height: 460px;
+    }
+}
+
+/* ========================================
+   4. SPACING & VERTICAL RHYTHM
+   ======================================== */
+
+/* Consistent section padding */
+.services-list {
+    padding: 4rem 1.5rem 3rem;
+}
+
+.service-detail {
+    margin-bottom: 5.5rem;
+    padding-bottom: 5.5rem;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.08);
+}
+
+.service-detail:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+@media (min-width: 768px) {
+    .services-list {
+        padding: 5.5rem 2rem 4rem;
+    }
+
+    .service-detail {
+        margin-bottom: 6.5rem;
+        padding-bottom: 6.5rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .services-list {
+        padding: 7rem 3rem 5rem;
+    }
+
+    .service-detail {
+        margin-bottom: 7.5rem;
+        padding-bottom: 7.5rem;
+    }
+}
+
+/* ========================================
+   5. "KAKO RADIMO" SECTION REDESIGN
+   ======================================== */
+
+/* Elegant horizontal flow matching homepage */
+.work-process {
+    padding: 5.5rem 1.5rem;
+    background: linear-gradient(180deg, rgba(250, 248, 245, 0.3) 0%, rgba(250, 248, 245, 0.6) 100%);
+}
+
+.work-process .section-title {
+    font-family: 'Raleway', sans-serif;
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    font-weight: 300;
+    letter-spacing: -0.01em;
+    line-height: 1.25;
+    text-align: center;
+    margin-bottom: 4rem;
+    color: #1a1a1a;
+}
+
+.process-steps {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.process-step {
+    background: rgba(255, 255, 255, 0.7);
+    padding: 2.25rem 2rem;
+    border-radius: 2px;
+    border: 1px solid rgba(212, 175, 55, 0.08);
+    transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.process-step::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, rgba(212, 175, 55, 0.4) 0%, transparent 100%);
+    opacity: 0;
+    transition: opacity 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.process-step:hover {
+    background: rgba(255, 255, 255, 0.95);
+    border-color: rgba(212, 175, 55, 0.15);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
+}
+
+.process-step:hover::before {
+    opacity: 1;
+}
+
+.step-number {
+    font-family: 'Raleway', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 300;
+    letter-spacing: 0.25em;
+    color: #d4af37;
+    opacity: 0.6;
+    margin-bottom: 0.85rem;
+    display: block;
+}
+
+.step-title {
+    font-family: 'Raleway', sans-serif;
+    font-size: clamp(1.15rem, 2.5vw, 1.35rem);
+    font-weight: 400;
+    letter-spacing: -0.005em;
+    line-height: 1.3;
+    color: #1a1a1a;
+    margin-bottom: 0.85rem;
+}
+
+.step-text {
+    font-size: clamp(0.92rem, 2vw, 1.02rem);
+    line-height: 1.75;
+    color: #4a4a4a;
+    font-weight: 300;
+    margin: 0;
+    letter-spacing: -0.003em;
+}
+
+@media (min-width: 768px) {
+    .process-steps {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+    }
+
+    .work-process {
+        padding: 6.5rem 2rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .process-steps {
+        gap: 2.5rem;
+    }
+
+    .work-process {
+        padding: 8rem 3rem;
+    }
+
+    .process-step {
+        padding: 2.5rem 2.25rem;
+    }
+}
+
+/* ========================================
+   6. CTA SECTION POLISH
+   ======================================== */
+
+.cta-secondary {
+    padding: 5.5rem 1.5rem;
+    background: linear-gradient(180deg, transparent 0%, rgba(212, 175, 55, 0.025) 100%);
+}
+
+.cta-secondary .cta-title {
+    font-family: 'Raleway', sans-serif;
+    letter-spacing: -0.015em;
+    line-height: 1.25;
+    margin-bottom: 1.75rem;
+}
+
+.cta-secondary .cta-text {
+    line-height: 1.75;
+    color: #4a4a4a;
+    margin-bottom: 2.5rem;
+    letter-spacing: -0.005em;
+}
+
+.cta-secondary .btn {
+    transition: all 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+    padding: 1rem 2.5rem;
+}
+
+.cta-secondary .btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08), 0 3px 10px rgba(212, 175, 55, 0.12);
+}
+
+@media (min-width: 768px) {
+    .cta-secondary {
+        padding: 7rem 2rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .cta-secondary {
+        padding: 8.5rem 3rem;
+    }
+}
+
+/* ========================================
+   7. MOBILE OPTIMIZATION
+   ======================================== */
+
+@media (max-width: 767px) {
+    /* Tighter mobile spacing */
+    .services-list {
+        padding: 3rem 1.25rem 2rem;
+    }
+
+    .service-detail {
+        margin-bottom: 4rem;
+        padding-bottom: 4rem;
+    }
+
+    .service-detail-content {
+        gap: 2rem;
+    }
+
+    /* Full-width images on mobile */
+    .service-detail-image {
+        margin-left: -1.25rem;
+        margin-right: -1.25rem;
+        width: calc(100% + 2.5rem);
+        max-width: none;
+        border-radius: 0;
+    }
+
+    .service-detail-image img {
+        aspect-ratio: 16 / 10;
+        height: auto;
+    }
+
+    /* Comfortable title sizing */
+    .service-detail-title {
+        font-size: clamp(1.65rem, 6vw, 2rem);
+        margin-bottom: 1rem;
+    }
+
+    .service-detail-lead {
+        font-size: clamp(1.05rem, 3vw, 1.15rem);
+        margin-bottom: 1.5rem;
+    }
+
+    /* Process cards */
+    .work-process {
+        padding: 4.5rem 1.25rem;
+    }
+
+    .process-step {
+        padding: 2rem 1.75rem;
+    }
+
+    /* CTA */
+    .cta-secondary {
+        padding: 4.5rem 1.25rem;
+    }
+
+    .cta-secondary .btn {
+        width: 100%;
+        max-width: 320px;
+    }
+}
+
+/* ========================================
+   8. ACCESSIBILITY ENHANCEMENTS
+   ======================================== */
+
+/* Focus states */
+.service-detail-title:focus,
+.step-title:focus {
+    outline: 2px solid #d4af37;
+    outline-offset: 4px;
+    border-radius: 2px;
+}
+
+/* Link focus */
+.cta-secondary .btn:focus {
+    outline: 2px solid #d4af37;
+    outline-offset: 4px;
+    box-shadow: 0 0 0 4px rgba(212, 175, 55, 0.15);
+}
+
+/* Ensure sufficient color contrast */
+.service-detail-text > p:not(.service-detail-lead) {
+    color: #3a3a3a; /* Enhanced from #4a4a4a for better contrast */
+}
+
+.service-detail-list li {
+    color: #3a3a3a; /* Enhanced from #5a5a5a */
+}
+
+/* Smooth scrolling for anchor links */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* ========================================
+   9. PERFORMANCE & LOADING STABILITY
+   ======================================== */
+
+/* Prevent layout shift - images */
+.service-detail-image {
+    min-height: 240px;
+    background: linear-gradient(135deg, rgba(250, 248, 245, 0.8) 0%, rgba(212, 175, 55, 0.05) 100%);
+}
+
+@media (min-width: 768px) {
+    .service-detail-image {
+        min-height: 380px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .service-detail-image {
+        min-height: 420px;
+    }
+}
+
+/* Image loading state */
+.service-detail-image img {
+    opacity: 0;
+    animation: fadeInImage 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    animation-delay: 0.1s;
+}
+
+@keyframes fadeInImage {
+    to {
+        opacity: 1;
+    }
+}
+
+/* Will-change for animated elements */
+.process-step:hover {
+    will-change: transform, box-shadow;
+}
+
+.service-detail-image img:hover {
+    will-change: transform;
+}
+
+/* ========================================
+   10. FOOTER REFINEMENT
+   ======================================== */
+
+/* Enhanced footer spacing and hierarchy */
+.footer {
+    padding-top: 4.5rem;
+}
+
+.footer-content {
+    margin-bottom: 3rem;
+}
+
+.footer-bottom {
+    padding-top: 2.5rem;
+    border-top: 1px solid rgba(212, 175, 55, 0.12);
+}
+
+.footer-credit {
+    margin-top: 0.75rem;
+}
+
+.footer-credit p {
+    font-size: 0.88rem;
+    color: #8a8a8a;
+    font-weight: 300;
+}
+
+.footer-credit a {
+    color: #d4af37;
+    text-decoration: none;
+    transition: color 0.15s ease;
+}
+
+.footer-credit a:hover {
+    color: #c49d2a;
+}
+
+.footer-credit a:focus {
+    outline: 2px solid #d4af37;
+    outline-offset: 2px;
+    border-radius: 2px;
+}
+
+@media (min-width: 768px) {
+    .footer {
+        padding-top: 5.5rem;
+    }
+
+    .footer-content {
+        margin-bottom: 3.5rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .footer {
+        padding-top: 6.5rem;
+    }
+}

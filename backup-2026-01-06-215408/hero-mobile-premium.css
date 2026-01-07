@@ -1,0 +1,753 @@
+/**
+ * MAITEA MOBILE OPTIMIZATION - COMPLETE SITE
+ * Mobile-first: 375-430px
+ * Premium compact layout - NO font changes, NO color changes
+ * Focus: spacing, rhythm, alignment, readability
+ */
+
+/* ============================================
+   GLOBAL MOBILE SYSTEM
+============================================ */
+
+@media (max-width: 768px) {
+    /* Global container system */
+    .container {
+        max-width: 560px !important;
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+    }
+    
+    /* Larger phones get more breathing room */
+    @media (min-width: 414px) {
+        .container {
+            padding-left: 24px !important;
+            padding-right: 24px !important;
+        }
+    }
+    
+    /* Prevent horizontal scroll */
+    body {
+        overflow-x: hidden;
+    }
+    
+    /* ============================================
+       HEADER & NAVIGATION - LUXURY EDITORIAL MOBILE MENU
+       Ultra-minimal, calm, hierarchical
+       Fashion / luxury brand aesthetics
+    ============================================ */
+    
+    .header {
+        padding: 20px 0 !important;
+        position: relative !important;
+        z-index: 100 !important;
+        background: #faf8f5 !important;
+    }
+    
+    .header-content {
+        padding-left: 24px !important;
+        padding-right: 24px !important;
+        display: flex !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+    }
+    
+    .logo .wordmark {
+        font-size: 1.0625rem !important;
+        letter-spacing: 0.18em !important;
+        font-weight: 400 !important;
+        color: #1a1a1a !important;
+    }
+    
+    /* Hamburger toggle button */
+    .nav-toggle {
+        width: 44px !important;
+        height: 44px !important;
+        z-index: 1001 !important;
+        background: transparent !important;
+        border: none !important;
+        padding: 0 !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        cursor: pointer !important;
+        position: relative !important;
+        transition: opacity 0.13s ease-out, 
+                    transform 0.13s ease-out !important;
+    }
+    
+    /* Micro-animation on hover/tap - quiet, elegant */
+    .nav-toggle:hover {
+        opacity: 0.7 !important;
+        transform: scale(0.95) !important;
+    }
+    
+    /* X close icon - positioned top-right in overlay, discrete but visible */
+    .nav-toggle[aria-expanded="true"] {
+        position: fixed !important;
+        top: 22px !important;
+        right: 24px !important;
+        opacity: 1 !important;
+    }
+    
+    .nav-toggle[aria-expanded="true"]:hover {
+        opacity: 0.6 !important;
+        transform: scale(0.95) !important;
+    }
+    
+    .nav-toggle[aria-expanded="true"] .hamburger {
+        background: transparent !important;
+    }
+    
+    /* Thin, elegant X lines - primary text color, not accent */
+    .nav-toggle[aria-expanded="true"] .hamburger::before,
+    .nav-toggle[aria-expanded="true"] .hamburger::after {
+        top: 0 !important;
+        background: #1a1a1a !important;
+        height: 1px !important;
+        width: 18px !important;
+    }
+    
+    .nav-toggle[aria-expanded="true"] .hamburger::before {
+        transform: rotate(45deg) !important;
+    }
+    
+    .nav-toggle[aria-expanded="true"] .hamburger::after {
+        transform: rotate(-45deg) !important;
+    }
+    
+    /* Full-screen overlay - pure cream background */
+    .nav {
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 100% !important;
+        height: 100vh !important;
+        height: 100svh !important;
+        background: #faf8f5 !important;
+        padding: 0 !important;
+        z-index: 999 !important;
+        opacity: 0 !important;
+        visibility: hidden !important;
+        transition: opacity 0.25s ease-out,
+                    visibility 0.25s ease-out !important;
+        overflow-y: auto !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+    
+    .nav.active,
+    .header:has(.nav-toggle[aria-expanded="true"]) .nav {
+        opacity: 1 !important;
+        visibility: visible !important;
+    }
+    
+    /* Remove any decorative elements */
+    .nav::before,
+    .nav::after {
+        display: none !important;
+    }
+    
+    /* Navigation list - centered, vertical, spacious */
+    .nav-list {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 0 !important;
+        align-items: center !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 !important;
+        padding: 0 32px !important;
+        list-style: none !important;
+    }
+    
+    /* Menu items container - first 5 items (navigation links) */
+    .nav-list > li:not(.lang-switch) {
+        width: 100% !important;
+        max-width: 320px !important;
+        border: none !important;
+        margin: 0 !important;
+        opacity: 0 !important;
+        transform: translateY(8px) !important;
+        transition: opacity 0.25s ease-out, 
+                    transform 0.25s ease-out !important;
+    }
+    
+    /* Subtle staggered fade-in */
+    .nav.active .nav-list > li,
+    .header:has(.nav-toggle[aria-expanded="true"]) .nav-list > li {
+        opacity: 1 !important;
+        transform: translateY(0) !important;
+    }
+    
+    .nav-list > li:nth-child(1) { transition-delay: 0.04s !important; }
+    .nav-list > li:nth-child(2) { transition-delay: 0.08s !important; }
+    .nav-list > li:nth-child(3) { transition-delay: 0.12s !important; }
+    .nav-list > li:nth-child(4) { transition-delay: 0.16s !important; }
+    .nav-list > li:nth-child(5) { transition-delay: 0.20s !important; }
+    .nav-list > li:nth-child(6) { transition-delay: 0.24s !important; }
+    
+    /* Navigation links - large, editorial, airy spacing */
+    .nav-link {
+        display: block !important;
+        padding: 1rem 0 !important; /* 16px vertical = 32px total between items */
+        font-family: 'Raleway', sans-serif !important;
+        font-size: 1.625rem !important;
+        font-weight: 300 !important;
+        line-height: 1.3 !important;
+        letter-spacing: -0.01em !important;
+        color: #1a1a1a !important;
+        text-align: center !important;
+        text-decoration: none !important;
+        transition: color 0.2s ease !important;
+        position: relative !important;
+    }
+    
+    /* Hover - subtle gold */
+    .nav-link:hover {
+        color: #d4af37 !important;
+    }
+    
+    /* Active page - gold color + thin centered underline */
+    .nav-link.active {
+        color: #d4af37 !important;
+    }
+    
+    .nav-link.active::after {
+        content: '' !important;
+        position: absolute !important;
+        bottom: 0.625rem !important;
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+        width: 28px !important;
+        height: 1px !important;
+        background: rgba(212, 175, 55, 0.5) !important;
+    }
+    
+    /* ============================================
+       LANGUAGE SWITCHER - Pure Text, Luxury Editorial
+       Minimal, elegant, fashion-forward
+    ============================================ */
+    
+    /* CLEAR VISUAL SEPARATOR - empty space zone */
+    /* Minimum 56px from last nav item to language switcher */
+    .lang-switch {
+        margin-top: 3.5rem !important; /* 56px minimum gap */
+        padding: 0 !important;
+        border: none !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        gap: 0.75rem !important;
+        position: relative !important;
+        background: transparent !important;
+    }
+    
+    /* Language buttons - pure text, luxury typography */
+    .lang-btn {
+        font-family: 'Raleway', sans-serif !important;
+        font-size: 0.8125rem !important; /* 13px - slightly larger for readability */
+        font-weight: 400 !important;
+        letter-spacing: 0.12em !important; /* more spacing for luxury feel */
+        padding: 4px 2px !important;
+        background: transparent !important;
+        border: none !important;
+        color: rgba(26, 26, 26, 0.35) !important; /* very light for inactive */
+        transition: color 0.3s ease,
+                    opacity 0.3s ease !important;
+        cursor: pointer !important;
+        text-transform: uppercase !important;
+        position: relative !important;
+        opacity: 0.6 !important;
+    }
+    
+    /* Active language - gold with subtle underline */
+    .lang-btn.active {
+        color: #1a1a1a !important; /* dark text for active */
+        opacity: 1 !important;
+    }
+    
+    .lang-btn.active::after {
+        content: '' !important;
+        position: absolute !important;
+        bottom: -2px !important;
+        left: 0 !important;
+        right: 0 !important;
+        height: 1px !important;
+        background: rgba(212, 175, 55, 0.4) !important; /* subtle gold line */
+    }
+    
+    /* Hover on inactive language */
+    .lang-btn:not(.active):hover {
+        color: rgba(26, 26, 26, 0.6) !important;
+        opacity: 0.85 !important;
+    }
+    
+    /* Divider - thin, elegant, barely there */
+    .lang-divider {
+        display: inline !important;
+        color: rgba(26, 26, 26, 0.15) !important; /* very subtle */
+        font-size: 0.75rem !important;
+        font-weight: 200 !important;
+        opacity: 0.5 !important;
+    }
+    
+    /* Section spacing system - eliminate "rupe" */
+    .section {
+        padding: 56px 0 !important; /* Standard section */
+    }
+    
+    /* Smaller blocks get reduced padding */
+    .philosophy-section,
+    .clients-section {
+        padding: 40px 0 !important;
+    }
+    
+    /* ============================================
+       HERO SECTION - PREMIUM COMPACT
+    ============================================ */
+    
+    /* Hide MAITEA brand label on mobile (logo stays in header only) */
+    .hero-brand,
+    .brand-signature {
+        display: none !important;
+    }
+    
+    /* Hero: Full viewport with modern svh unit */
+    .hero {
+        min-height: 100svh !important;
+        padding: 72px 0 56px 0 !important;
+        margin-top: 0 !important;
+    }
+    
+    /* Hero scene: Centered content, moved up for optical balance */
+    .hero-scene {
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: center !important;
+        align-items: center !important;
+        min-height: calc(100svh - 128px) !important; /* Account for padding */
+        transform: none !important; /* Let padding handle positioning */
+    }
+    
+    /* Hero content: Centered, controlled width */
+    .hero-content {
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: center !important;
+        align-items: center !important;
+        text-align: center !important;
+        padding: 0 20px !important;
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+    
+    /* Headline: LOCKED fonts, adjusted size */
+    .hero-headline {
+        /* Font locked - only size/spacing adjusted */
+        font-size: 2.75rem !important; /* 44px - premium size for mobile */
+        line-height: 1.1 !important;
+        letter-spacing: -0.02em !important;
+        max-width: 280px !important; /* ~12ch for beautiful line breaks */
+        margin: -6.25rem 0 1.25rem 0 !important; /* -100px for dramatic vertical compression */
+    }
+    
+    /* Descriptor: LOCKED font, adjusted size */
+    .hero-descriptor {
+        /* Font locked - only size/spacing adjusted */
+        font-size: 0.9375rem !important; /* 15px */
+        line-height: 1.6 !important;
+        letter-spacing: 0.01em !important;
+        max-width: 340px !important; /* ~30ch */
+        margin: 0 0 1.75rem 0 !important; /* 28px spacing below */
+    }
+    
+    /* CTA button: Full width with max constraint */
+    .btn-hero {
+        width: 100% !important;
+        max-width: 320px !important;
+        height: 52px !important;
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        margin: 0 !important;
+        padding: 0 2rem !important;
+    }
+    
+    /* ============================================
+       PHILOSOPHY / VALUES - COMPACT STACK
+    ============================================ */
+    
+    .philosophy-section {
+        padding: 48px 0 !important; /* Reduced from excessive spacing */
+    }
+    
+    .philosophy-statements {
+        gap: 20px !important; /* Tight spacing between items */
+        max-width: 340px !important; /* Centered narrow column */
+        margin: 0 auto !important;
+    }
+    
+    .statement {
+        padding: 0 !important; /* Remove excessive padding */
+        margin-bottom: 0 !important;
+    }
+    
+    .statement-title {
+        font-size: 1.375rem !important; /* 22px - readable but compact */
+        margin: 0 !important;
+        line-height: 1.3 !important;
+    }
+    
+    /* Hairline between values - subtle */
+    .statement:not(:last-child)::after {
+        width: 16px !important; /* Subtle accent line */
+        margin-top: 10px !important;
+    }
+    
+    /* ============================================
+       SERVICES - PREMIUM STACKED CARDS
+    ============================================ */
+    
+    .services-section {
+        padding: 56px 0 !important;
+    }
+    
+    .services-section .section-title {
+        margin-bottom: 32px !important; /* Reduced from excessive */
+    }
+    
+    .services-grid {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 18px !important; /* Tight but premium */
+    }
+    
+    .service-card {
+        width: 100% !important;
+        padding: 22px !important; /* Compact interior */
+        border-radius: 16px !important; /* Modern radius */
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04), 
+                    0 4px 16px rgba(0, 0, 0, 0.03) !important; /* Subtle shadow */
+    }
+    
+    /* Icon sizing */
+    .service-icon {
+        margin-bottom: 14px !important;
+    }
+    
+    .service-icon svg {
+        width: 22px !important;
+        height: 22px !important;
+    }
+    
+    /* Typography inside cards */
+    .service-title {
+        font-size: 1.25rem !important; /* 20px */
+        margin-bottom: 10px !important;
+        line-height: 1.3 !important;
+    }
+    
+    .service-text {
+        font-size: 0.9375rem !important; /* 15px */
+        line-height: 1.6 !important;
+        margin-bottom: 14px !important;
+    }
+    
+    .service-link {
+        font-size: 0.875rem !important; /* 14px - not too small */
+        margin-top: 8px !important;
+        text-decoration: underline !important;
+        text-underline-offset: 3px !important;
+        opacity: 0.75 !important;
+    }
+    
+    .service-link:active {
+        opacity: 1 !important;
+    }
+    
+    /* ============================================
+       PROCESS / HOW WE WORK - VERTICAL STACK
+    ============================================ */
+    
+    .process-section {
+        padding: 56px 0 !important;
+    }
+    
+    .process-section .section-title {
+        margin-bottom: 32px !important;
+    }
+    
+    .process-steps {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 18px !important; /* Compact rhythm */
+        max-width: 340px !important; /* Narrower for better centering */
+        margin: 0 auto !important;
+        padding: 0 !important;
+    }
+    
+    .process-step {
+        text-align: center !important;
+        padding: 24px 18px !important; /* More vertical, less horizontal */
+        background: rgba(250, 248, 245, 0.5) !important;
+        border-radius: 12px !important;
+        width: 100% !important;
+    }
+    
+    /* Step number - subtle and refined */
+    .step-number {
+        font-size: 2rem !important; /* 32px - smaller, elegant */
+        margin-bottom: 10px !important;
+        opacity: 0.25 !important; /* More subtle */
+    }
+    
+    .step-title {
+        font-size: 1.125rem !important; /* 18px - slightly smaller */
+        margin-bottom: 8px !important;
+        line-height: 1.3 !important;
+    }
+    
+    .step-text {
+        font-size: 0.875rem !important; /* 14px - more compact */
+        line-height: 1.65 !important;
+        margin: 0 !important;
+        max-width: 280px !important; /* Limit text width */
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+    
+    /* ============================================
+       CLIENTS - 2x2 GRID
+    ============================================ */
+    
+    .clients-section {
+        padding: 48px 0 !important;
+    }
+    
+    .clients-section .section-title {
+        margin-bottom: 28px !important;
+    }
+    
+    .clients-strip {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr !important; /* 2 columns */
+        gap: 14px !important;
+        max-width: 340px !important;
+        margin: 0 auto !important;
+    }
+    
+    .client-logo {
+        height: 44px !important; /* Uniform height */
+        width: 100% !important;
+        border-radius: 8px !important;
+    }
+    
+    /* ============================================
+       FINAL CTA - COMPACT & FOCUSED
+    ============================================ */
+    
+    .cta-final {
+        padding: 56px 0 !important;
+    }
+    
+    .cta-content {
+        text-align: center !important;
+        max-width: 360px !important;
+        margin: 0 auto !important;
+    }
+    
+    /* CTA title */
+    .cta-title {
+        font-size: 1.625rem !important; /* 26px */
+        line-height: 1.3 !important;
+        margin: 0 0 16px 0 !important; /* 16px to text */
+    }
+    
+    /* CTA text (if exists) */
+    .cta-text {
+        font-size: 0.9375rem !important; /* 15px */
+        line-height: 1.6 !important;
+        margin: 0 0 22px 0 !important; /* 22px to button */
+    }
+    
+    /* CTA button */
+    .cta-final .btn,
+    .cta-final .btn-primary,
+    .cta-final .btn-large {
+        width: 100% !important;
+        max-width: 320px !important;
+        height: 52px !important;
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        margin: 0 auto !important;
+    }
+    
+    /* ============================================
+       FOOTER - PREMIUM COMPACT
+    ============================================ */
+    
+    .footer {
+        padding: 48px 0 28px 0 !important;
+    }
+    
+    .footer-content {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 28px !important;
+        margin-bottom: 28px !important;
+    }
+    
+    /* Footer MAITEA branding */
+    .footer .wordmark {
+        font-size: 1.125rem !important;
+        margin-bottom: 8px !important;
+    }
+    
+    .footer-tagline {
+        font-size: 0.8125rem !important; /* 13px */
+        margin-bottom: 6px !important;
+    }
+    
+    .footer-brand-statement {
+        font-size: 0.75rem !important; /* 12px */
+        margin-bottom: 16px !important;
+    }
+    
+    /* Social icons - clean and compact */
+    .footer-social {
+        display: flex !important;
+        gap: 16px !important;
+        margin-bottom: 20px !important;
+    }
+    
+    .footer-social a {
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+    
+    .footer-social svg {
+        width: 22px !important;
+        height: 22px !important;
+    }
+    
+    /* Footer sections */
+    .footer-section {
+        margin-bottom: 0 !important;
+    }
+    
+    .footer-title {
+        font-size: 0.875rem !important; /* 14px */
+        margin-bottom: 12px !important;
+    }
+    
+    .footer-links,
+    .footer-contact {
+        font-size: 0.875rem !important; /* 14px */
+        line-height: 1.8 !important;
+    }
+    
+    .footer-links li,
+    .footer-contact li {
+        margin-bottom: 8px !important;
+    }
+    
+    /* Footer CTA button */
+    .footer-cta .btn {
+        width: 100% !important;
+        max-width: 280px !important;
+        height: 48px !important;
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        font-size: 0.8125rem !important; /* 13px */
+        margin-top: 0 !important;
+    }
+    
+    /* Footer bottom / copyright */
+    .footer-bottom {
+        padding-top: 28px !important;
+        margin-top: 28px !important;
+        border-top: 1px solid rgba(250, 248, 245, 0.1) !important;
+    }
+    
+    .footer-bottom p {
+        font-size: 0.75rem !important; /* 12px */
+        line-height: 1.6 !important;
+        opacity: 0.7 !important;
+        text-align: center !important;
+    }
+    
+    .footer-separator {
+        margin: 0 8px !important;
+    }
+    
+    /* ============================================
+       SECTION TITLES - MOBILE REFINEMENT
+    ============================================ */
+    
+    .section-title {
+        font-size: 0.8125rem !important; /* 13px - subtle uppercase */
+        letter-spacing: 0.2em !important;
+        margin-bottom: 32px !important;
+    }
+    
+    .section-title::after {
+        bottom: -10px !important;
+        width: 28px !important;
+    }
+    
+    /* ============================================
+       UTILITY FIXES
+    ============================================ */
+    
+    /* Remove any excessive margins that create "rupe" */
+    .section > *:first-child {
+        margin-top: 0 !important;
+    }
+    
+    .section > *:last-child {
+        margin-bottom: 0 !important;
+    }
+    
+    /* Ensure all buttons work well on mobile */
+    .btn,
+    .btn-primary,
+    .btn-secondary {
+        min-height: 48px !important; /* Touch target */
+        padding: 0 1.5rem !important;
+        font-size: 0.875rem !important;
+    }
+    
+    /* Paper animation - hide on mobile to save performance */
+    .paper-animation {
+        display: none !important;
+    }
+}
+
+/* ============================================
+   LARGER MOBILE (414px+) - SUBTLE ADJUSTMENTS
+============================================ */
+
+@media (min-width: 414px) and (max-width: 768px) {
+    .hero-headline {
+        font-size: 3rem !important; /* 48px - slightly larger */
+        max-width: 300px !important;
+    }
+    
+    .hero-descriptor {
+        font-size: 1rem !important; /* 16px */
+        max-width: 360px !important;
+    }
+    
+    .philosophy-statements {
+        max-width: 380px !important;
+    }
+    
+    .process-steps {
+        max-width: 420px !important;
+    }
+}

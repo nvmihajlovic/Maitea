@@ -1,0 +1,388 @@
+/* ============================================
+   PREMIUM ANIMATIONS & MICROINTERACTIONS
+   ======================================== */
+
+/* Scroll Reveal Base */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    transition-delay: var(--reveal-delay, 0s);
+}
+
+.reveal-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Reduce motion support */
+@media (prefers-reduced-motion: reduce) {
+    .reveal {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+}
+
+/* ============================================
+   CARD HOVER EFFECTS
+   ======================================== */
+
+/* Service Cards */
+.service-card {
+    transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+}
+
+.service-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: inherit;
+    border: 1px solid transparent;
+    transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    pointer-events: none;
+}
+
+.service-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 32px rgba(212, 175, 55, 0.08),
+                0 4px 16px rgba(26, 26, 26, 0.06);
+}
+
+.service-card:hover::before {
+    border-color: rgba(212, 175, 55, 0.2);
+}
+
+/* Value Items */
+.value-item {
+    transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.value-item::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #d4af37, transparent);
+    transition: left 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.value-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(212, 175, 55, 0.1),
+                0 4px 12px rgba(26, 26, 26, 0.05);
+}
+
+.value-item:hover::after {
+    left: 100%;
+}
+
+/* Contact Cards */
+.contact-card {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+}
+
+.contact-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(212, 175, 55, 0.3);
+    box-shadow: 0 8px 20px rgba(212, 175, 55, 0.08);
+}
+
+.contact-card:hover .contact-icon {
+    color: #d4af37;
+    transform: scale(1.1);
+}
+
+.contact-icon {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ============================================
+   IMAGE HOVER EFFECTS
+   ======================================== */
+
+/* Gallery Items */
+.gallery-item {
+    overflow: hidden;
+    position: relative;
+}
+
+.gallery-item img {
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: transform;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.05);
+}
+
+.gallery-item::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(212, 175, 55, 0.1), rgba(212, 175, 55, 0.05));
+    opacity: 0;
+    transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    pointer-events: none;
+}
+
+.gallery-item:hover::after {
+    opacity: 1;
+}
+
+/* Content Images */
+.content-image,
+.side-image,
+.service-detail-image {
+    overflow: hidden;
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.content-image img,
+.side-image img,
+.service-detail-image img {
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.content-image:hover img,
+.side-image:hover img,
+.service-detail-image:hover img {
+    transform: scale(1.03);
+}
+
+/* ============================================
+   LINK HOVER EFFECTS
+   ======================================== */
+
+/* Text Links sa zlatnim underline */
+.content-text a,
+.service-detail-lead a,
+.value-item-description a {
+    position: relative;
+    color: inherit;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+    transition: all 0.25s ease;
+}
+
+.content-text a::after,
+.service-detail-lead a::after,
+.value-item-description a::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: #d4af37;
+    transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.content-text a:hover::after,
+.service-detail-lead a:hover::after,
+.value-item-description a:hover::after {
+    width: 100%;
+}
+
+.content-text a:hover,
+.service-detail-lead a:hover,
+.value-item-description a:hover {
+    color: #d4af37;
+}
+
+/* ============================================
+   BUTTON MICROINTERACTIONS
+   ======================================== */
+
+.cta-button,
+.submit-button {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.cta-button::before,
+.submit-button::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s ease, height 0.6s ease;
+}
+
+.cta-button:hover::before,
+.submit-button:hover::before {
+    width: 300px;
+    height: 300px;
+}
+
+.cta-button:hover,
+.submit-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(212, 175, 55, 0.25);
+}
+
+.cta-button:active,
+.submit-button:active {
+    transform: translateY(0);
+}
+
+/* ============================================
+   FORM INPUT INTERACTIONS
+   ======================================== */
+
+.form-input,
+.form-textarea {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.form-input:focus,
+.form-textarea:focus {
+    border-color: rgba(212, 175, 55, 0.5);
+    box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.08),
+                0 2px 8px rgba(26, 26, 26, 0.04);
+    transform: translateY(-1px);
+}
+
+/* Label float animation */
+.form-group {
+    position: relative;
+}
+
+.form-label {
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.form-input:focus ~ .form-label,
+.form-input:not(:placeholder-shown) ~ .form-label,
+.form-textarea:focus ~ .form-label,
+.form-textarea:not(:placeholder-shown) ~ .form-label {
+    transform: translateY(-1.5rem) scale(0.85);
+    color: #d4af37;
+}
+
+/* Success checkmark animation */
+.form-input.valid,
+.form-textarea.valid {
+    border-color: rgba(76, 175, 80, 0.5);
+}
+
+.form-input.invalid,
+.form-textarea.invalid {
+    border-color: rgba(244, 67, 54, 0.5);
+}
+
+/* ============================================
+   LOADING ANIMATIONS
+   ======================================== */
+
+.loading-spinner {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 2px solid rgba(212, 175, 55, 0.2);
+    border-top-color: #d4af37;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Button loading state */
+.button-loading {
+    position: relative;
+    color: transparent !important;
+    pointer-events: none;
+}
+
+.button-loading::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    margin: -10px 0 0 -10px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-top-color: #ffffff;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+
+/* ============================================
+   PULSE EFFECT za attention
+   ======================================== */
+
+@keyframes pulse {
+    0%, 100% {
+        box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.4);
+    }
+    50% {
+        box-shadow: 0 0 0 10px rgba(212, 175, 55, 0);
+    }
+}
+
+.pulse {
+    animation: pulse 2s ease-in-out infinite;
+}
+
+/* ============================================
+   MOBILE OPTIMIZATIONS
+   ======================================== */
+
+@media (max-width: 768px) {
+    /* Reduce hover effects on mobile */
+    .service-card:hover,
+    .value-item:hover,
+    .contact-card:hover {
+        transform: none;
+    }
+    
+    /* Keep subtle shadow on tap */
+    .service-card:active {
+        transform: scale(0.98);
+    }
+    
+    /* Disable parallax on mobile */
+    .hero-image,
+    .content-image,
+    .service-detail-image {
+        transform: none !important;
+    }
+}
+
+/* ============================================
+   PERFORMANCE OPTIMIZATIONS
+   ======================================== */
+
+/* Will-change hints for animations */
+.gallery-item img,
+.service-card,
+.value-item,
+.contact-card {
+    will-change: transform;
+}
+
+/* Remove will-change after animation */
+.reveal-visible {
+    will-change: auto;
+}

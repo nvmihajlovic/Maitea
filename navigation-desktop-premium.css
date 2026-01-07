@@ -1,0 +1,231 @@
+/* ========================================
+   DESKTOP NAVIGATION - PREMIUM REFINEMENT
+   Exclusively for ≥1024px
+   Luxurious, minimalist, calm UI
+   ======================================== */
+
+@media (min-width: 1024px) {
+    
+    /* Header Container - Premium Spacing */
+    .header {
+        padding: 2.5rem 0 2.25rem;
+        background: rgba(250, 248, 245, 0.96);
+        backdrop-filter: blur(20px) saturate(180%);
+        border-bottom: 1px solid rgba(212, 175, 55, 0.08);
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.01);
+    }
+    
+    .header-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    /* Logo - Left Aligned */
+    .logo {
+        transition: opacity 0.15s ease-out;
+    }
+    
+    .logo:hover {
+        opacity: 0.75;
+    }
+    
+    .wordmark {
+        font-family: 'Raleway', sans-serif;
+        font-size: 1.5rem;
+        font-weight: 300;
+        letter-spacing: 0.15em;
+        color: #1a1a1a;
+    }
+    
+    /* Navigation Container - Right Aligned */
+    .nav {
+        position: static;
+        width: auto;
+        max-width: none;
+        height: auto;
+        background: transparent;
+        box-shadow: none;
+        transform: none;
+        overflow: visible;
+    }
+    
+    .nav-list {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 0;
+        padding: 0;
+        list-style: none;
+    }
+    
+    .nav-list li {
+        border-bottom: none;
+        margin: 0 1.75rem;
+    }
+    
+    .nav-list li:last-child {
+        margin-right: 0;
+    }
+    
+    /* Navigation Links - Elegant Typography */
+    .nav-link {
+        display: inline-block;
+        padding: 0.4rem 0;
+        font-family: 'Manrope', sans-serif;
+        font-size: 0.9rem;
+        font-weight: 400;
+        letter-spacing: 0.03em;
+        color: #2a2a2a;
+        text-decoration: none;
+        position: relative;
+        transition: color 0.13s ease-out;
+        transform: none;
+    }
+    
+    /* Remove mobile-specific pseudo-elements */
+    .nav-link::after {
+        display: none;
+    }
+    
+    .nav-link.active::before {
+        display: none;
+    }
+    
+    /* Hover State - Subtle & Refined */
+    .nav-link:hover {
+        color: rgba(42, 42, 42, 0.65);
+        transform: none;
+    }
+    
+    /* Hover Underline - Appears from Center */
+    .nav-link::before {
+        content: '';
+        position: absolute;
+        left: 50%;
+        bottom: -2px;
+        width: 0;
+        height: 1px;
+        background: rgba(212, 175, 55, 0.6);
+        transform: translateX(-50%);
+        transition: width 0.14s ease-out;
+    }
+    
+    .nav-link:hover::before {
+        width: 100%;
+    }
+    
+    /* Active Link State - Discreet Golden Accent */
+    .nav-link.active {
+        color: #c4a144;
+        font-weight: 400;
+        transform: none;
+    }
+    
+    .nav-link.active::after {
+        content: '';
+        display: block;
+        position: absolute;
+        left: 0;
+        bottom: -2px;
+        width: 100%;
+        height: 1px;
+        background: linear-gradient(90deg, 
+            rgba(212, 175, 55, 0.7) 0%, 
+            rgba(212, 175, 55, 0.5) 100%
+        );
+    }
+    
+    /* Language Switcher - Secondary Element */
+    .lang-switch {
+        display: flex;
+        align-items: center;
+        gap: 0.35rem;
+        padding: 0;
+        margin: 0 0 0 2.5rem;
+        border: none;
+    }
+    
+    .lang-btn {
+        background: none;
+        border: none;
+        font-family: 'Manrope', sans-serif;
+        font-size: 0.75rem;
+        font-weight: 400;
+        letter-spacing: 0.05em;
+        color: rgba(42, 42, 42, 0.5);
+        cursor: pointer;
+        padding: 0.3rem 0.5rem;
+        min-width: auto;
+        min-height: auto;
+        transition: color 0.12s ease-out;
+        text-transform: uppercase;
+    }
+    
+    .lang-btn:hover,
+    .lang-btn:focus {
+        color: rgba(42, 42, 42, 0.75);
+        outline: none;
+    }
+    
+    .lang-btn.active {
+        color: rgba(212, 175, 55, 0.85);
+        font-weight: 500;
+    }
+    
+    .lang-divider {
+        color: rgba(42, 42, 42, 0.25);
+        font-size: 0.7rem;
+        font-weight: 200;
+    }
+    
+}
+
+/* Desktop XL: 1280px and up - Refined Spacing */
+@media (min-width: 1280px) {
+    
+    .header {
+        padding: 3rem 0 2.75rem;
+    }
+    
+    .wordmark {
+        font-size: 1.6rem;
+        letter-spacing: 0.18em;
+    }
+    
+    .nav-list li {
+        margin: 0 2rem;
+    }
+    
+    .nav-link {
+        font-size: 0.92rem;
+        letter-spacing: 0.04em;
+    }
+    
+    .lang-switch {
+        margin-left: 3rem;
+    }
+    
+}
+
+/* Desktop XXL: 1440px and up - Maximum Breathing Room */
+@media (min-width: 1440px) {
+    
+    .header {
+        padding: 3.25rem 0 3rem;
+    }
+    
+    .wordmark {
+        font-size: 1.65rem;
+        letter-spacing: 0.2em;
+    }
+    
+    .nav-list li {
+        margin: 0 2.25rem;
+    }
+    
+    .nav-link {
+        font-size: 0.94rem;
+    }
+    
+}
