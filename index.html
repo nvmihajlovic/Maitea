@@ -9,28 +9,66 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200;300;400;600&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
-    
-    <!-- Stylesheet -->
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/design-system.css">
-    <link rel="stylesheet" href="assets/css/narrative-structure.css">
-    <link rel="stylesheet" href="assets/css/hero-refinement.css">
-    <link rel="stylesheet" href="homepage-polish.css">
-    <link rel="stylesheet" href="hero-mobile-premium.css">
-    <link rel="stylesheet" href="process-editorial.css">
-    <link rel="stylesheet" href="footer-refinement.css">
-    <link rel="stylesheet" href="footer-polish.css">
-    <link rel="stylesheet" href="footer-premium-polish.css">
-    <link rel="stylesheet" href="navigation-desktop-premium.css">
-    <link rel="stylesheet" href="navigation-mobile-premium.css">
-    <link rel="stylesheet" href="index-mobile-luxury.css">
-    <link rel="stylesheet" href="luxury-corrections.css">
-    <link rel="stylesheet" href="premium-polish-final.css">
-    <link rel="stylesheet" href="performance-optimizations.css">
-    
-    <!-- Preload critical fonts -->
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Raleway:wght@200;300;400;600&family=Manrope:wght@400;500;600&display=swap" as="style">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200;300;400;600&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript>
+        <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200;300;400;600&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
+    </noscript>
+    
+    <!-- Critical CSS inline -->
+    <style>
+        :root{--gold:#d4af37;--dark:#1a1a1a;--off-white:#faf8f5}*{margin:0;padding:0;box-sizing:border-box}body{font-family:'Manrope',-apple-system,BlinkMacSystemFont,sans-serif;background-color:var(--off-white);color:var(--dark);line-height:1.6;overflow-x:hidden}.header{position:fixed;top:0;left:0;right:0;z-index:10000;background-color:var(--off-white);border-bottom:1px solid rgba(26,26,26,.1)}.container{max-width:1200px;margin:0 auto;padding:0 24px}.header-content{display:flex;justify-content:space-between;align-items:center;height:80px}.wordmark{font-family:'Raleway',sans-serif;font-weight:200;font-size:24px;letter-spacing:.2em;color:var(--dark)}.hero{min-height:100vh;display:flex;align-items:center;justify-content:center;position:relative;background-color:var(--off-white);padding-top:80px}.hero-headline{font-family:'Raleway',sans-serif;font-weight:200;font-size:clamp(32px,6vw,72px);line-height:1.2;color:var(--dark);margin-bottom:24px}.btn{display:inline-flex;align-items:center;justify-content:center;padding:16px 32px;background-color:var(--gold);color:#fff;text-decoration:none;border-radius:16px;font-weight:500;transition:transform .3s ease}.nav-toggle{display:none;background:0 0;border:none;cursor:pointer}@media (max-width:768px){.nav{display:none}.nav-toggle{display:block}}
+    </style>
+    
+    <!-- Preload critical CSS files -->
+    <link rel="preload" href="assets/css/style.css" as="style">
+    <link rel="preload" href="assets/css/design-system.css" as="style">
+    <link rel="preload" href="cls-fixes.css" as="style">
+    
+    <!-- CLS Fixes - load immediately -->
+    <link rel="stylesheet" href="cls-fixes.css">
+    
+    <!-- Stylesheet - defer non-critical CSS -->
+    <link rel="stylesheet" href="assets/css/style.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="assets/css/design-system.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="assets/css/narrative-structure.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="assets/css/hero-refinement.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="homepage-polish.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="hero-mobile-premium.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="process-editorial.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="footer-refinement.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="footer-polish.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="footer-premium-polish.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="navigation-desktop-premium.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="navigation-mobile-premium.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="index-mobile-luxury.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="luxury-corrections.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="premium-polish-final.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="performance-optimizations.css" media="print" onload="this.media='all'">
+    
+    <noscript>
+        <link rel="stylesheet" href="assets/css/style.css">
+        <link rel="stylesheet" href="assets/css/design-system.css">
+        <link rel="stylesheet" href="assets/css/narrative-structure.css">
+        <link rel="stylesheet" href="assets/css/hero-refinement.css">
+        <link rel="stylesheet" href="homepage-polish.css">
+        <link rel="stylesheet" href="hero-mobile-premium.css">
+        <link rel="stylesheet" href="process-editorial.css">
+        <link rel="stylesheet" href="footer-refinement.css">
+        <link rel="stylesheet" href="footer-polish.css">
+        <link rel="stylesheet" href="footer-premium-polish.css">
+        <link rel="stylesheet" href="navigation-desktop-premium.css">
+        <link rel="stylesheet" href="navigation-mobile-premium.css">
+        <link rel="stylesheet" href="index-mobile-luxury.css">
+        <link rel="stylesheet" href="luxury-corrections.css">
+        <link rel="stylesheet" href="premium-polish-final.css">
+        <link rel="stylesheet" href="performance-optimizations.css">
+    </noscript>
+    
+    <!-- Fallback CSS loader script -->
+    <script>
+        !function(e){"use strict";var t=function(t,n,r){var o,i=e.document,s=i.createElement("link");if(n)o=n;else{var a=(i.body||i.getElementsByTagName("head")[0]).childNodes;o=a[a.length-1]}var l=i.styleSheets;s.rel="stylesheet",s.href=t,s.media="only x",function e(t){if(i.body)return t();setTimeout(function(){e(t)})}(function(){o.parentNode.insertBefore(s,n?o:o.nextSibling)});var f=function(e){for(var t=s.href,n=l.length;n--;)if(l[n].href===t)return e();setTimeout(function(){f(e)})};return s.addEventListener&&s.addEventListener("load",r),s.onloadcssdefined=f,f(r),s};"undefined"!=typeof exports?exports.loadCSS=t:e.loadCSS=t}("undefined"!=typeof global?global:this);
+    </script>
     
     <!-- Resource hints for performance -->
     <link rel="dns-prefetch" href="https://fonts.googleapis.com">
@@ -306,7 +344,7 @@
         </div>
     </footer>
 
-    <!-- JavaScript -->
-    <script src="assets/js/app.js"></script>
+    <!-- JavaScript - defer execution -->
+    <script src="assets/js/app.js" defer></script>
 </body>
 </html>

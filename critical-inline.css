@@ -1,0 +1,101 @@
+/* Critical CSS - inline u <head> */
+/* Samo najvažniji stilovi za above-the-fold sadržaj */
+
+:root {
+    --gold: #d4af37;
+    --dark: #1a1a1a;
+    --off-white: #faf8f5;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Manrope', -apple-system, BlinkMacSystemFont, sans-serif;
+    background-color: var(--off-white);
+    color: var(--dark);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10000;
+    background-color: var(--off-white);
+    border-bottom: 1px solid rgba(26, 26, 26, 0.1);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+}
+
+.wordmark {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 200;
+    font-size: 24px;
+    letter-spacing: 0.2em;
+    color: var(--dark);
+}
+
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background-color: var(--off-white);
+    padding-top: 80px;
+}
+
+.hero-headline {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 200;
+    font-size: clamp(32px, 6vw, 72px);
+    line-height: 1.2;
+    color: var(--dark);
+    margin-bottom: 24px;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px 32px;
+    background-color: var(--gold);
+    color: white;
+    text-decoration: none;
+    border-radius: 16px;
+    font-weight: 500;
+    transition: transform 0.3s ease;
+}
+
+.nav-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .nav {
+        display: none;
+    }
+    .nav-toggle {
+        display: block;
+    }
+}
