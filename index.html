@@ -6,24 +6,23 @@
     <meta name="description" content="MAITEA - Umetnički ketering za korporativne i privatne događaje">
     <title>MAITEA - Artistic Catering</title>
     
-    <!-- Google Fonts -->
+    <!-- Google Fonts - blocking load -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Raleway:wght@200;300;400;600&family=Manrope:wght@400;500;600&display=swap" as="style">
-    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200;300;400;600&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
-    <noscript>
-        <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200;300;400;600&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
-    </noscript>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200;300;400;600&family=Manrope:wght@400;500;600&display=block" rel="stylesheet">
     
     <!-- Critical CSS inline - essential above-the-fold styles -->
     <style>
-        :root{--gold:#d4af37;--dark:#1a1a1a;--off-white:#faf8f5}
+        :root{--gold:#d4af37;--dark:#1a1a1a;--off-white:#faf8f5;--header-height:80px}
         *{margin:0;padding:0;box-sizing:border-box}
-        body{font-family:'Manrope',-apple-system,BlinkMacSystemFont,sans-serif;background-color:var(--off-white);color:var(--dark);line-height:1.6;overflow-x:hidden}
+        body{font-family:'Manrope',-apple-system,BlinkMacSystemFont,sans-serif;background-color:var(--off-white);color:var(--dark);line-height:1.6;overflow-x:hidden;min-height:100vh}
+        
+        /* Reserve space for fixed header to prevent layout shift */
+        main{padding-top:var(--header-height)}
         
         /* Header - Critical Styles */
-        .header{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(250,248,245,0.98);backdrop-filter:blur(10px);border-bottom:1px solid rgba(212,175,55,0.1);transition:all 0.3s ease}
-        .header-content{max-width:1400px;margin:0 auto;padding:1.25rem 2rem;display:flex;justify-content:space-between;align-items:center}
+        .header{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(250,248,245,0.98);backdrop-filter:blur(10px);border-bottom:1px solid rgba(212,175,55,0.1);transition:all 0.3s ease;height:var(--header-height)}
+        .header-content{max-width:1400px;margin:0 auto;padding:1.25rem 2rem;display:flex;justify-content:space-between;align-items:center;height:100%}
         .logo{text-decoration:none;color:var(--dark);font-weight:600;letter-spacing:0.05em}
         .wordmark{font-family:'Raleway',serif;font-size:1.5rem;font-weight:300;letter-spacing:0.15em;color:var(--gold)}
         
@@ -43,12 +42,12 @@
         .lang-divider{color:var(--dark);opacity:0.3}
         
         /* Hero - Prevent Flash and Layout Shift */
-        .hero{min-height:100vh;display:flex;align-items:center;justify-content:center;position:relative;background:var(--off-white);padding-top:80px}
-        .paper-animation{opacity:0;visibility:hidden}
-        .hero-wordmark{opacity:0;visibility:hidden}
+        .hero{min-height:calc(100vh - var(--header-height));display:flex;align-items:center;justify-content:center;position:relative;background:var(--off-white);margin-top:calc(-1 * var(--header-height))}
+        .paper-animation{opacity:0;visibility:hidden;will-change:opacity}
+        .hero-wordmark{opacity:0;visibility:hidden;will-change:opacity}
         .paper-animation.active{opacity:1;visibility:visible}
-        .hero-scene{width:100%;opacity:0}
-        .hero-content{text-align:center;max-width:900px;margin:0 auto}
+        .hero-scene{width:100%;opacity:0;will-change:opacity}
+        .hero-content{text-align:center;max-width:900px;margin:0 auto;padding:2rem 0}
         .hero-headline{font-family:'Raleway',serif;font-size:clamp(2rem,5vw,3.5rem);font-weight:300;color:var(--dark);margin:1rem 0 1.5rem;line-height:1.2}
         .hero-descriptor{font-size:1.125rem;color:var(--dark);opacity:0.75;margin-bottom:2rem;line-height:1.6}
         .btn{display:inline-block;padding:1rem 2.5rem;background:var(--gold);color:var(--dark);text-decoration:none;font-weight:600;letter-spacing:0.05em;transition:all 0.3s ease;border:none;cursor:pointer}
@@ -61,6 +60,8 @@
         
         /* Mobile Navigation Toggle */
         @media(max-width:768px){
+            :root{--header-height:70px}
+            .header-content{padding:1rem}
             .nav-toggle{display:block}
             .nav{position:fixed;top:0;right:-100%;width:100%;height:100vh;background:var(--off-white);transition:right 0.4s ease;padding:6rem 2rem 2rem;overflow-y:auto;z-index:999}
             .nav.active{right:0}
@@ -69,48 +70,23 @@
         }
     </style>
     
-    <!-- Stylesheet - defer non-critical CSS -->
-    <link rel="stylesheet" href="assets/css/style.css" media="print" onload="this.media='all'">
-    <link rel="stylesheet" href="assets/css/design-system.css" media="print" onload="this.media='all'">
-    <link rel="stylesheet" href="assets/css/narrative-structure.css" media="print" onload="this.media='all'">
-    <link rel="stylesheet" href="assets/css/hero-refinement.css" media="print" onload="this.media='all'">
-    <link rel="stylesheet" href="homepage-polish.css" media="print" onload="this.media='all'">
-    <link rel="stylesheet" href="hero-mobile-premium.css" media="print" onload="this.media='all'">
-    <link rel="stylesheet" href="process-editorial.css" media="print" onload="this.media='all'">
-    <link rel="stylesheet" href="footer-refinement.css" media="print" onload="this.media='all'">
-    <link rel="stylesheet" href="footer-polish.css" media="print" onload="this.media='all'">
-    <link rel="stylesheet" href="footer-premium-polish.css" media="print" onload="this.media='all'">
-    <link rel="stylesheet" href="navigation-desktop-premium.css" media="print" onload="this.media='all'">
-    <link rel="stylesheet" href="navigation-mobile-premium.css" media="print" onload="this.media='all'">
-    <link rel="stylesheet" href="index-mobile-luxury.css" media="print" onload="this.media='all'">
-    <link rel="stylesheet" href="luxury-corrections.css" media="print" onload="this.media='all'">
-    <link rel="stylesheet" href="premium-polish-final.css" media="print" onload="this.media='all'">
-    <link rel="stylesheet" href="performance-optimizations.css" media="print" onload="this.media='all'">
-    
-    <noscript>
-        <link rel="stylesheet" href="assets/css/style.css">
-        <link rel="stylesheet" href="assets/css/design-system.css">
-        <link rel="stylesheet" href="assets/css/narrative-structure.css">
-        <link rel="stylesheet" href="assets/css/hero-refinement.css">
-        <link rel="stylesheet" href="homepage-polish.css">
-        <link rel="stylesheet" href="hero-mobile-premium.css">
-        <link rel="stylesheet" href="process-editorial.css">
-        <link rel="stylesheet" href="footer-refinement.css">
-        <link rel="stylesheet" href="footer-polish.css">
-        <link rel="stylesheet" href="footer-premium-polish.css">
-        <link rel="stylesheet" href="navigation-desktop-premium.css">
-        <link rel="stylesheet" href="navigation-mobile-premium.css">
-        <link rel="stylesheet" href="index-mobile-luxury.css">
-        <link rel="stylesheet" href="luxury-corrections.css">
-        <link rel="stylesheet" href="premium-polish-final.css">
-        <link rel="stylesheet" href="performance-optimizations.css">
-    </noscript>
-    
-    <!-- CSS loader fallback -->
-    <script>
-        !function(e){"use strict";var t=function(t,n,r){var o,i=e.document,s=i.createElement("link");if(n)o=n;else{var a=(i.body||i.getElementsByTagName("head")[0]).childNodes;o=a[a.length-1]}var l=i.styleSheets;s.rel="stylesheet",s.href=t,s.media="only x",function e(t){if(i.body)return t();setTimeout(function(){e(t)})}(function(){o.parentNode.insertBefore(s,n?o:o.nextSibling)});var f=function(e){for(var t=s.href,n=l.length;n--;)if(l[n].href===t)return e();setTimeout(function(){f(e)})};return s.addEventListener&&s.addEventListener("load",r),s.onloadcssdefined=f,f(r),s};"undefined"!=typeof exports?exports.loadCSS=t:e.loadCSS=t}("undefined"!=typeof global?global:this);
-    </script>
-    
+    <!-- Stylesheet - load ALL blocking to prevent layout shift -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/design-system.css">
+    <link rel="stylesheet" href="assets/css/narrative-structure.css">
+    <link rel="stylesheet" href="assets/css/hero-refinement.css">
+    <link rel="stylesheet" href="homepage-polish.css">
+    <link rel="stylesheet" href="hero-mobile-premium.css">
+    <link rel="stylesheet" href="process-editorial.css">
+    <link rel="stylesheet" href="footer-refinement.css">
+    <link rel="stylesheet" href="footer-polish.css">
+    <link rel="stylesheet" href="footer-premium-polish.css">
+    <link rel="stylesheet" href="navigation-desktop-premium.css">
+    <link rel="stylesheet" href="navigation-mobile-premium.css">
+    <link rel="stylesheet" href="index-mobile-luxury.css">
+    <link rel="stylesheet" href="luxury-corrections.css">
+    <link rel="stylesheet" href="premium-polish-final.css">
+    <link rel="stylesheet" href="performance-optimizations.css">
     
     <!-- Resource hints for performance -->
     <link rel="dns-prefetch" href="https://fonts.googleapis.com">
