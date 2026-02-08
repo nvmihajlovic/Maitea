@@ -26,12 +26,18 @@
     ============================================ */
     
     .hero {
-        min-height: auto !important;
-        padding: 0 !important;
+        min-height: 100svh !important;
+        margin-top: calc(-1 * var(--header-height)) !important;
+        padding-top: var(--header-height) !important;
+        padding-bottom: 56px !important;
     }
     
     .hero-scene {
-        padding: 4rem 0 5rem 0 !important; /* Reduced from default */
+        min-height: calc(100svh - var(--header-height) - 56px) !important;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: center !important;
+        align-items: center !important;
     }
     
     .hero-content {
@@ -631,17 +637,7 @@
        Spacing: 4-5rem section padding, 1.25rem card gaps
     ============================================ */
     
-    /* Paper animation - ensure it doesn't interfere */
-    .paper-animation {
-        pointer-events: none !important;
-    }
-    
-    .paper-animation[data-open="true"] {
-        opacity: 0 !important;
-        visibility: hidden !important;
-    }
-    
-    /* Ensure hero content is visible after animation */
+    /* Ensure hero content is visible */
     .hero-scene {
         opacity: 1 !important;
         visibility: visible !important;

@@ -37,7 +37,7 @@
     ============================================ */
     
     .header {
-        padding: 20px 0 !important;
+        padding: 16px 0 !important;
         position: relative !important;
         z-index: 100 !important;
         background: #faf8f5 !important;
@@ -314,11 +314,12 @@
         display: none !important;
     }
     
-    /* Hero: Full viewport with modern svh unit */
+    /* Hero: Full viewport, extends behind navbar */
     .hero {
         min-height: 100svh !important;
-        padding: 72px 0 56px 0 !important;
-        margin-top: 0 !important;
+        padding: 0 0 56px 0 !important;
+        margin-top: calc(-1 * var(--header-height)) !important;
+        padding-top: var(--header-height) !important;
     }
     
     /* Hero scene: Centered content, moved up for optical balance */
@@ -327,7 +328,7 @@
         flex-direction: column !important;
         justify-content: center !important;
         align-items: center !important;
-        min-height: calc(100svh - 128px) !important; /* Account for padding */
+        min-height: calc(100svh - var(--header-height) - 56px) !important;
         transform: none !important; /* Let padding handle positioning */
     }
     
@@ -720,11 +721,6 @@
         min-height: 48px !important; /* Touch target */
         padding: 0 1.5rem !important;
         font-size: 0.875rem !important;
-    }
-    
-    /* Paper animation - hide on mobile to save performance */
-    .paper-animation {
-        display: none !important;
     }
 }
 

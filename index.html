@@ -13,7 +13,7 @@
     
     <!-- Critical CSS inline - essential above-the-fold styles -->
     <style>
-        :root{--gold:#d4af37;--dark:#1a1a1a;--off-white:#faf8f5;--header-height:80px}
+        :root{--gold:#d4af37;--dark:#1a1a1a;--off-white:#faf8f5;--header-height:95px}
         *{margin:0;padding:0;box-sizing:border-box}
         body{font-family:'Manrope',-apple-system,BlinkMacSystemFont,sans-serif;background-color:var(--off-white);color:var(--dark);line-height:1.6;overflow-x:hidden;min-height:100vh}
         
@@ -21,8 +21,8 @@
         main{padding-top:var(--header-height)}
         
         /* Header - Critical Styles */
-        .header{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(250,248,245,0.98);backdrop-filter:blur(10px);border-bottom:1px solid rgba(212,175,55,0.1);transition:all 0.3s ease;height:var(--header-height)}
-        .header-content{max-width:1400px;margin:0 auto;padding:1.25rem 2rem;display:flex;justify-content:space-between;align-items:center;height:100%}
+        .header{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(250,248,245,0.98);backdrop-filter:blur(10px);border-bottom:1px solid rgba(212,175,55,0.1);transition:all 0.3s ease}
+        .header-content{max-width:1400px;margin:0 auto;padding:1.25rem 2rem;display:flex;justify-content:space-between;align-items:center}
         .logo{text-decoration:none;color:var(--dark);font-weight:600;letter-spacing:0.05em}
         .wordmark{font-family:'Raleway',serif;font-size:1.5rem;font-weight:300;letter-spacing:0.15em;color:var(--gold)}
         
@@ -42,14 +42,11 @@
         .lang-divider{color:var(--dark);opacity:0.3}
         
         /* Hero - Prevent Flash and Layout Shift */
-        .hero{min-height:calc(100vh - var(--header-height));display:flex;align-items:center;justify-content:center;position:relative;background:var(--off-white);margin-top:calc(-1 * var(--header-height))}
-        .paper-animation{opacity:0;visibility:hidden;will-change:opacity}
-        .hero-wordmark{opacity:0;visibility:hidden;will-change:opacity}
-        .paper-animation.active{opacity:1;visibility:visible}
-        .hero-scene{width:100%;opacity:0;will-change:opacity}
+        .hero{min-height:calc(100vh - var(--header-height));display:flex;align-items:center;justify-content:center;position:relative;background:#1a1a1a;margin-top:calc(-1 * var(--header-height))}
+        .hero-scene{width:100%;opacity:1}
         .hero-content{text-align:center;max-width:900px;margin:0 auto;padding:2rem 0}
-        .hero-headline{font-family:'Raleway',serif;font-size:clamp(2rem,5vw,3.5rem);font-weight:300;color:var(--dark);margin:1rem 0 1.5rem;line-height:1.2}
-        .hero-descriptor{font-size:1.125rem;color:var(--dark);opacity:0.75;margin-bottom:2rem;line-height:1.6}
+        .hero-headline{font-family:'Raleway',serif;font-size:clamp(2rem,5vw,3.5rem);font-weight:300;color:#ffffff;margin:1rem 0 1.5rem;line-height:1.2}
+        .hero-descriptor{font-size:1.125rem;color:rgba(255,255,255,0.8);margin-bottom:2rem;line-height:1.6}
         .btn{display:inline-block;padding:1rem 2.5rem;background:var(--gold);color:var(--dark);text-decoration:none;font-weight:600;letter-spacing:0.05em;transition:all 0.3s ease;border:none;cursor:pointer}
         .btn:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(212,175,55,0.3)}
         .container{max-width:1400px;margin:0 auto;padding:0 2rem}
@@ -60,7 +57,7 @@
         
         /* Mobile Navigation Toggle */
         @media(max-width:768px){
-            :root{--header-height:70px}
+            :root{--header-height:80px}
             .header-content{padding:1rem}
             .nav-toggle{display:block}
             .nav{position:fixed;top:0;right:-100%;width:100%;height:100vh;background:var(--off-white);transition:right 0.4s ease;padding:6rem 2rem 2rem;overflow-y:auto;z-index:999}
@@ -86,7 +83,10 @@
     <link rel="stylesheet" href="index-mobile-luxury.css">
     <link rel="stylesheet" href="luxury-corrections.css">
     <link rel="stylesheet" href="premium-polish-final.css">
+    <link rel="stylesheet" href="concepts-sections.css">
     <link rel="stylesheet" href="performance-optimizations.css">
+    <link rel="stylesheet" href="unified-premium-polish.css">
+    <link rel="stylesheet" href="hero-slider.css">
     
     <!-- Resource hints for performance -->
     <link rel="dns-prefetch" href="https://fonts.googleapis.com">
@@ -133,21 +133,24 @@
     <main>
         <!-- Hero Section - Cinematic Entrance -->
         <section class="hero" aria-label="Dobrodošlica">
-            <!-- Paper Unrolling Animation -->
-            <div class="paper-animation" data-open="false" aria-hidden="true">
-                <div class="paper-sheet">
-                    <div class="paper-texture"></div>
-                    
-                    <!-- MAITEA Letters (Scattered Assembly) -->
-                    <div class="hero-wordmark">
-                        <h1 class="wordmark-large">
-                            <span class="letter" data-letter="m" style="--delay: 0.15s; --initial-x: -80px; --initial-y: -40px;">M</span><span class="letter" data-letter="a" style="--delay: 0.35s; --initial-x: 60px; --initial-y: 50px;">A</span><span class="letter" data-letter="i" style="--delay: 0.05s; --initial-x: 40px; --initial-y: -60px;">I</span><span class="letter" data-letter="t" style="--delay: 0s; --initial-x: -50px; --initial-y: 70px;">T</span><span class="letter" data-letter="e" style="--delay: 0.25s; --initial-x: 90px; --initial-y: -30px;">E</span><span class="letter" data-letter="a" style="--delay: 0.45s; --initial-x: -70px; --initial-y: 60px;">A</span>
-                        </h1>
-                    </div>
+            <!-- Hero Image Slider -->
+            <div class="hero-slider" aria-hidden="true">
+                <div class="hero-slide hero-slide-active">
+                    <img src="assets/slike/1.jpg" alt="MAITEA ketering" class="hero-slide-img">
                 </div>
+                <div class="hero-slide">
+                    <img src="assets/slike/centralfeast/PRVA.jpeg" alt="MAITEA ketering" class="hero-slide-img">
+                </div>
+                <div class="hero-slide">
+                    <img src="assets/slike/Sequence%2001.00_00_08_33.Still015.jpg" alt="MAITEA ketering" class="hero-slide-img">
+                </div>
+                <div class="hero-slide">
+                    <img src="assets/slike/centralfeast/DRUGA.jpeg" alt="MAITEA ketering" class="hero-slide-img">
+                </div>
+                <div class="hero-slider-overlay"></div>
             </div>
-            
-            <!-- Hero Content (Appears After Paper Animation) -->
+
+            <!-- Hero Content -->
             <div class="hero-scene">
                 <div class="container">
                     <div class="hero-content">
@@ -186,95 +189,50 @@
             </div>
         </section>
 
-        <!-- Services -->
-        <section class="section services-section section-reveal">
+        <!-- Concepts Intro -->
+        <section class="section concepts-intro section-reveal">
             <div class="container">
-                <h2 class="section-title" data-i18n="services.title">Naše usluge</h2>
-                
-                <div class="services-grid">
-                    <!-- Service 1 -->
-                    <article class="service-card">
-                        <div class="service-icon" aria-hidden="true">
-                            <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <rect x="8" y="12" width="24" height="18" rx="1" stroke="#d4af37" stroke-width="1.5"/>
-                                <path d="M14 12V10C14 8.89543 14.8954 8 16 8H24C25.1046 8 26 8.89543 26 10V12" stroke="#d4af37" stroke-width="1.5"/>
-                                <path d="M8 18H32" stroke="#d4af37" stroke-width="1.5"/>
-                            </svg>
-                        </div>
-                        <h3 class="service-title" data-i18n="services.corporate.title">Korporativni eventi</h3>
-                        <p class="service-text" data-i18n="services.corporate.text">Profesionalne proslave, konferencije i poslovni sastanci.</p>
-                        <a href="usluge.html#korporativni-eventi" class="service-link" data-i18n="services.link">Saznajte više</a>
-                    </article>
-                    
-                    <!-- Service 2 -->
-                    <article class="service-card">
-                        <div class="service-icon" aria-hidden="true">
-                            <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <circle cx="20" cy="20" r="10" stroke="#d4af37" stroke-width="1.5"/>
-                                <path d="M20 10L21.5 15L26 13.5L23 18L28 19L23 20L26 24.5L21.5 23L20 28L18.5 23L14 24.5L17 20L12 19L17 18L14 13.5L18.5 15L20 10Z" fill="#d4af37"/>
-                            </svg>
-                        </div>
-                        <h3 class="service-title" data-i18n="services.private.title">Privatne proslave</h3>
-                        <p class="service-text" data-i18n="services.private.text">Rođendani, jubileji, porodična okupljanja sa ukusnom hranom.</p>
-                        <a href="usluge.html#privatne-proslave" class="service-link" data-i18n="services.link">Saznajte više</a>
-                    </article>
-                    
-                    <!-- Service 3 -->
-                    <article class="service-card">
-                        <div class="service-icon" aria-hidden="true">
-                            <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M20 14C18 10 14 9 11 11C8 13 7 17 11 21L20 30L29 21C33 17 32 13 29 11C26 9 22 10 20 14Z" stroke="#d4af37" stroke-width="1.5" stroke-linejoin="round"/>
-                            </svg>
-                        </div>
-                        <h3 class="service-title" data-i18n="services.wedding.title">Wedding catering</h3>
-                        <p class="service-text" data-i18n="services.wedding.text">Najlepši dan zaslužuje savršen meni prilagođen Vašoj viziji.</p>
-                        <a href="usluge.html#wedding-catering" class="service-link" data-i18n="services.link">Saznajte više</a>
-                    </article>
-                    
-                    <!-- Service 4 -->
-                    <article class="service-card">
-                        <div class="service-icon" aria-hidden="true">
-                            <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M14 10L12 22C12 25 14 28 18 28H22C26 28 28 25 28 22L26 10" stroke="#d4af37" stroke-width="1.5" stroke-linecap="round"/>
-                                <path d="M18 28V32H22V28" stroke="#d4af37" stroke-width="1.5" stroke-linecap="round"/>
-                                <path d="M15 32H25" stroke="#d4af37" stroke-width="1.5" stroke-linecap="round"/>
-                                <path d="M14 10H26" stroke="#d4af37" stroke-width="1.5" stroke-linecap="round"/>
-                            </svg>
-                        </div>
-                        <h3 class="service-title" data-i18n="services.tasting.title">Degustacioni meniji</h3>
-                        <p class="service-text" data-i18n="services.tasting.text">Tematski stolovi koji vode goste na kulinarski put.</p>
-                        <a href="usluge.html#degustacioni-meniji" class="service-link" data-i18n="services.link">Saznajte više</a>
-                    </article>
+                <div class="concepts-intro-content">
+                    <h2 class="concepts-intro-title" data-i18n="concepts.intro.title">Dva koncepta. Jedan cilj.</h2>
+                    <p class="concepts-intro-text" data-i18n="concepts.intro.text">MAITEA je umetnički ketering koji pretvara sto u scenu, a hranu u doživljaj.<br>Kroz dva pažljivo osmišljena koncepta, svako slavlje dobija svoju atmosferu, ritam i karakter.</p>
                 </div>
             </div>
         </section>
 
-        <!-- Process -->
-        <section class="section process-section section-reveal">
+        <!-- CENTERFEAST -->
+        <section class="section concept-section concept-centerfeast section-reveal">
             <div class="container">
-                <h2 class="section-title" data-i18n="process.title">Kako radimo</h2>
-                
-                <div class="process-steps">
-                    <!-- Step 1 -->
-                    <article class="process-step">
-                        <div class="step-number" aria-hidden="true">01</div>
-                        <h3 class="step-title" data-i18n="process.step1.title">Konsultacija</h3>
-                        <p class="step-text" data-i18n="process.step1.text">Razgovaramo o Vašoj viziji, broju gostiju i specifičnim potrebama.</p>
-                    </article>
-                    
-                    <!-- Step 2 -->
-                    <article class="process-step">
-                        <div class="step-number" aria-hidden="true">02</div>
-                        <h3 class="step-title" data-i18n="process.step2.title">Kreiranje menija</h3>
-                        <p class="step-text" data-i18n="process.step2.text">Dizajniramo prilagođeni meni i detaljan plan izvedbe.</p>
-                    </article>
-                    
-                    <!-- Step 3 -->
-                    <article class="process-step">
-                        <div class="step-number" aria-hidden="true">03</div>
-                        <h3 class="step-title" data-i18n="process.step3.title">Savršena realizacija</h3>
-                        <p class="step-text" data-i18n="process.step3.text">Dostavljamo sve na vreme, sa preciznošću prema svakom detalju.</p>
-                    </article>
+                <div class="concept-layout">
+                    <div class="concept-images">
+                        <img src="assets/slike/centralfeast/Sequence%2001.00_00_08_33.Still015.jpg" alt="CENTERFEAST — pažljivo aranžirana hrana" class="concept-img" loading="lazy">
+                        <img src="assets/slike/centralfeast/PRVA.jpeg" alt="CENTERFEAST — detalj stola" class="concept-img" loading="lazy">
+                    </div>
+                    <div class="concept-text">
+                        <h3 class="concept-title" data-i18n="concepts.centerfeast.title">CENTERFEAST</h3>
+                        <p class="concept-subtitle" data-i18n="concepts.centerfeast.subtitle">Sto koji postaje centar okupljanja</p>
+                        <p class="concept-description" data-i18n="concepts.centerfeast.p1">CENTERFEAST je sto prekriven pažljivo aranžiranom hranom na pek papiru, gde se boje, mirisi, ukusi i teksture spajaju u malo umetničko delo.</p>
+                        <p class="concept-description" data-i18n="concepts.centerfeast.p2">Savršen je za intimne proslave, porodične večere i trenutke koji zaslužuju poseban sjaj. Ovakav način posluženja stvara osećaj bliskosti i povezuje ljude oko hrane.</p>
+                        <a href="galerija.html#centerfeast" class="concept-link" data-i18n="concepts.centerfeast.link">Pogledajte slike</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- LAYERS of FEAST -->
+        <section class="section concept-section concept-layers section-reveal">
+            <div class="container">
+                <div class="concept-layout concept-layout-reverse">
+                    <div class="concept-images">
+                        <img src="assets/slike/20260118_160714.jpg" alt="LAYERS of FEAST — višeslojno posluženje" class="concept-img" loading="lazy">
+                        <img src="assets/slike/20260118_160711.jpg" alt="LAYERS of FEAST — elegancija u detaljima" class="concept-img" loading="lazy">
+                    </div>
+                    <div class="concept-text">
+                        <h3 class="concept-title" data-i18n="concepts.layers.title">LAYERS of FEAST</h3>
+                        <p class="concept-subtitle" data-i18n="concepts.layers.subtitle">Prefinjenost sa ritmom</p>
+                        <p class="concept-description" data-i18n="concepts.layers.p1">LAYERS of FEAST je klasičan ketering u modernom, luksuznom izdanju — jer i praktičnost može biti servirana sa elegancijom.</p>
+                        <p class="concept-description" data-i18n="concepts.layers.p2">Višeslojno posluženje osmišljeno je za venčanja, rođendane, evente i velike proslave koje traže više od običnog keteringa. Bogato, rustično i sa stilom.</p>
+                        <a href="galerija.html#layers" class="concept-link" data-i18n="concepts.layers.link">Pogledajte slike</a>
+                    </div>
                 </div>
             </div>
         </section>
@@ -364,5 +322,8 @@
 
     <!-- JavaScript - defer execution -->
     <script src="assets/js/app.js" defer></script>
+    <button class="back-to-top" id="backToTop" aria-label="Nazad na vrh">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="18 15 12 9 6 15"></polyline></svg>
+    </button>
 </body>
 </html>

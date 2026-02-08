@@ -14,14 +14,22 @@ const i18n = {
         'nav.home': 'Naslovna',
         'nav.about': 'O nama',
         'nav.services': 'Naše usluge',
+        'nav.gallery': 'Galerija',
         'nav.contact': 'Kontakt',
         
         // Hero
         'hero.tagline': 'Umetnički ketering za nezaboravne trenutke',
         'hero.headline': 'Gde estetika sreće ukus',
+        'hero.descriptor': 'Umetnički ketering za korporativne, privatne i ekskluzivne događaje',
         'hero.text': 'Kreiramo kulinarska iskustva koja nadilaze očekivanja. Svaki detalj je osmišljen sa strašću i preciznošću.',
+        'hero.cta': 'Zakažite konsultaciju',
         'hero.cta.book': 'Rezervišite',
         'hero.cta.services': 'Naše usluge',
+        
+        // Philosophy
+        'philosophy.aesthetic': 'Estetika.',
+        'philosophy.taste': 'Ukus.',
+        'philosophy.reliability': 'Pouzdanost.',
         
         // Why MAITEA
         'why.title': 'Zašto MAITEA',
@@ -59,7 +67,7 @@ const i18n = {
         'clients.intro': 'Veruju nam vodeće kompanije i pojedinci koji cene kvalitet.',
         
         // CTA
-        'cta.title': 'Spremni za nezaboravan događaj?',
+        'cta.title': 'Spremni za nezaboravan događaj?<br>Razgovarajmo o Vašoj ideji.',
         'cta.text': 'Kontaktirajte nas i počnimo sa planiranjem.',
         'cta.button': 'Pošaljite upit',
         
@@ -67,13 +75,38 @@ const i18n = {
         'footer.tagline': 'Umetnički ketering',
         'footer.brand.statement': 'Estetika · Ukus · Pouzdanost',
         'footer.design.credit': 'Dizajn i izrada:',
+        'footer.cta': 'Pošaljite upit',
         'footer.links.title': 'Linkovi',
         'footer.contact.title': 'Kontakt',
         'footer.copyright': 'Sva prava zadržana.',
         
+        // Gallery Page
+        'gallery.title': 'Galerija',
+        'gallery.subtitle': 'Kulinarska umetnost u svakom detalju',
+        'gallery.centerfeast.title': 'CENTERFEAST',
+        'gallery.centerfeast.subtitle': 'Sto koji postaje centar okupljanja',
+        'gallery.layers.title': 'LAYERS of FEAST',
+        'gallery.layers.subtitle': 'Prefinjenost sa ritmom',
+        'gallery.cta.title': 'Zainteresovani?',
+        'gallery.cta.text': 'Slobodno nas kontaktirajte. Rado ćemo odgovoriti na Vaša pitanja.',
+        
+        // Concepts (index.html)
+        'concepts.intro.title': 'Dva koncepta. Jedan cilj.',
+        'concepts.intro.text': 'MAITEA je umetnički ketering koji pretvara sto u scenu, a hranu u doživljaj.<br>Kroz dva pažljivo osmišljena koncepta, svako slavlje dobija svoju atmosferu, ritam i karakter.',
+        'concepts.centerfeast.title': 'CENTERFEAST',
+        'concepts.centerfeast.subtitle': 'Sto koji postaje centar okupljanja',
+        'concepts.centerfeast.p1': 'CENTERFEAST je sto prekriven pažljivo aranžiranom hranom na pek papiru, gde se boje, mirisi, ukusi i teksture spajaju u malo umetničko delo.',
+        'concepts.centerfeast.p2': 'Savršen je za intimne proslave, porodične večere i trenutke koji zaslužuju poseban sjaj. Ovakav način posluženja stvara osećaj bliskosti i povezuje ljude oko hrane.',
+        'concepts.centerfeast.link': 'Pogledajte slike',
+        'concepts.layers.title': 'LAYERS of FEAST',
+        'concepts.layers.subtitle': 'Prefinjenost sa ritmom',
+        'concepts.layers.p1': 'LAYERS of FEAST je klasičan ketering u modernom, luksuznom izdanju — jer i praktičnost može biti servirana sa elegancijom.',
+        'concepts.layers.p2': 'Višeslojno posluženje osmišljeno je za venčanja, rođendane, evente i velike proslave koje traže više od običnog keteringa. Bogato, rustično i sa stilom.',
+        'concepts.layers.link': 'Pogledajte slike',
+        
         // About Page
         'about.page.title': 'O nama',
-        'about.page.intro': 'Strast, preciznost i posvećenost svakom detalju.',
+        'about.page.intro': 'Mi smo tim koji shvata Vaš događaj ozbiljno — sa dušom, strukčnošću i poštovanjem prema svakom detalju.',
         'about.story.title': 'Naša priča',
         'about.story.p1': 'MAITEA je nastao iz želje da ketering više ne bude samo hrana na stolu, već celovit kulinarski doživljaj koji govori priču.',
         'about.story.p2': 'Verujemo da svaki događaj zaslužuje pažnju sličnu stvaranju umetničkog dela. Od biranja sastojaka do finalne prezentacije, svaki korak je promišljen.',
@@ -91,12 +124,12 @@ const i18n = {
         'about.approach.lead': 'Ketering shvatamo kao umetnost koja uključuje sva čula.',
         'about.approach.p1': 'Fokusiramo se na autentičnost i originalnost. Ne pratimo trendove slepo – stvaramo časne, ukusne prezentacije koje odražavaju karakter vašeg događaja.',
         'about.approach.p2': 'Cenimo jednostavnost i eleganciju, gde svaki element ima svoju svrhu. Koristimo sezonske sastojke i poštujemo kulinarske tradicije kroz moderan pristup.',
-        'about.cta.title': 'Želite da saznate više?',
-        'about.cta.text': 'Kontaktirajte nas i razgovarajmo o vašem sledećem događaju.',
+        'about.cta.title': 'Voleli bismo da vas upoznamo',
+        'about.cta.text': 'Razgovarajmo o Vašem događaju. Slobodno nas kontaktirajte — ovde smo da slušamo.',
         
         // Services Page
         'services.page.title': 'Naše usluge',
-        'services.page.intro': 'Prilagođeni ketering za svaku vrstu događaja.',
+        'services.page.intro': 'Svaki događaj je jedinstven. Naša uloga je da vašu viziju prenesemo u stvarnost — precizno, profesionalno i sa dušom.',
         'services.detail.corporate.title': 'Korporativni eventi',
         'services.detail.corporate.lead': 'Profesionalan pristup za poslovne događaje koji ostavljaju trajan utisak.',
         'services.detail.corporate.p1': 'Od poslovnih doručaka i radnih ručkova do svečanih proslava – nudimo ketering koji odražava profesionalnost vašeg brenda.',
@@ -136,8 +169,8 @@ const i18n = {
         'services.work.step2.text': 'Dizajniramo prilagođeni meni i detaljan plan sa transparentnom cenom.',
         'services.work.step3.title': 'Realizacija',
         'services.work.step3.text': 'Dostavljamo sve na vreme, serviramo sa pažnjom i ostajemo dostupni.',
-        'services.cta.title': 'Planirate događaj?',
-        'services.cta.text': 'Kontaktirajte nas i razgovarajmo o detaljima.',
+        'services.cta.title': 'Razgovarajmo o Vašem događaju',
+        'services.cta.text': 'Bez obaveze. Samo otvorena konverzacija o Vama, Vašoj viziji i načinu na koji možemo pomoći.',
         
         // Contact Page
         'contact.page.title': 'Kontakt',
@@ -223,7 +256,7 @@ const i18n = {
         'clients.intro': 'Leading companies and individuals who value quality trust us.',
         
         // CTA
-        'cta.title': 'Ready for an unforgettable event?',
+        'cta.title': 'Ready for an unforgettable event?<br>Let\'s talk about your idea.',
         'cta.text': 'Contact us and let\'s start planning.',
         'cta.button': 'Send Inquiry',
         
@@ -239,8 +272,26 @@ const i18n = {
         // Gallery Page
         'gallery.title': 'Gallery',
         'gallery.subtitle': 'Culinary art in every detail',
+        'gallery.centerfeast.title': 'CENTERFEAST',
+        'gallery.centerfeast.subtitle': 'A table that becomes the center of gathering',
+        'gallery.layers.title': 'LAYERS of FEAST',
+        'gallery.layers.subtitle': 'Refinement with rhythm',
         'gallery.cta.title': 'Interested?',
         'gallery.cta.text': 'Feel free to contact us. We\'ll gladly answer your questions.',
+        
+        // Concepts (index.html)
+        'concepts.intro.title': 'Two concepts. One goal.',
+        'concepts.intro.text': 'MAITEA is artistic catering that turns the table into a stage, and food into an experience.<br>Through two carefully designed concepts, every celebration gets its own atmosphere, rhythm and character.',
+        'concepts.centerfeast.title': 'CENTERFEAST',
+        'concepts.centerfeast.subtitle': 'The table becomes the center of gathering',
+        'concepts.centerfeast.p1': 'CENTERFEAST is a table covered with carefully arranged food on parchment paper, where colors, aromas, flavors and textures come together in a small work of art.',
+        'concepts.centerfeast.p2': 'Perfect for intimate celebrations, family dinners and moments that deserve a special glow. This style of serving creates a sense of closeness and connects people around food.',
+        'concepts.centerfeast.link': 'See photos',
+        'concepts.layers.title': 'LAYERS of FEAST',
+        'concepts.layers.subtitle': 'Sophistication with rhythm',
+        'concepts.layers.p1': 'LAYERS of FEAST is classic catering in a modern, luxurious edition — because even practicality can be served with elegance.',
+        'concepts.layers.p2': 'Multi-layered serving designed for weddings, birthdays, events and large celebrations that demand more than ordinary catering. Rich, rustic and with style.',
+        'concepts.layers.link': 'See photos',
         
         // About Page
         'about.page.title': 'About Us',
@@ -262,8 +313,8 @@ const i18n = {
         'about.approach.lead': 'We understand catering as an art that engages all senses.',
         'about.approach.p1': 'We focus on authenticity and originality. We don\'t follow trends blindly – we create honest, tasty presentations that reflect your event\'s character.',
         'about.approach.p2': 'We value simplicity and elegance, where every element has its purpose. We use seasonal ingredients and respect culinary traditions through a modern approach.',
-        'about.cta.title': 'Want to know more?',
-        'about.cta.text': 'Contact us and let\'s talk about your next event.',
+        'about.cta.title': 'We\'d love to meet you',
+        'about.cta.text': 'Let\'s talk about your event. Feel free to contact us — we\'re here to listen.',
         
         // Services Page
         'services.page.title': 'Our Services',
@@ -355,7 +406,12 @@ function translatePage() {
         const translation = i18n[currentLanguage][key];
         
         if (translation) {
-            el.textContent = translation;
+            // Use innerHTML if translation contains HTML tags, otherwise textContent
+            if (translation.includes('<')) {
+                el.innerHTML = translation;
+            } else {
+                el.textContent = translation;
+            }
         }
     });
     
@@ -387,7 +443,7 @@ function switchLanguage(lang) {
                 messageField.value.includes('Interesuje me') || 
                 messageField.value.includes('I am interested')
             )) {
-                messageField.value = translations[lang]['contact.form.message.autofill'];
+                messageField.value = i18n[lang]['contact.form.message.autofill'];
             }
         }
     }
@@ -464,30 +520,7 @@ function initMobileNav() {
     });
 }
 
-// ============================================
-// PAPER ANIMATION (HERO)
-// ============================================
 
-function initPaperAnimation() {
-    const paperAnimation = document.querySelector('.paper-animation');
-    
-    if (!paperAnimation) return;
-    
-    // Check if user prefers reduced motion
-    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    
-    if (prefersReducedMotion) {
-        paperAnimation.setAttribute('data-open', 'true');
-        return;
-    }
-    
-    // Start animation automatically on load
-    window.addEventListener('load', () => {
-        setTimeout(() => {
-            paperAnimation.setAttribute('data-open', 'true');
-        }, 50);
-    });
-}
 
 // ============================================
 // SECTION REVEAL - Intersection Observer
@@ -710,6 +743,53 @@ function initHeaderScroll() {
 }
 
 // ============================================
+// HERO IMAGE SLIDER
+// ============================================
+
+function initHeroSlider() {
+    const slides = document.querySelectorAll('.hero-slide');
+    if (slides.length < 2) return;
+
+    let current = 0;
+    const total = slides.length;
+    const interval = 6000; // 6 seconds per slide
+
+    function nextSlide() {
+        const prev = current;
+        current = (current + 1) % total;
+
+        // Blur-out the leaving slide
+        slides[prev].classList.add('hero-slide-leaving');
+        slides[prev].classList.remove('hero-slide-active');
+
+        // Blur-in the incoming slide
+        slides[current].classList.add('hero-slide-active');
+
+        // Clean up leaving class after transition completes
+        setTimeout(() => {
+            slides[prev].classList.remove('hero-slide-leaving');
+        }, 2000);
+    }
+
+    // Start auto-rotation
+    let timer = setInterval(nextSlide, interval);
+
+    // Pause when page is hidden (battery/performance)
+    document.addEventListener('visibilitychange', () => {
+        if (document.hidden) {
+            clearInterval(timer);
+        } else {
+            timer = setInterval(nextSlide, interval);
+        }
+    });
+
+    // Respect reduced motion
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        clearInterval(timer);
+    }
+}
+
+// ============================================
 // INITIALIZE ON PAGE LOAD
 // ============================================
 
@@ -721,8 +801,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // Initialize navigation
     initMobileNav();
     
-    // Initialize animations
-    initPaperAnimation();
+    // Initialize hero slider
+    initHeroSlider();
     
     // Initialize performance optimizations
     initSectionReveal();
@@ -742,7 +822,31 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Initialize gallery lightbox
     initGalleryLightbox();
+
+    // Initialize back to top button
+    initBackToTop();
 });
+
+// ============================================
+// BACK TO TOP BUTTON
+// ============================================
+
+function initBackToTop() {
+    const btn = document.getElementById('backToTop');
+    if (!btn) return;
+
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 400) {
+            btn.classList.add('visible');
+        } else {
+            btn.classList.remove('visible');
+        }
+    }, { passive: true });
+
+    btn.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+}
 
 // ============================================
 // GALLERY LIGHTBOX
@@ -847,8 +951,8 @@ function initContactFormAutoFill() {
         
         if (messageField && !messageField.value) {
             // Get translated auto-fill message
-            const currentLang = localStorage.getItem('language') || 'sr';
-            const defaultMessage = translations[currentLang]['contact.form.message.autofill'];
+            const currentLang = localStorage.getItem('maitea-lang') || 'sr';
+            const defaultMessage = i18n[currentLang]['contact.form.message.autofill'];
             
             messageField.value = defaultMessage;
             

@@ -1,0 +1,1015 @@
+/**
+ * MAITEA — UNIFIED PREMIUM POLISH
+ * Loads LAST to resolve cascade conflicts and unify the visual experience.
+ * 
+ * Principles:
+ * - Editorial, not flashy
+ * - Consistent typography scale (design-system tokens)
+ * - One shadow system, one timing system
+ * - Sharp, editorial border-radius (2–4px) — not rounded/bubbly
+ * - Footer readability fixed on mobile
+ * - Subtle animations that feel natural
+ * - NO gratuitous effects
+ */
+
+
+/* ============================================
+   1. TYPOGRAPHY — UNIFIED SCALE
+   Settle all competing sizes into one coherent system
+============================================ */
+
+/* Page titles (h1 on subpages) — clean, authoritative */
+.page-title {
+    font-family: 'Raleway', serif !important;
+    font-size: clamp(2rem, 5vw, 3rem) !important;
+    font-weight: 300 !important;
+    letter-spacing: -0.02em !important;
+    line-height: 1.15 !important;
+    color: #1a1a1a !important;
+    margin-bottom: 1rem !important;
+}
+
+/* Page intro text below title */
+.page-intro,
+.page-subtitle {
+    font-family: 'Manrope', sans-serif !important;
+    font-size: clamp(1rem, 2.5vw, 1.125rem) !important;
+    font-weight: 400 !important;
+    line-height: 1.65 !important;
+    color: #5a5a5a !important;
+    max-width: 55ch !important;
+}
+
+/* Section titles (h2) — consistent across all pages */
+.section-title {
+    font-family: 'Raleway', serif !important;
+    font-size: clamp(1.75rem, 4vw, 2.5rem) !important;
+    font-weight: 300 !important;
+    letter-spacing: -0.01em !important;
+    line-height: 1.2 !important;
+    color: #1a1a1a !important;
+    margin-bottom: 2rem !important;
+    text-transform: none !important;
+}
+
+.section-title::after {
+    display: none !important;
+}
+
+/* Service detail titles */
+.service-detail-title {
+    font-family: 'Raleway', serif !important;
+    font-size: clamp(1.5rem, 3.5vw, 2rem) !important;
+    font-weight: 300 !important;
+    letter-spacing: -0.01em !important;
+    line-height: 1.25 !important;
+    color: #1a1a1a !important;
+    margin-bottom: 1rem !important;
+}
+
+/* Service detail subtitle */
+.service-detail-subtitle {
+    font-family: 'Manrope', sans-serif !important;
+    font-size: 0.8125rem !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.06em !important;
+    text-transform: uppercase !important;
+    color: #1a1a1a !important;
+    margin-top: 1.5rem !important;
+    margin-bottom: 0.75rem !important;
+}
+
+/* Lead / intro text within sections */
+.service-detail-lead,
+.section-intro,
+.lead-text,
+.opening-paragraph {
+    font-size: clamp(1rem, 2vw, 1.0625rem) !important;
+    line-height: 1.7 !important;
+    color: #3a3a3a !important;
+}
+
+/* Card titles — consistent weight and size */
+.service-title,
+.value-title,
+.contact-card-title {
+    font-family: 'Raleway', serif !important;
+    font-size: 1.125rem !important;
+    font-weight: 400 !important;
+    letter-spacing: 0 !important;
+    line-height: 1.35 !important;
+    color: #1a1a1a !important;
+    margin-bottom: 0.625rem !important;
+}
+
+/* Body text in cards */
+.service-text,
+.value-text,
+.contact-card-text,
+.contact-card-note {
+    font-size: 0.9375rem !important;
+    line-height: 1.65 !important;
+    color: #5a5a5a !important;
+}
+
+/* Step numbers — clean, not oversized */
+.step-number {
+    font-family: 'Raleway', serif !important;
+    font-size: 1.75rem !important;
+    font-weight: 200 !important;
+    color: #d4af37 !important;
+    line-height: 1 !important;
+    margin-bottom: 1rem !important;
+    letter-spacing: -0.02em !important;
+}
+
+/* Step titles */
+.step-title {
+    font-family: 'Raleway', serif !important;
+    font-size: 1.125rem !important;
+    font-weight: 400 !important;
+    color: #1a1a1a !important;
+    margin-bottom: 0.5rem !important;
+    letter-spacing: 0 !important;
+}
+
+/* Step body text */
+.step-text {
+    font-size: 0.9375rem !important;
+    line-height: 1.65 !important;
+    color: #5a5a5a !important;
+}
+
+/* CTA section titles */
+.cta-title {
+    font-family: 'Raleway', serif !important;
+    font-size: clamp(1.75rem, 4vw, 2.5rem) !important;
+    font-weight: 300 !important;
+    letter-spacing: -0.01em !important;
+    line-height: 1.3 !important;
+    color: #faf8f5 !important;
+    margin-bottom: 2rem !important;
+    text-wrap: balance !important;
+}
+
+/* CTA body */
+.cta-text {
+    font-size: 1rem !important;
+    line-height: 1.65 !important;
+    color: rgba(250, 248, 245, 0.65) !important;
+    max-width: 50ch !important;
+    margin: 0 auto 2.5rem !important;
+}
+
+
+/* ============================================
+   2. SPACING — CONSISTENT RHYTHM
+   Vertical flow should breathe evenly
+============================================ */
+
+/* Page header section */
+.page-header {
+    padding: 4rem 0 2.5rem !important;
+    text-align: center !important;
+}
+
+@media (min-width: 768px) {
+    .page-header {
+        padding: 5rem 0 3rem !important;
+    }
+}
+
+@media (min-width: 1024px) {
+    .page-header {
+        padding: 6rem 0 3.5rem !important;
+    }
+}
+
+/* Sections — consistent vertical spacing */
+.section {
+    padding: 4rem 0 !important;
+}
+
+@media (min-width: 768px) {
+    .section {
+        padding: 5.5rem 0 !important;
+    }
+}
+
+@media (min-width: 1024px) {
+    .section {
+        padding: 7rem 0 !important;
+    }
+}
+
+/* CTA sections — premium dark treatment */
+.cta-final,
+.cta-secondary {
+    padding: 5rem 0 !important;
+    text-align: center !important;
+    background: linear-gradient(160deg, #1a1a1a 0%, #242424 40%, #1e1e1e 100%) !important;
+    position: relative !important;
+}
+
+/* CTA gold button */
+.cta-final .btn-primary,
+.cta-final .btn-large {
+    background: transparent !important;
+    color: #d4af37 !important;
+    border: 1px solid rgba(212, 175, 55, 0.5) !important;
+    padding: 1.1rem 3rem !important;
+    font-size: 0.8125rem !important;
+    letter-spacing: 0.12em !important;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    box-shadow: none !important;
+}
+
+.cta-final .btn-primary:hover,
+.cta-final .btn-large:hover {
+    background: #d4af37 !important;
+    color: #1a1a1a !important;
+    border-color: #d4af37 !important;
+    transform: none !important;
+    box-shadow: 0 4px 24px rgba(212, 175, 55, 0.2) !important;
+}
+
+@media (min-width: 768px) {
+    .cta-final,
+    .cta-secondary {
+        padding: 6.5rem 0 !important;
+    }
+}
+
+@media (min-width: 1024px) {
+    .cta-final,
+    .cta-secondary {
+        padding: 8rem 0 !important;
+    }
+}
+
+.cta-content {
+    max-width: 720px !important;
+    margin: 0 auto !important;
+}
+
+
+/* ============================================
+   3. SHADOWS — ONE REFINED SYSTEM
+   Minimal, 2-layer: editorial not bubbly
+============================================ */
+
+.service-card,
+.value-item,
+.contact-card,
+.process-step {
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.02) !important;
+    transition: box-shadow 0.24s cubic-bezier(0.4, 0, 0.2, 1),
+                transform 0.24s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.service-card:hover,
+.value-item:hover,
+.contact-card:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06), 0 2px 4px rgba(0, 0, 0, 0.04) !important;
+    transform: translateY(-2px) !important;
+}
+
+/* Cards — consistent styling */
+.service-card,
+.value-item,
+.contact-card {
+    background: #ffffff !important;
+    border: 1px solid rgba(26, 26, 26, 0.06) !important;
+    border-radius: 3px !important;
+    padding: 1.75rem !important;
+}
+
+@media (min-width: 768px) {
+    .service-card,
+    .value-item,
+    .contact-card {
+        padding: 2rem !important;
+    }
+}
+
+/* Process steps — no card feel, editorial look */
+.process-step {
+    background: transparent !important;
+    border: none !important;
+    border-top: 1px solid rgba(26, 26, 26, 0.08) !important;
+    border-radius: 0 !important;
+    padding: 2rem 0 !important;
+    box-shadow: none !important;
+    text-align: center !important;
+}
+
+.process-step:hover {
+    box-shadow: none !important;
+    transform: none !important;
+}
+
+/* Process steps grid */
+.process-steps {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 0 !important;
+    max-width: 640px !important;
+    margin: 0 auto !important;
+}
+
+@media (min-width: 768px) {
+    .process-steps {
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: 2rem !important;
+    }
+    
+    .process-step {
+        border-top: none !important;
+        border-left: 1px solid rgba(26, 26, 26, 0.08) !important;
+        padding: 0 1.5rem !important;
+    }
+    
+    .process-step:first-child {
+        border-left: none !important;
+        padding-left: 0 !important;
+    }
+}
+
+/* Gallery items — editorial, sharp */
+.gallery-item {
+    border-radius: 2px !important;
+    overflow: hidden !important;
+}
+
+.gallery-image-wrapper {
+    border-radius: 2px !important;
+}
+
+/* Service detail images */
+.service-detail-image img {
+    border-radius: 3px !important;
+}
+
+/* Content images on about page */
+.content-image,
+.side-image {
+    border-radius: 3px !important;
+}
+
+
+/* ============================================
+   4. BUTTONS — UNIFIED CTA SYSTEM
+   Refined, not glossy
+============================================ */
+
+.btn {
+    font-family: 'Manrope', sans-serif !important;
+    font-size: 0.8125rem !important;
+    font-weight: 500 !important;
+    letter-spacing: 0.08em !important;
+    text-transform: uppercase !important;
+    border-radius: 2px !important;
+    transition: all 0.24s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    text-decoration: none !important;
+    cursor: pointer !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+/* Kill the shimmer effect — too AI-looking */
+.btn::before {
+    display: none !important;
+}
+
+.btn-primary {
+    background: #1a1a1a !important;
+    color: #faf8f5 !important;
+    border: 1px solid #1a1a1a !important;
+    padding: 0.875rem 2.25rem !important;
+    box-shadow: none !important;
+}
+
+.btn-primary:hover {
+    background: #2a2a2a !important;
+    transform: translateY(-1px) !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12) !important;
+}
+
+.btn-primary:active {
+    transform: translateY(0) !important;
+    box-shadow: none !important;
+}
+
+/* Large CTA button */
+.btn-large {
+    padding: 1rem 2.5rem !important;
+    font-size: 0.8125rem !important;
+}
+
+/* Service links (inline) */
+.service-link {
+    font-size: 0.8125rem !important;
+    font-weight: 500 !important;
+    letter-spacing: 0.04em !important;
+    color: #1a1a1a !important;
+    text-decoration: none !important;
+    border-bottom: 1px solid rgba(26, 26, 26, 0.2) !important;
+    padding-bottom: 2px !important;
+    transition: border-color 0.2s ease !important;
+}
+
+.service-link:hover {
+    border-color: #d4af37 !important;
+    color: #1a1a1a !important;
+}
+
+
+/* ============================================
+   5. TRANSITIONS & ANIMATIONS — SUBTLE
+   Only 3 durations, 1 easing curve
+============================================ */
+
+/* Links — clean underline transition */
+a {
+    transition: color 0.2s ease !important;
+}
+
+/* Nav links — minimal */
+.nav-link {
+    transition: color 0.2s ease, opacity 0.2s ease !important;
+}
+
+/* Kill overly dramatic card hover transforms */
+.service-card:hover,
+.value-item:hover,
+.feature-card:hover {
+    transform: translateY(-2px) !important;
+}
+
+/* Section reveal — gentle fade in */
+.section-reveal {
+    opacity: 1 !important;
+}
+
+/* Image hover on gallery — subtle zoom */
+.gallery-image-wrapper img {
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.gallery-item:hover .gallery-image-wrapper img {
+    transform: scale(1.03) !important;
+}
+
+
+/* ============================================
+   6. FOOTER — READABILITY FIX (CRITICAL)
+   Ensure light text on dark background
+============================================ */
+
+.footer {
+    background: linear-gradient(180deg, #1a1a1a 0%, #141414 100%) !important;
+    color: #e8e6e2 !important;
+}
+
+/* ALL footer text must be light */
+.footer * {
+    color: inherit;
+}
+
+.footer .wordmark {
+    color: #e8e6e2 !important;
+}
+
+.footer-tagline {
+    color: rgba(232, 230, 226, 0.65) !important;
+}
+
+.footer-brand-statement {
+    color: rgba(232, 230, 226, 0.5) !important;
+    font-size: 0.8125rem !important;
+    letter-spacing: 0.04em !important;
+}
+
+.footer-title {
+    color: rgba(232, 230, 226, 0.6) !important;
+    font-size: 0.75rem !important;
+    font-weight: 500 !important;
+    letter-spacing: 0.12em !important;
+    text-transform: uppercase !important;
+}
+
+.footer-links a,
+.footer-contact a,
+.footer-contact li {
+    color: rgba(232, 230, 226, 0.75) !important;
+    font-size: 0.9375rem !important;
+}
+
+.footer-links a:hover,
+.footer-contact a:hover {
+    color: #d4af37 !important;
+}
+
+.footer-bottom,
+.footer-bottom p,
+.footer-bottom span {
+    color: rgba(232, 230, 226, 0.45) !important;
+    font-size: 0.8125rem !important;
+}
+
+.footer-bottom a {
+    color: rgba(232, 230, 226, 0.6) !important;
+}
+
+.footer-bottom a:hover {
+    color: #d4af37 !important;
+}
+
+/* Footer CTA */
+.footer-cta .btn {
+    background: transparent !important;
+    color: #e8e6e2 !important;
+    border: 1px solid rgba(232, 230, 226, 0.2) !important;
+    border-radius: 2px !important;
+}
+
+.footer-cta .btn:hover {
+    border-color: rgba(212, 175, 55, 0.4) !important;
+    background: rgba(232, 230, 226, 0.03) !important;
+    color: #e8e6e2 !important;
+    transform: none !important;
+    box-shadow: none !important;
+}
+
+/* Footer social icons */
+.footer-social a svg {
+    fill: rgba(232, 230, 226, 0.7) !important;
+}
+
+.footer-social a:hover svg {
+    fill: #d4af37 !important;
+}
+
+.footer-social a {
+    background: rgba(232, 230, 226, 0.06) !important;
+}
+
+.footer-social a:hover {
+    background: rgba(212, 175, 55, 0.1) !important;
+}
+
+/* Footer separator */
+.footer-separator {
+    color: rgba(232, 230, 226, 0.3) !important;
+}
+
+
+/* ============================================
+   7. PAGE-SPECIFIC REFINEMENTS
+============================================ */
+
+/* === About Page === */
+.about-story,
+.approach-section {
+    overflow: hidden !important;
+}
+
+.content-with-image {
+    gap: 2.5rem !important;
+}
+
+@media (min-width: 768px) {
+    .content-with-image {
+        gap: 3.5rem !important;
+    }
+}
+
+.values-grid {
+    gap: 1.25rem !important;
+}
+
+@media (min-width: 768px) {
+    .values-grid {
+        gap: 1.5rem !important;
+    }
+}
+
+.value-item {
+    transition: box-shadow 0.24s ease, transform 0.24s ease !important;
+}
+
+
+/* === Gallery Page === */
+.gallery-grid {
+    gap: 0.75rem !important;
+}
+
+@media (min-width: 768px) {
+    .gallery-grid {
+        gap: 1rem !important;
+    }
+}
+
+.gallery-overlay {
+    background: linear-gradient(
+        180deg,
+        transparent 60%,
+        rgba(0, 0, 0, 0.15) 100%
+    ) !important;
+    opacity: 0 !important;
+    transition: opacity 0.3s ease !important;
+}
+
+.gallery-item:hover .gallery-overlay {
+    opacity: 1 !important;
+}
+
+
+/* === Contact Page === */
+.contact-cards {
+    gap: 1.25rem !important;
+}
+
+@media (min-width: 768px) {
+    .contact-cards {
+        gap: 1.5rem !important;
+    }
+}
+
+.contact-icon {
+    font-size: 1.5rem !important;
+    margin-bottom: 1rem !important;
+    opacity: 0.7 !important;
+}
+
+/* Form inputs — editorial, clean */
+.form-input,
+.form-textarea {
+    font-family: 'Manrope', sans-serif !important;
+    font-size: 1rem !important;
+    border: 1px solid rgba(26, 26, 26, 0.12) !important;
+    border-radius: 2px !important;
+    padding: 0.875rem 1rem !important;
+    background: #ffffff !important;
+    color: #1a1a1a !important;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease !important;
+}
+
+.form-input:focus,
+.form-textarea:focus {
+    outline: none !important;
+    border-color: rgba(212, 175, 55, 0.4) !important;
+    box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.08) !important;
+}
+
+.form-label {
+    font-size: 0.8125rem !important;
+    font-weight: 500 !important;
+    letter-spacing: 0.02em !important;
+    color: #1a1a1a !important;
+    margin-bottom: 0.5rem !important;
+    display: block !important;
+}
+
+
+/* === Services Page (usluge.html) === */
+.services-grid {
+    gap: 1.25rem !important;
+}
+
+@media (min-width: 768px) {
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 1.5rem !important;
+    }
+}
+
+@media (min-width: 1024px) {
+    .services-grid {
+        grid-template-columns: repeat(4, 1fr) !important;
+        gap: 1.5rem !important;
+    }
+}
+
+/* Service detail sections — alternating layout */
+.service-detail {
+    padding: 3rem 0 !important;
+    border-bottom: 1px solid rgba(26, 26, 26, 0.06) !important;
+}
+
+.service-detail:last-child {
+    border-bottom: none !important;
+}
+
+.service-detail-content {
+    gap: 2.5rem !important;
+}
+
+@media (min-width: 768px) {
+    .service-detail-content {
+        gap: 3.5rem !important;
+    }
+}
+
+.service-detail-list {
+    list-style: none !important;
+    padding: 0 !important;
+}
+
+.service-detail-list li {
+    position: relative !important;
+    padding-left: 1.25rem !important;
+    margin-bottom: 0.5rem !important;
+    font-size: 0.9375rem !important;
+    line-height: 1.6 !important;
+    color: #3a3a3a !important;
+}
+
+.service-detail-list li::before {
+    content: '—' !important;
+    position: absolute !important;
+    left: 0 !important;
+    color: #d4af37 !important;
+    font-weight: 300 !important;
+}
+
+
+/* ============================================
+   8. MOBILE REFINEMENTS (≤ 767px)
+============================================ */
+
+@media (max-width: 767px) {
+    /* Tighter section spacing on small screens */
+    .section {
+        padding: 3.5rem 0 !important;
+    }
+    
+    .page-header {
+        padding: 3.5rem 0 2rem !important;
+    }
+    
+    .cta-final,
+    .cta-secondary {
+        padding: 4rem 0 !important;
+    }
+    
+    /* Full-width buttons on mobile */
+    .cta-content .btn {
+        width: 100% !important;
+        max-width: 380px !important;
+    }
+    
+    /* Service cards — single column */
+    .services-grid {
+        grid-template-columns: 1fr !important;
+        max-width: 480px !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+    
+    /* Process steps centered */
+    .process-step {
+        text-align: center !important;
+        max-width: 340px !important;
+        margin: 0 auto !important;
+    }
+}
+
+
+/* ============================================
+   9. MOBILE INDEX PAGE — OVERRIDES
+   Fix .section-title being made too small by
+   index-mobile-luxury.css
+============================================ */
+
+@media (max-width: 1023px) {
+    /* Restore proper section title size on mobile
+       (index-mobile-luxury.css sets it to 0.875rem as label) */
+    .clients-section .section-title,
+    .work-process .section-title,
+    .services-list .section-title,
+    .values-section .section-title,
+    .about-story .section-title,
+    .approach-section .section-title,
+    .contact-form-section .section-title {
+        font-size: clamp(1.75rem, 4vw, 2.5rem) !important;
+        font-weight: 300 !important;
+        letter-spacing: -0.01em !important;
+        text-transform: none !important;
+        color: #1a1a1a !important;
+    }
+    
+    /* Let hero section on index keep the mobile luxury treatments */
+    /* But fix card border-radius to be editorial */
+    .service-card {
+        border-radius: 3px !important;
+    }
+    
+    /* Fix mobile hero CTA radius */
+    .btn-hero {
+        border-radius: 2px !important;
+    }
+    
+    /* Philosophy pills — keep but refine */
+    .statement-title {
+        border-radius: 2px !important;
+    }
+}
+
+
+/* ============================================
+   10. CONCEPT SECTIONS REFINEMENT
+============================================ */
+
+.concept-title {
+    font-family: 'Raleway', serif !important;
+    font-size: clamp(1.5rem, 3.5vw, 2rem) !important;
+    font-weight: 300 !important;
+    letter-spacing: 0.04em !important;
+    color: #1a1a1a !important;
+}
+
+.concept-subtitle {
+    font-size: 0.9375rem !important;
+    font-weight: 400 !important;
+    color: #d4af37 !important;
+    letter-spacing: 0.02em !important;
+    margin-bottom: 1rem !important;
+}
+
+.concept-description {
+    font-size: 0.9375rem !important;
+    line-height: 1.7 !important;
+    color: #3a3a3a !important;
+}
+
+.concept-link {
+    font-size: 0.8125rem !important;
+    font-weight: 500 !important;
+    color: #1a1a1a !important;
+    letter-spacing: 0.04em !important;
+    text-decoration: none !important;
+    border-bottom: 1px solid rgba(26, 26, 26, 0.2) !important;
+    padding-bottom: 2px !important;
+    transition: border-color 0.2s ease !important;
+}
+
+.concept-link:hover {
+    border-color: #d4af37 !important;
+}
+
+.concept-img {
+    border-radius: 3px !important;
+}
+
+/* Concepts intro — editorial premium */
+.concepts-intro {
+    position: relative !important;
+    padding: 4.5rem 0 3.5rem !important;
+}
+
+@media (min-width: 768px) {
+    .concepts-intro {
+        padding: 5rem 0 4rem !important;
+    }
+}
+
+@media (min-width: 1024px) {
+    .concepts-intro {
+        padding: 5.5rem 0 4rem !important;
+    }
+}
+
+.concepts-intro-content {
+    position: relative !important;
+    max-width: 600px !important;
+    margin: 0 auto !important;
+}
+
+/* Decorative gold line above title */
+.concepts-intro-content::before {
+    content: '' !important;
+    display: block !important;
+    width: 48px !important;
+    height: 1px !important;
+    background: #d4af37 !important;
+    margin: 0 auto 2rem !important;
+}
+
+.concepts-intro-title {
+    font-family: 'Raleway', serif !important;
+    font-size: clamp(1.75rem, 4vw, 2.5rem) !important;
+    font-weight: 300 !important;
+    letter-spacing: 0.02em !important;
+    color: #1a1a1a !important;
+    margin-bottom: 1.25rem !important;
+    text-wrap: balance !important;
+}
+
+.concepts-intro-text {
+    font-size: 0.9375rem !important;
+    line-height: 1.8 !important;
+    color: #6a6a6a !important;
+    max-width: 600px !important;
+    margin: 0 auto !important;
+    text-wrap: balance !important;
+}
+
+
+/* ============================================
+   11. CLIENTS SECTION POLISH
+============================================ */
+
+.clients-strip {
+    gap: 2rem !important;
+}
+
+.client-logo {
+    font-size: 0.8125rem !important;
+    letter-spacing: 0.08em !important;
+    text-transform: uppercase !important;
+    color: rgba(26, 26, 26, 0.3) !important;
+    border: 1px solid rgba(26, 26, 26, 0.08) !important;
+    border-radius: 2px !important;
+    padding: 1.5rem 2rem !important;
+    box-shadow: none !important;
+}
+
+
+/* ============================================
+   12. PRINT STYLES (bonus polish)
+============================================ */
+
+@media print {
+    .header,
+    .footer,
+    .nav-toggle,
+    .cta-final,
+    .cta-secondary,
+    .footer-cta {
+        display: none !important;
+    }
+    
+    .section {
+        padding: 2rem 0 !important;
+        break-inside: avoid;
+    }
+    
+    body {
+        background: white !important;
+        color: black !important;
+    }
+}
+
+/* ============================================
+   13. BACK TO TOP BUTTON
+============================================ */
+
+.back-to-top {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    z-index: 999;
+    width: 44px;
+    height: 44px;
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    border-radius: 50%;
+    background: rgba(26, 26, 26, 0.85);
+    backdrop-filter: blur(8px);
+    color: #d4af37;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(12px);
+    transition:
+        opacity 0.4s ease,
+        visibility 0.4s ease,
+        transform 0.4s ease,
+        background 0.3s ease,
+        border-color 0.3s ease;
+}
+
+.back-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.back-to-top:hover {
+    background: rgba(26, 26, 26, 0.95);
+    border-color: rgba(212, 175, 55, 0.6);
+    transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+    .back-to-top {
+        bottom: 1.25rem;
+        right: 1.25rem;
+        width: 40px;
+        height: 40px;
+    }
+}

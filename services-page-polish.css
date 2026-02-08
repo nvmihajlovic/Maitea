@@ -336,6 +336,7 @@
     transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
     position: relative;
     overflow: hidden;
+    text-align: center;
 }
 
 .process-step::before {

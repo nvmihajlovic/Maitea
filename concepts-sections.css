@@ -1,0 +1,288 @@
+/* ============================================
+   MAITEA — CONCEPT SECTIONS
+   Premium, minimalist, editorial styling
+   Mobile-first responsive
+   ============================================ */
+
+/* ========================================
+   CONCEPTS INTRO — "Dva koncepta. Jedan cilj."
+   ======================================== */
+
+.concepts-intro {
+    padding: 6rem 0 4rem;
+    background: var(--off-white, #faf8f5);
+    text-align: center;
+}
+
+/* Remove the default section vertical line */
+.concepts-intro::before,
+.concept-section::before {
+    display: none;
+}
+
+.concepts-intro-content {
+    max-width: 640px;
+    margin: 0 auto;
+}
+
+.concepts-intro-title {
+    font-family: var(--font-display, 'Raleway', serif);
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    font-weight: 300;
+    letter-spacing: 0.04em;
+    line-height: 1.2;
+    color: var(--dark, #1a1a1a);
+    margin-bottom: 1.5rem;
+}
+
+.concepts-intro-text {
+    font-family: var(--font-body, 'Manrope', sans-serif);
+    font-size: clamp(0.9375rem, 1.5vw, 1.0625rem);
+    font-weight: 400;
+    line-height: 1.8;
+    color: var(--color-text-muted, #5a5a5a);
+    letter-spacing: 0.01em;
+}
+
+/* ========================================
+   CONCEPT SECTIONS — Shared Styles
+   ======================================== */
+
+.concept-section {
+    padding: 4rem 0;
+    background: var(--off-white, #faf8f5);
+}
+
+/* ========================================
+   CONCEPT LAYOUT — Mobile First (stacked)
+   ======================================== */
+
+.concept-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+    align-items: center;
+}
+
+/* ========================================
+   CONCEPT IMAGES
+   ======================================== */
+
+.concept-images {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    width: 100%;
+    max-width: 560px;
+}
+
+.concept-img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    border-radius: 2px;
+    display: block;
+}
+
+/* ========================================
+   CONCEPT TEXT
+   ======================================== */
+
+.concept-text {
+    max-width: 520px;
+    text-align: center;
+}
+
+.concept-title {
+    font-family: var(--font-display, 'Raleway', serif);
+    font-size: clamp(1.5rem, 3.5vw, 2rem);
+    font-weight: 300;
+    letter-spacing: 0.1em;
+    line-height: 1.2;
+    color: var(--dark, #1a1a1a);
+    margin-bottom: 0.75rem;
+    text-transform: uppercase;
+}
+
+.concept-subtitle {
+    font-family: var(--font-body, 'Manrope', sans-serif);
+    font-size: 0.8125rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--gold, #d4af37);
+    margin-bottom: 1.5rem;
+}
+
+.concept-description {
+    font-family: var(--font-body, 'Manrope', sans-serif);
+    font-size: clamp(0.9375rem, 1.5vw, 1rem);
+    font-weight: 400;
+    line-height: 1.8;
+    color: var(--color-text-muted, #5a5a5a);
+    margin-bottom: 1rem;
+    letter-spacing: 0.01em;
+}
+
+.concept-description:last-of-type {
+    margin-bottom: 1.75rem;
+}
+
+.concept-link {
+    display: inline-block;
+    font-family: var(--font-body, 'Manrope', sans-serif);
+    font-size: 0.8125rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: var(--dark, #1a1a1a);
+    border-bottom: 1px solid var(--gold, #d4af37);
+    padding-bottom: 4px;
+    transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+.concept-link:hover {
+    color: var(--gold, #d4af37);
+}
+
+/* ========================================
+   Mobile — text above, photos below
+   On mobile we reverse so text comes first
+   ======================================== */
+
+@media (max-width: 767px) {
+    .concept-layout,
+    .concept-layout.concept-layout-reverse {
+        flex-direction: column-reverse;
+    }
+
+    .concept-images {
+        gap: 0.75rem;
+    }
+
+    .concepts-intro {
+        padding: 4rem 0 3rem;
+    }
+
+    .concept-section {
+        padding: 3rem 0;
+    }
+}
+
+/* ========================================
+   Tablet — wider spacing
+   ======================================== */
+
+@media (min-width: 768px) {
+    .concepts-intro {
+        padding: 7rem 0 5rem;
+    }
+
+    .concept-section {
+        padding: 5rem 0;
+    }
+
+    .concept-layout {
+        gap: 3rem;
+    }
+
+    .concept-images {
+        max-width: 600px;
+        gap: 1.25rem;
+    }
+
+    .concept-img {
+        border-radius: 3px;
+    }
+}
+
+/* ========================================
+   Desktop — Side by side layout
+   CENTERFEAST: photos left, text right
+   LAYERS: text left, photos right (reversed)
+   ======================================== */
+
+@media (min-width: 1024px) {
+    .concepts-intro {
+        padding: 8rem 0 5rem;
+    }
+
+    .concepts-intro-content {
+        max-width: 700px;
+    }
+
+    .concept-section {
+        padding: 5rem 0;
+    }
+
+    .concept-layout {
+        flex-direction: row;
+        align-items: center;
+        gap: 4rem;
+    }
+
+    .concept-images {
+        flex: 1;
+        max-width: 50%;
+        gap: 1.25rem;
+    }
+
+    .concept-text {
+        flex: 1;
+        text-align: left;
+        max-width: 480px;
+    }
+
+    /* Reverse layout: text left, photos right */
+    .concept-layout-reverse {
+        flex-direction: row-reverse;
+    }
+
+    .concept-layout-reverse .concept-text {
+        text-align: left;
+    }
+}
+
+/* ========================================
+   Large Desktop — generous whitespace
+   ======================================== */
+
+@media (min-width: 1280px) {
+    .concepts-intro {
+        padding: 9rem 0 6rem;
+    }
+
+    .concept-section {
+        padding: 6rem 0;
+    }
+
+    .concept-layout {
+        gap: 5rem;
+    }
+
+    .concept-images {
+        gap: 1.5rem;
+    }
+
+    .concept-img {
+        border-radius: 4px;
+    }
+}
+
+@media (min-width: 1440px) {
+    .concepts-intro {
+        padding: 10rem 0 6rem;
+    }
+
+    .concept-section {
+        padding: 7rem 0;
+    }
+
+    .concept-layout {
+        gap: 6rem;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+}

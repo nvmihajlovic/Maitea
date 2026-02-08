@@ -93,35 +93,6 @@
     width: calc(100% - 1.5rem);
 }
 
-/* Paper Value Prop & Scope */
-.paper-value-prop {
-    font-size: 0.7rem;
-    color: #8a8a8a;
-    font-weight: 300;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    opacity: 1;
-    line-height: 1.6;
-    margin: 0.75rem 0 0.5rem;
-    padding-right: 0.2em;
-}
-
-.paper-scope {
-    font-size: 0.65rem;
-    color: #afafaf;
-    font-weight: 400;
-    letter-spacing: 0.25em;
-    text-transform: uppercase;
-    opacity: 1;
-    margin: 0;
-}
-
-.paper-animation[data-open="true"] .paper-value-prop,
-.paper-animation[data-open="true"] .paper-scope {
-    animation: taglineFadeIn 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-    animation-delay: 1.6s;
-}
-
 /* Trust Strip */
 .trust-strip {
     padding: 2.5rem 0;

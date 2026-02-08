@@ -504,6 +504,7 @@ body.menu-open {
     background: transparent !important;
     border: none !important;
     box-shadow: none !important;
+    text-align: center !important;
 }
 
 /* Step divider - ultra subtle */
@@ -532,6 +533,7 @@ body.menu-open {
     color: rgba(26, 26, 26, 0.15) !important;
     line-height: 1 !important;
     margin-bottom: 1rem !important;
+    text-align: center !important;
 }
 
 @media (min-width: 768px) {
@@ -548,6 +550,7 @@ body.menu-open {
     line-height: 1.35 !important;
     color: #1a1a1a !important;
     margin-bottom: 0.75rem !important;
+    text-align: center !important;
 }
 
 /* Step text */
@@ -555,6 +558,9 @@ body.menu-open {
     font-size: 0.9375rem !important;
     line-height: 1.7 !important;
     color: #5a5a5a !important;
+    text-align: center !important;
+    margin: 0 auto !important;
+    max-width: 320px !important;
 }
 
 /* ============================================
