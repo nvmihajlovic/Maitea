@@ -5,7 +5,7 @@
  */
 
 /* ============================================
-   DESKTOP LAYOUT — LUXURIOUS HORIZONTAL SPACING
+   DESKTOP LAYOUT - LUXURIOUS HORIZONTAL SPACING
    Increased column gaps for premium "air" effect
 ============================================ */
 
@@ -28,7 +28,7 @@
 }
 
 /* ============================================
-   PART 1: BRAND SECTION — BREATHING ROOM
+   PART 1: BRAND SECTION - BREATHING ROOM
    Left column vertical rhythm refinement
 ============================================ */
 
@@ -38,21 +38,21 @@
     position: relative;
 }
 
-/* MAITEA wordmark — stands alone with authority */
+/* MAITEA wordmark - stands alone with authority */
 .footer-section:first-child .wordmark {
     color: #e8e6e2;
     opacity: 1;
     margin-bottom: 0.75rem; /* More breathing room to tagline */
 }
 
-/* Tagline — immediate descriptor */
+/* Tagline - immediate descriptor */
 .footer-tagline {
     color: rgba(232, 230, 226, 0.75);
     opacity: 1;
     margin-bottom: 2.5rem; /* Increased breathing room before brand statement */
 }
 
-/* Brand statement — clear separation from wordmark group */
+/* Brand statement - clear separation from wordmark group */
 .footer-brand-statement {
     color: rgba(232, 230, 226, 0.65); /* Refined opacity */
     opacity: 1;
@@ -70,7 +70,7 @@
 }
 
 /* ============================================
-   PART 2: COLUMN TITLES — VISUALLY LIGHTER
+   PART 2: COLUMN TITLES - VISUALLY LIGHTER
    Reduced weight and increased tracking for calm hierarchy
 ============================================ */
 
@@ -85,7 +85,7 @@
 }
 
 /* ============================================
-   PART 3: SOCIAL ICONS — SUBTLE & DETACHED
+   PART 3: SOCIAL ICONS - SUBTLE & DETACHED
    Optional, not promotional
 ============================================ */
 
@@ -126,11 +126,11 @@
 }
 
 /* ============================================
-   PART 4: MICRO-INTERACTIONS — "FELT, NOT SEEN"
+   PART 4: MICRO-INTERACTIONS - "FELT, NOT SEEN"
    Desktop hover refinements
 ============================================ */
 
-/* Footer links — subtle underline fade */
+/* Footer links - subtle underline fade */
 .footer-links a {
     color: rgba(232, 230, 226, 0.62);
     opacity: 1;
@@ -153,7 +153,7 @@
     line-height: 1.7; /* Increased line-height for balance */
 }
 
-/* Contact links — opacity shift only */
+/* Contact links - opacity shift only */
 .footer-contact a {
     color: rgba(232, 230, 226, 0.62);
     opacity: 1;
@@ -170,7 +170,7 @@
     line-height: 1.7; /* Increased line-height for balance */
 }
 
-/* Pansoft credit — subtle golden tint on hover */
+/* Pansoft credit - subtle golden tint on hover */
 .footer-credit a {
     color: rgba(232, 230, 226, 0.56);
     font-weight: 400;
@@ -184,7 +184,7 @@
 }
 
 /* ============================================
-   PART 4: MOBILE LAYOUT — AIRY & CALM
+   PART 4: MOBILE LAYOUT - AIRY & CALM
    Increased vertical spacing, comfortable touch
 ============================================ */
 
@@ -206,7 +206,7 @@
         font-size: 0.75rem; /* Maintain refined size on mobile */
     }
 
-    /* Social icons mobile — clean spacing */
+    /* Social icons mobile - clean spacing */
     .footer-social {
         border-top: none;
         padding-top: 0;
@@ -214,7 +214,7 @@
         justify-content: flex-start;
     }
 
-    /* Mobile CTA — generous touch target */
+    /* Mobile CTA - generous touch target */
     .footer-cta {
         margin-top: 2rem;
     }
@@ -229,7 +229,7 @@
         margin-bottom: 0;
     }
 
-    /* Mobile footer bottom — kompaktno */
+    /* Mobile footer bottom - kompaktno */
     .footer-bottom {
         padding-top: 1.75rem;
         padding-bottom: 1rem;
@@ -246,7 +246,7 @@
 }
 
 /* ============================================
-   DESKTOP REFINEMENTS — BALANCED COLUMNS
+   DESKTOP REFINEMENTS - BALANCED COLUMNS
 ============================================ */
 
 @media (min-width: 1024px) {
@@ -255,7 +255,7 @@
         padding: 5.5rem 0 4.5rem; /* More generous desktop padding */
     }
 
-    /* Brand column — control max-width for optimal reading */
+    /* Brand column - control max-width for optimal reading */
     .footer-section:first-child {
         max-width: 340px;
     }
@@ -265,23 +265,23 @@
         line-height: 1.6;
     }
 
-    /* Social icons — desktop refinement */
+    /* Social icons - desktop refinement */
     .footer-social {
         padding-top: 0;
         border-top: none;
     }
 
-    /* Links section — consistent spacing */
+    /* Links section - consistent spacing */
     .footer-links {
         gap: 1.125rem; /* Calm rhythm */
     }
 
-    /* Contact section — aligned with links */
+    /* Contact section - aligned with links */
     .footer-contact {
         gap: 1rem;
     }
 
-    /* Footer bottom — desktop optimal spacing */
+    /* Footer bottom - desktop optimal spacing */
     .footer-bottom {
         padding-top: 2.25rem;
         padding-bottom: 1.5rem;
@@ -298,7 +298,7 @@
 }
 
 /* ============================================
-   LARGE DESKTOP — PREMIUM SPACING
+   LARGE DESKTOP - PREMIUM SPACING
    Maximum luxury with increased horizontal gaps
 ============================================ */
 
@@ -332,7 +332,7 @@
 }
 
 /* ============================================
-   FOOTER BOTTOM — TIHI ZAVRŠETAK
+   FOOTER BOTTOM - TIHI ZAVRŠETAK
    Compact, premium, subtle finish with lighter separator
 ============================================ */
 
@@ -395,7 +395,7 @@
 }
 
 /* ============================================
-   ACCESSIBILITY — REDUCED MOTION
+   ACCESSIBILITY - REDUCED MOTION
 ============================================ */
 
 @media (prefers-reduced-motion: reduce) {
@@ -410,9 +410,9 @@
 }
 
 /* ============================================
-   VERIFICATION CHECKLIST — UPDATED
+   VERIFICATION CHECKLIST - UPDATED
    
-   ✓ Leva kolona "diše" bolje — povećani vertikalni razmaci
+   ✓ Leva kolona "diše" bolje - povećani vertikalni razmaci
    ✓ MAITEA → Umetnički ketering: 0.75rem gap
    ✓ Umetnički ketering → Slogan: 2.5rem gap
    ✓ Slogan → Social icons: 2.75rem gap
@@ -421,7 +421,7 @@
    ✓ Instagram/TikTok: male (16px), monohromatske (0.35 opacity), hover zlatna (0.85)
    ✓ Srednja/desna kolona: line-height 1.7 za balans
    ✓ Donji footer: diskretan, savršeno centriran, optički lak
-   ✓ Luksuzno, editorialno, smireno — bez template izgleda
+   ✓ Luksuzno, editorialno, smireno - bez template izgleda
 ============================================ */
 
 @media (prefers-reduced-motion: reduce) {

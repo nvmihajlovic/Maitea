@@ -1,11 +1,11 @@
 /* ============================================
-   MAITEA — CONCEPT SECTIONS
+   MAITEA - CONCEPT SECTIONS
    Premium, minimalist, editorial styling
    Mobile-first responsive
    ============================================ */
 
 /* ========================================
-   CONCEPTS INTRO — "Dva koncepta. Jedan cilj."
+   CONCEPTS INTRO - "Dva koncepta. Jedan cilj."
    ======================================== */
 
 .concepts-intro {
@@ -45,7 +45,7 @@
 }
 
 /* ========================================
-   CONCEPT SECTIONS — Shared Styles
+   CONCEPT SECTIONS - Shared Styles
    ======================================== */
 
 .concept-section {
@@ -54,7 +54,7 @@
 }
 
 /* ========================================
-   CONCEPT LAYOUT — Mobile First (stacked)
+   CONCEPT LAYOUT - Mobile First (stacked)
    ======================================== */
 
 .concept-layout {
@@ -148,7 +148,7 @@
 }
 
 /* ========================================
-   Mobile — text above, photos below
+   Mobile - text above, photos below
    On mobile we reverse so text comes first
    ======================================== */
 
@@ -172,7 +172,7 @@
 }
 
 /* ========================================
-   Tablet — wider spacing
+   Tablet - wider spacing
    ======================================== */
 
 @media (min-width: 768px) {
@@ -199,7 +199,7 @@
 }
 
 /* ========================================
-   Desktop — Side by side layout
+   Desktop - Side by side layout
    CENTERFEAST: photos left, text right
    LAYERS: text left, photos right (reversed)
    ======================================== */
@@ -246,7 +246,7 @@
 }
 
 /* ========================================
-   Large Desktop — generous whitespace
+   Large Desktop - generous whitespace
    ======================================== */
 
 @media (min-width: 1280px) {

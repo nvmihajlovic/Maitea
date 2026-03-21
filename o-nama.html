@@ -23,13 +23,14 @@
     <link rel="stylesheet" href="footer-polish.css">
     <link rel="stylesheet" href="footer-premium-polish.css">
     <link rel="stylesheet" href="unified-premium-polish.css">
+    <link rel="stylesheet" href="uiux-harmony.css">
 </head>
 <body>
     <!-- Header -->
     <header class="header" role="banner">
         <div class="container header-content">
             <a href="index.html" class="logo" aria-label="MAITEA - Naslovna">
-                <span class="wordmark">MAITEA</span>
+                <img src="assets/logo/maitea-logo-clean.png" class="logo-image" width="1129" height="303" alt="MAITEA">
             </a>
             
             <button class="nav-toggle" aria-label="Otvori meni" aria-expanded="false" aria-controls="main-nav">
@@ -38,7 +39,9 @@
             
             <nav class="nav" id="main-nav" role="navigation" aria-label="Glavna navigacija">
                 <!-- Mobile Menu Logo (only visible when menu is open) -->
-                <div class="nav-mobile-logo" aria-hidden="true">MAITEA</div>
+                <div class="nav-mobile-logo" aria-hidden="true">
+                    <img src="assets/logo/maitea-logo-clean.png" class="nav-mobile-logo-image" width="1129" height="303" alt="">
+                </div>
                 
                 <ul class="nav-list">
                     <li><a href="index.html" class="nav-link" data-i18n="nav.home">Naslovna</a></li>
@@ -63,7 +66,7 @@
         <section class="page-header">
             <div class="container">
                 <h1 class="page-title" data-i18n="about.page.title">O nama</h1>
-                <p class="page-intro" data-i18n="about.page.intro">Mi smo tim koji shvata Vaš događaj ozbiljno — sa dušom, strukčnošću i poštovanjem prema svakom detalju.</p>
+                <p class="page-intro" data-i18n="about.page.intro">Mi smo tim koji shvata Vaš događaj ozbiljno - sa stilom, strukčnošću i poštovanjem prema svakom detalju.</p>
             </div>
         </section>
 
@@ -148,7 +151,7 @@
                         <h2 class="section-title" data-i18n="about.approach.title">Naš pristup</h2>
                         <div class="content-text">
                             <p class="lead-text" data-i18n="about.approach.lead">Ketering shvatamo kao umetnost koja uključuje sva čula.</p>
-                            <p data-i18n="about.approach.p1">Fokusiramo se na autentičnost i originalnost. Ne pratimo trendove slepo – stvaramo časne, ukusne prezentacije koje odražavaju karakter Vašeg događaja.</p>
+                            <p data-i18n="about.approach.p1">Fokusiramo se na autentičnost i originalnost. Ne pratimo trendove slepo - stvaramo časne, ukusne prezentacije koje odražavaju karakter Vašeg događaja.</p>
                             <p data-i18n="about.approach.p2">Cenimo jednostavnost i eleganciju, gde svaki element ima svoju svrhu. Koristimo sezonske sastojke i poštujemo kulinarske tradicije kroz moderan pristup.</p>
                         </div>
                     </div>
@@ -161,7 +164,7 @@
             <div class="container">
                 <div class="cta-content">
                     <h2 class="cta-title" data-i18n="about.cta.title">Voleli bismo da vas upoznamo</h2>
-                    <p class="cta-text" data-i18n="about.cta.text">Razgovarajmo o Vašem događaju. Slobodno nas kontaktirajte — ovde smo da slušamo.</p>
+                    <p class="cta-text" data-i18n="about.cta.text">Razgovarajmo o Vašem događaju. Slobodno nas kontaktirajte - ovde smo da slušamo.</p>
                     <a href="kontakt.html" class="btn btn-primary" data-i18n="cta.button">Pošaljite upit</a>
                 </div>
             </div>
@@ -174,8 +177,9 @@
             <div class="footer-content">
                 <!-- Footer Info -->
                 <div class="footer-section">
-                    <span class="wordmark">MAITEA</span>
-                    <p class="footer-tagline" data-i18n="footer.tagline">Umetnički ketering</p>
+                    <span class="wordmark footer-wordmark-image-wrap">
+                        <img src="assets/logo/maitea-logo-clean.png" class="footer-logo-image" width="1129" height="303" alt="MAITEA">
+                    </span>
                     <p class="footer-brand-statement" data-i18n="footer.brand.statement">Estetika · Ukus · Pouzdanost</p>
                     
                     <!-- Social Media Links -->
@@ -192,9 +196,6 @@
                         </a>
                     </div>
                     
-                    <div class="footer-cta">
-                        <a href="kontakt.html#contact-form" class="btn" data-i18n="footer.cta">Pošaljite upit</a>
-                    </div>
                 </div>
                 
                 <!-- Footer Links -->
@@ -214,14 +215,17 @@
                     <h3 class="footer-title" data-i18n="footer.contact.title">Kontakt</h3>
                     <ul class="footer-contact">
                         <li><a href="tel:+38162210102">062 210 102</a></li>
-                        <li><a href="mailto:info@maitea.rs">info@maitea.rs</a></li>
+                        <li><a href="mailto:info@maiteacatering.rs">info@maiteacatering.rs</a></li>
                         <li>Beograd, Srbija</li>
                     </ul>
                 </div>
             </div>
             
             <div class="footer-bottom">
-                <p>&copy; 2026 MAITEA. <span data-i18n="footer.copyright">Sva prava zadržana</span> <span class="footer-separator">·</span> <span data-i18n="footer.design.credit">Dizajn i izrada:</span> <a href="https://pansoft.rs" target="_blank" rel="noopener">Pansoft</a></p>
+                <p>
+                    <span class="footer-copyline">&copy; 2026 MAITEA. <span data-i18n="footer.copyright">Sva prava zadržana</span></span>
+                    <span class="footer-creditline"><span data-i18n="footer.design.credit">Dizajn i izrada:</span> <a href="https://pansoft.rs" target="_blank" rel="noopener">Pansoft</a></span>
+                </p>
             </div>
         </div>
     </footer>

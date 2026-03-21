@@ -9,11 +9,18 @@
  * Constraints: Do NOT change fonts, do NOT change brand colors
  */
 
+.hero-leaf-decoration {
+    display: none;
+}
+
 /* ============================================
    MOBILE ONLY - ALL REFINEMENTS
 ============================================ */
 
 @media (max-width: 1023px) {
+    .hero-leaf-decoration {
+        display: none !important;
+    }
     
     /* ============================================
        1. HERO SECTION - LUXURY REFINEMENT
@@ -125,19 +132,20 @@
     }
     
     .philosophy-statements {
-        display: flex !important;
-        flex-direction: row !important;
-        justify-content: center !important;
+        display: grid !important;
+        grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
         align-items: center !important;
-        gap: 0 !important;
+        gap: clamp(0.28rem, 1.4vw, 0.45rem) !important;
         max-width: 100% !important;
+        width: 100% !important;
     }
     
     .statement {
         padding: 0 !important;
         border: none !important;
         text-align: center !important;
-        flex: 0 0 auto !important;
+        flex: 1 1 0 !important;
+        min-width: 0 !important;
     }
     
     .statement::after {
@@ -147,23 +155,77 @@
     /* Convert to subtle pills */
     .statement-title {
         font-family: 'Manrope', sans-serif !important;
-        font-size: 0.75rem !important;
+        font-size: clamp(0.62rem, 2.1vw, 0.82rem) !important;
         font-weight: 400 !important;
-        letter-spacing: 0.08em !important;
-        text-transform: uppercase !important;
+        letter-spacing: 0.01em !important;
+        text-transform: none !important;
         color: #5a5a5a !important;
-        line-height: 1 !important;
+        line-height: 1.2 !important;
         margin: 0 !important;
-        padding: 0.625rem 1rem !important;
-        background: rgba(212, 175, 55, 0.06) !important;
-        border: 1px solid rgba(212, 175, 55, 0.15) !important;
-        border-radius: 14px !important;
-        display: inline-block !important;
+        padding: 0.18rem 0.08rem !important;
+        background: transparent !important;
+        border: 0 !important;
+        border-radius: 0 !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        min-height: 0 !important;
+        width: 100% !important;
+        white-space: nowrap !important;
         transition: all 0.2s ease !important;
     }
     
     .statement + .statement {
-        margin-left: 0.625rem !important;
+        margin-left: 0 !important;
+    }
+
+    html[lang='sr'] .philosophy-statements {
+        display: flex !important;
+        justify-content: center !important;
+        gap: clamp(1rem, 4.2vw, 1.55rem) !important;
+    }
+
+    html[lang='sr'] .philosophy-statements .statement {
+        flex: 0 0 auto !important;
+    }
+
+    html[lang='sr'] .philosophy-statements .statement-title {
+        width: auto !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+
+    /* Final guard: never allow stacking on mobile */
+    .philosophy-section .philosophy-statements {
+        display: flex !important;
+        flex-direction: row !important;
+        flex-wrap: nowrap !important;
+        justify-content: center !important;
+        align-items: center !important;
+        gap: clamp(0.45rem, 2.2vw, 0.8rem) !important;
+    }
+
+    .philosophy-section .philosophy-statements .statement {
+        flex: 0 1 auto !important;
+        min-width: 0 !important;
+    }
+
+    .philosophy-section .philosophy-statements .statement-title {
+        white-space: nowrap !important;
+        display: block !important;
+    }
+
+    @media (max-width: 390px) {
+        .statement-title {
+            font-size: clamp(0.58rem, 2vw, 0.74rem) !important;
+        }
+    }
+
+    @media (max-width: 360px) {
+        .statement-title {
+            font-size: clamp(0.54rem, 1.9vw, 0.68rem) !important;
+            letter-spacing: 0 !important;
+        }
     }
     
     /* ============================================

@@ -23,7 +23,8 @@
         /* Header - Critical Styles */
         .header{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(250,248,245,0.98);backdrop-filter:blur(10px);border-bottom:1px solid rgba(212,175,55,0.1);transition:all 0.3s ease}
         .header-content{max-width:1400px;margin:0 auto;padding:1.25rem 2rem;display:flex;justify-content:space-between;align-items:center}
-        .logo{text-decoration:none;color:var(--dark);font-weight:600;letter-spacing:0.05em}
+        .logo{text-decoration:none;color:var(--dark);font-weight:600;letter-spacing:0.05em;display:inline-flex;align-items:center;line-height:0}
+        .logo-image{display:block;width:auto;height:38px}
         .wordmark{font-family:'Raleway',serif;font-size:1.5rem;font-weight:300;letter-spacing:0.15em;color:var(--gold)}
         
         /* Hamburger Menu Styles */
@@ -87,6 +88,7 @@
     <link rel="stylesheet" href="performance-optimizations.css">
     <link rel="stylesheet" href="unified-premium-polish.css">
     <link rel="stylesheet" href="hero-slider.css">
+    <link rel="stylesheet" href="uiux-harmony.css">
     
     <!-- Resource hints for performance -->
     <link rel="dns-prefetch" href="https://fonts.googleapis.com">
@@ -98,7 +100,7 @@
         <div class="container header-content">
             <!-- Logo / Wordmark -->
             <a href="index.html" class="logo" aria-label="MAITEA - Naslovna">
-                <span class="wordmark">MAITEA</span>
+                <img src="assets/logo/maitea-logo-clean.png" class="logo-image" width="1129" height="303" alt="MAITEA">
             </a>
             
             <!-- Mobile Menu Toggle -->
@@ -109,7 +111,9 @@
             <!-- Navigation -->
             <nav class="nav" id="main-nav" role="navigation" aria-label="Glavna navigacija">
                 <!-- Mobile Menu Logo (only visible when menu is open) -->
-                <div class="nav-mobile-logo" aria-hidden="true">MAITEA</div>
+                <div class="nav-mobile-logo" aria-hidden="true">
+                    <img src="assets/logo/maitea-logo-clean.png" class="nav-mobile-logo-image" width="1129" height="303" alt="">
+                </div>
                 
                 <ul class="nav-list">
                     <li><a href="index.html" class="nav-link active" data-i18n="nav.home">Naslovna</a></li>
@@ -136,16 +140,19 @@
             <!-- Hero Image Slider -->
             <div class="hero-slider" aria-hidden="true">
                 <div class="hero-slide hero-slide-active">
-                    <img src="assets/slike/1.jpg" alt="MAITEA ketering" class="hero-slide-img">
-                </div>
-                <div class="hero-slide">
-                    <img src="assets/slike/centralfeast/PRVA.jpeg" alt="MAITEA ketering" class="hero-slide-img">
-                </div>
-                <div class="hero-slide">
                     <img src="assets/slike/Sequence%2001.00_00_08_33.Still015.jpg" alt="MAITEA ketering" class="hero-slide-img">
                 </div>
                 <div class="hero-slide">
                     <img src="assets/slike/centralfeast/DRUGA.jpeg" alt="MAITEA ketering" class="hero-slide-img">
+                </div>
+                <div class="hero-slide">
+                    <img src="assets/slike/1.jpg" alt="MAITEA ketering" class="hero-slide-img">
+                </div>
+                <div class="hero-slide">
+                    <img src="assets/slike/2.jpg" alt="MAITEA ketering" class="hero-slide-img">
+                </div>
+                <div class="hero-slide">
+                    <img src="assets/slike/centralfeast/PRVA.jpeg" alt="MAITEA ketering" class="hero-slide-img">
                 </div>
                 <div class="hero-slider-overlay"></div>
             </div>
@@ -163,7 +170,7 @@
                         <h1 class="hero-headline" data-i18n="hero.headline">Gde estetika sreće ukus</h1>
                         
                         <!-- Descriptor -->
-                        <p class="hero-descriptor" data-i18n="hero.descriptor">Umetnički ketering za korporativne, privatne i ekskluzivne događaje</p>
+                        <p class="hero-descriptor" data-i18n="hero.descriptor">Umetnički ketering za korporativne,<br>privatne i ekskluzivne događaje</p>
                         
                         <!-- Primary CTA -->
                         <a href="kontakt.html#contact-form" class="btn btn-primary btn-hero" data-i18n="hero.cta">Zakažite konsultaciju</a>
@@ -204,8 +211,8 @@
             <div class="container">
                 <div class="concept-layout">
                     <div class="concept-images">
-                        <img src="assets/slike/centralfeast/Sequence%2001.00_00_08_33.Still015.jpg" alt="CENTERFEAST — pažljivo aranžirana hrana" class="concept-img" loading="lazy">
-                        <img src="assets/slike/centralfeast/PRVA.jpeg" alt="CENTERFEAST — detalj stola" class="concept-img" loading="lazy">
+                        <img src="assets/slike/centralfeast/Sequence%2001.00_00_08_33.Still015.jpg" alt="CENTERFEAST - pažljivo aranžirana hrana" class="concept-img" loading="lazy">
+                        <img src="assets/slike/centralfeast/PRVA.jpeg" alt="CENTERFEAST - detalj stola" class="concept-img" loading="lazy">
                     </div>
                     <div class="concept-text">
                         <h3 class="concept-title" data-i18n="concepts.centerfeast.title">CENTERFEAST</h3>
@@ -223,13 +230,13 @@
             <div class="container">
                 <div class="concept-layout concept-layout-reverse">
                     <div class="concept-images">
-                        <img src="assets/slike/20260118_160714.jpg" alt="LAYERS of FEAST — višeslojno posluženje" class="concept-img" loading="lazy">
-                        <img src="assets/slike/20260118_160711.jpg" alt="LAYERS of FEAST — elegancija u detaljima" class="concept-img" loading="lazy">
+                        <img src="assets/slike/20260118_160714.jpg" alt="LAYERS of FEAST - višeslojno posluženje" class="concept-img" loading="lazy">
+                        <img src="assets/slike/20260118_160711.jpg" alt="LAYERS of FEAST - elegancija u detaljima" class="concept-img" loading="lazy">
                     </div>
                     <div class="concept-text">
                         <h3 class="concept-title" data-i18n="concepts.layers.title">LAYERS of FEAST</h3>
                         <p class="concept-subtitle" data-i18n="concepts.layers.subtitle">Prefinjenost sa ritmom</p>
-                        <p class="concept-description" data-i18n="concepts.layers.p1">LAYERS of FEAST je klasičan ketering u modernom, luksuznom izdanju — jer i praktičnost može biti servirana sa elegancijom.</p>
+                        <p class="concept-description" data-i18n="concepts.layers.p1">LAYERS of FEAST je klasičan ketering u modernom, luksuznom izdanju - jer i praktičnost može biti servirana sa elegancijom.</p>
                         <p class="concept-description" data-i18n="concepts.layers.p2">Višeslojno posluženje osmišljeno je za venčanja, rođendane, evente i velike proslave koje traže više od običnog keteringa. Bogato, rustično i sa stilom.</p>
                         <a href="galerija.html#layers" class="concept-link" data-i18n="concepts.layers.link">Pogledajte slike</a>
                     </div>
@@ -268,8 +275,9 @@
             <div class="footer-content">
                 <!-- Footer Info -->
                 <div class="footer-section">
-                    <span class="wordmark">MAITEA</span>
-                    <p class="footer-tagline" data-i18n="footer.tagline">Umetnički ketering</p>
+                    <span class="wordmark footer-wordmark-image-wrap">
+                        <img src="assets/logo/maitea-logo-clean.png" class="footer-logo-image" width="1129" height="303" alt="MAITEA">
+                    </span>
                     <p class="footer-brand-statement" data-i18n="footer.brand.statement">Estetika · Ukus · Pouzdanost</p>
                     
                     <!-- Social Media Links -->
@@ -286,9 +294,6 @@
                         </a>
                     </div>
                     
-                    <div class="footer-cta">
-                        <a href="kontakt.html#contact-form" class="btn" data-i18n="footer.cta">Pošaljite upit</a>
-                    </div>
                 </div>
                 
                 <!-- Footer Links -->
@@ -308,14 +313,17 @@
                     <h3 class="footer-title" data-i18n="footer.contact.title">Kontakt</h3>
                     <ul class="footer-contact">
                         <li><a href="tel:+38162210102">062 210 102</a></li>
-                        <li><a href="mailto:info@maitea.rs">info@maitea.rs</a></li>
+                        <li><a href="mailto:info@maiteacatering.rs">info@maiteacatering.rs</a></li>
                         <li>Beograd, Srbija</li>
                     </ul>
                 </div>
             </div>
             
             <div class="footer-bottom">
-                <p>&copy; 2026 MAITEA. <span data-i18n="footer.copyright">Sva prava zadržana</span> <span class="footer-separator">·</span> <span data-i18n="footer.design.credit">Dizajn i izrada:</span> <a href="https://pansoft.rs" target="_blank" rel="noopener">Pansoft</a></p>
+                <p>
+                    <span class="footer-copyline">&copy; 2026 MAITEA. <span data-i18n="footer.copyright">Sva prava zadržana</span></span>
+                    <span class="footer-creditline"><span data-i18n="footer.design.credit">Dizajn i izrada:</span> <a href="https://pansoft.rs" target="_blank" rel="noopener">Pansoft</a></span>
+                </p>
             </div>
         </div>
     </footer>

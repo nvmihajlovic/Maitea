@@ -1014,3 +1014,34 @@ button:focus-visible {
         margin: 0 8px !important;
     }
 }
+
+    /* Final mobile comfort spacing pass */
+    @media (max-width: 640px) {
+        .page-header {
+            padding-top: 3rem !important;
+            padding-bottom: 2.4rem !important;
+        }
+
+        .about-story,
+        .values-section,
+        .approach-section,
+        .cta-secondary {
+            padding: 64px 0 !important;
+        }
+
+        .content-with-image {
+            gap: 30px !important;
+        }
+
+        .values-grid {
+            gap: 18px !important;
+        }
+
+        .value-item {
+            padding: 22px !important;
+        }
+
+        .content-text p {
+            margin-bottom: 1.15rem !important;
+        }
+    }

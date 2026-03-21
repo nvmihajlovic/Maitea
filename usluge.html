@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="assets/css/services-refinement.css">
     <link rel="stylesheet" href="homepage-polish.css">
     <link rel="stylesheet" href="services-page-polish.css">
+    <link rel="stylesheet" href="services-offers.css">
     <link rel="stylesheet" href="hero-mobile-premium.css">
     <link rel="stylesheet" href="navigation-desktop-premium.css">
     <link rel="stylesheet" href="navigation-mobile-premium.css">
@@ -25,13 +26,14 @@
     <link rel="stylesheet" href="footer-polish.css">
     <link rel="stylesheet" href="footer-premium-polish.css">
     <link rel="stylesheet" href="unified-premium-polish.css">
+    <link rel="stylesheet" href="uiux-harmony.css">
 </head>
 <body>
     <!-- Header -->
     <header class="header" role="banner">
         <div class="container header-content">
             <a href="index.html" class="logo" aria-label="MAITEA - Naslovna">
-                <span class="wordmark">MAITEA</span>
+                <img src="assets/logo/maitea-logo-clean.png" class="logo-image" width="1129" height="303" alt="MAITEA">
             </a>
             
             <button class="nav-toggle" aria-label="Otvori meni" aria-expanded="false" aria-controls="main-nav">
@@ -40,7 +42,9 @@
             
             <nav class="nav" id="main-nav" role="navigation" aria-label="Glavna navigacija">
                 <!-- Mobile Menu Logo (only visible when menu is open) -->
-                <div class="nav-mobile-logo" aria-hidden="true">MAITEA</div>
+                <div class="nav-mobile-logo" aria-hidden="true">
+                    <img src="assets/logo/maitea-logo-clean.png" class="nav-mobile-logo-image" width="1129" height="303" alt="">
+                </div>
                 
                 <ul class="nav-list">
                     <li><a href="index.html" class="nav-link" data-i18n="nav.home">Naslovna</a></li>
@@ -65,207 +69,240 @@
         <section class="page-header">
             <div class="container">
                 <h1 class="page-title" data-i18n="services.page.title">Naše usluge</h1>
-                <p class="page-intro" data-i18n="services.page.intro">Svaki događaj je jedinstven. Naša uloga je da vašu viziju prenesemo u stvarnost — precizno, profesionalno i sa dušom.</p>
+                <p class="page-intro" data-i18n="services.page.intro">Svaki događaj je jedinstven. Naša uloga je da vašu viziju prenesemo u stvarnost stilom: precizno, profesionalno i sa stilom.</p>
             </div>
         </section>
 
-        <!-- Services Overview Cards -->
-        <section class="section services-section section-reveal">
+        <section class="section offers-intro section-reveal">
             <div class="container">
-                <div class="services-grid">
-                    <!-- Service 1 -->
-                    <article class="service-card">
-                        <div class="service-icon" aria-hidden="true">
-                            <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <rect x="8" y="12" width="24" height="18" rx="1" stroke="#d4af37" stroke-width="1.5"/>
-                                <path d="M14 12V10C14 8.89543 14.8954 8 16 8H24C25.1046 8 26 8.89543 26 10V12" stroke="#d4af37" stroke-width="1.5"/>
-                                <path d="M8 18H32" stroke="#d4af37" stroke-width="1.5"/>
-                            </svg>
-                        </div>
-                        <h3 class="service-title" data-i18n="services.corporate.title">Korporativni eventi</h3>
-                        <p class="service-text" data-i18n="services.corporate.text">Profesionalne proslave, konferencije i poslovni sastanci.</p>
-                        <a href="#korporativni-eventi" class="service-link" data-i18n="services.link">Saznajte više</a>
+                <p class="offers-intro-text" data-i18n="services.offers.intro.text">U nastavku su naše konkretne ponude bez istaknutih cena. Izaberite tip proslave, paket i broj gostiju, a mi vam šaljemo personalizovanu ponudu.</p>
+                <p class="offers-intro-note" data-i18n="services.offers.intro.note">U cenu svih paketa uključene su dekoracija stola i dostava na teritoriji Beograda.</p>
+            </div>
+        </section>
+
+        <section class="section offers-gallery section-reveal" aria-label="Prikaz posluženja">
+            <div class="container offers-gallery-grid">
+                <img src="assets/NASE%20USLUGE/55514.jpg" alt="Centerfeast postavka" loading="lazy">
+                <img src="assets/NASE%20USLUGE/59289.jpg" alt="Detalj finger food ponude" loading="lazy">
+                <img src="assets/NASE%20USLUGE/59318.jpg" alt="Bogata postavka stola" loading="lazy">
+                <img src="assets/NASE%20USLUGE/59753.jpg" alt="Premium ketering aranžman" loading="lazy">
+            </div>
+        </section>
+
+        <section class="section offer-category section-reveal" id="centerfeast">
+            <div class="container">
+                <div class="offer-category-head">
+                    <h2 data-i18n="services.offers.centerfeast.title">Centerfeast (Finger Food)</h2>
+                    <p data-i18n="services.offers.centerfeast.lead">Posluženje preko stola na pek papiru, prilagođeno broju gostiju.</p>
+                </div>
+                <div class="package-grid">
+                    <article class="package-card">
+                        <h3>Soft</h3>
+                        <ul>
+                            <li data-i18n="services.offers.centerfeast.soft.1">Kanapei, bruskete</li>
+                            <li data-i18n="services.offers.centerfeast.soft.2">Krekeri, grisine, kiflice</li>
+                            <li data-i18n="services.offers.centerfeast.soft.3">Slane palačinkice sa pilećom salatom, kikirikijem i susamom</li>
+                            <li data-i18n="services.offers.centerfeast.soft.4">Urnebes kuglice</li>
+                            <li data-i18n="services.offers.centerfeast.soft.5">Selekcija suhomesnatih proizvoda</li>
+                            <li data-i18n="services.offers.centerfeast.soft.6">Selekcija sireva</li>
+                            <li data-i18n="services.offers.centerfeast.soft.7">Sveže voće i povrće</li>
+                            <li data-i18n="services.offers.centerfeast.soft.8">Orašasti plodovi</li>
+                        </ul>
                     </article>
-                    
-                    <!-- Service 2 -->
-                    <article class="service-card">
-                        <div class="service-icon" aria-hidden="true">
-                            <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <circle cx="20" cy="20" r="10" stroke="#d4af37" stroke-width="1.5"/>
-                                <path d="M20 10L21.5 15L26 13.5L23 18L28 19L23 20L26 24.5L21.5 23L20 28L18.5 23L14 24.5L17 20L12 19L17 18L14 13.5L18.5 15L20 10Z" fill="#d4af37"/>
-                            </svg>
-                        </div>
-                        <h3 class="service-title" data-i18n="services.private.title">Privatne proslave</h3>
-                        <p class="service-text" data-i18n="services.private.text">Rođendani, jubileji, porodična okupljanja sa ukusnom hranom.</p>
-                        <a href="#privatne-proslave" class="service-link" data-i18n="services.link">Saznajte više</a>
+                    <article class="package-card">
+                        <h3>Bold</h3>
+                        <ul>
+                            <li data-i18n="services.offers.centerfeast.bold.1">Kanapei, bruskete</li>
+                            <li data-i18n="services.offers.centerfeast.bold.2">Krekeri, grisine, domaći crni hleb</li>
+                            <li data-i18n="services.offers.centerfeast.bold.3">Biftek rolnice</li>
+                            <li data-i18n="services.offers.centerfeast.bold.4">Gambori na avokadu</li>
+                            <li data-i18n="services.offers.centerfeast.bold.5">Slane palačinkice sa pilećom salatom, kikirikijem i susamom</li>
+                            <li data-i18n="services.offers.centerfeast.bold.6">Urnebes kuglice</li>
+                            <li data-i18n="services.offers.centerfeast.bold.7">Selekcija suhomesnatih proizvoda</li>
+                            <li data-i18n="services.offers.centerfeast.bold.8">Selekcija sireva</li>
+                            <li data-i18n="services.offers.centerfeast.bold.9">Sveže voće i povrće</li>
+                            <li data-i18n="services.offers.centerfeast.bold.10">Orašasti plodovi</li>
+                        </ul>
                     </article>
-                    
-                    <!-- Service 3 -->
-                    <article class="service-card">
-                        <div class="service-icon" aria-hidden="true">
-                            <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M20 14C18 10 14 9 11 11C8 13 7 17 11 21L20 30L29 21C33 17 32 13 29 11C26 9 22 10 20 14Z" stroke="#d4af37" stroke-width="1.5" stroke-linejoin="round"/>
-                            </svg>
-                        </div>
-                        <h3 class="service-title" data-i18n="services.wedding.title">Wedding catering</h3>
-                        <p class="service-text" data-i18n="services.wedding.text">Najlepši dan zaslužuje savršen meni prilagođen Vašoj viziji.</p>
-                        <a href="#wedding-catering" class="service-link" data-i18n="services.link">Saznajte više</a>
-                    </article>
-                    
-                    <!-- Service 4 -->
-                    <article class="service-card">
-                        <div class="service-icon" aria-hidden="true">
-                            <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M14 10L12 22C12 25 14 28 18 28H22C26 28 28 25 28 22L26 10" stroke="#d4af37" stroke-width="1.5" stroke-linecap="round"/>
-                                <path d="M18 28V32H22V28" stroke="#d4af37" stroke-width="1.5" stroke-linecap="round"/>
-                                <path d="M15 32H25" stroke="#d4af37" stroke-width="1.5" stroke-linecap="round"/>
-                                <path d="M14 10H26" stroke="#d4af37" stroke-width="1.5" stroke-linecap="round"/>
-                            </svg>
-                        </div>
-                        <h3 class="service-title" data-i18n="services.tasting.title">Degustacioni meniji</h3>
-                        <p class="service-text" data-i18n="services.tasting.text">Tematski stolovi koji vode goste na kulinarski put.</p>
-                        <a href="#degustacioni-meniji" class="service-link" data-i18n="services.link">Saznajte više</a>
+                    <article class="package-card package-card-featured">
+                        <h3>Prime</h3>
+                        <ul>
+                            <li data-i18n="services.offers.centerfeast.prime.1">Kanapei, bruskete</li>
+                            <li data-i18n="services.offers.centerfeast.prime.2">Mini ćabate sa pestom</li>
+                            <li data-i18n="services.offers.centerfeast.prime.3">Krekeri, grisine, domaći crni hleb</li>
+                            <li data-i18n="services.offers.centerfeast.prime.4">Maitea cups</li>
+                            <li data-i18n="services.offers.centerfeast.prime.5">Biftek rolnice</li>
+                            <li data-i18n="services.offers.centerfeast.prime.6">Gambori na avokadu</li>
+                            <li data-i18n="services.offers.centerfeast.prime.7">Losos korpice</li>
+                            <li data-i18n="services.offers.centerfeast.prime.8">Kruška sa gorgonzolom i medom</li>
+                            <li data-i18n="services.offers.centerfeast.prime.9">Urnebes salata</li>
+                            <li data-i18n="services.offers.centerfeast.prime.10">Selekcija suhomesnatih proizvoda i sireva</li>
+                            <li data-i18n="services.offers.centerfeast.prime.11">Sveže voće, povrće i orašasti plodovi</li>
+                        </ul>
                     </article>
                 </div>
             </div>
         </section>
 
-        <!-- Services List -->
-        <section class="section services-list">
+        <section class="section offer-category section-reveal" id="deciji-rodjendani">
             <div class="container">
-                <!-- Service 1 -->
-                <article class="service-detail" id="korporativni-eventi">
-                    <div class="service-detail-content">
-                        <div class="service-detail-text">
-                            <h2 class="service-detail-title" data-i18n="services.detail.corporate.title">Korporativni eventi</h2>
-                            <p class="service-detail-lead" data-i18n="services.detail.corporate.lead">Profesionalan pristup za poslovne događaje koji ostavljaju trajan utisak.</p>
-                            <p data-i18n="services.detail.corporate.p1">Od poslovnih doručaka i radnih ručkova do svečanih proslava – nudimo ketering koji odražava profesionalnost Vašeg brenda.</p>
-                            
-                            <h3 class="service-detail-subtitle" data-i18n="services.detail.corporate.includes">Šta obuhvata:</h3>
-                            <ul class="service-detail-list">
-                                <li data-i18n="services.detail.corporate.item1">Poslovni doručci, ručkovi, kokteli</li>
-                                <li data-i18n="services.detail.corporate.item2">Konferencije i seminari</li>
-                                <li data-i18n="services.detail.corporate.item3">Team building događaji</li>
-                                <li data-i18n="services.detail.corporate.item4">Korporativne proslave</li>
-                            </ul>
-                        </div>
-                        <div class="service-detail-image">
-                            <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?w=800&q=80" 
-                                 alt="Corporate catering event setup" 
-                                 loading="lazy">
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Service 2 -->
-                <article class="service-detail" id="privatne-proslave">
-                    <div class="service-detail-content">
-                        <div class="service-detail-text">
-                            <h2 class="service-detail-title" data-i18n="services.detail.private.title">Privatne proslave</h2>
-                            <p class="service-detail-lead" data-i18n="services.detail.private.lead">Intimni i porodični trenuci zaslužuju pažnju i autentičan pristup.</p>
-                            <p data-i18n="services.detail.private.p1">Rođendani, jubileji, krsne slave, porodična okupljanja – stvaramo toplu atmosferu kroz hranu koja donosi radost.</p>
-                            
-                            <h3 class="service-detail-subtitle" data-i18n="services.detail.private.includes">Šta obuhvata:</h3>
-                            <ul class="service-detail-list">
-                                <li data-i18n="services.detail.private.item1">Rođendanske proslave</li>
-                                <li data-i18n="services.detail.private.item2">Krsne slave i verske proslave</li>
-                                <li data-i18n="services.detail.private.item3">Godišnjice i jubileji</li>
-                                <li data-i18n="services.detail.private.item4">Porodična okupljanja</li>
-                            </ul>
-                        </div>
-                        <div class="service-detail-image">
-                            <img src="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=800&q=80" 
-                                 alt="Private celebration catering" 
-                                 loading="lazy">
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Service 3 -->
-                <article class="service-detail" id="wedding-catering">
-                    <div class="service-detail-content">
-                        <div class="service-detail-text">
-                            <h2 class="service-detail-title" data-i18n="services.detail.wedding.title">Wedding catering</h2>
-                            <p class="service-detail-lead" data-i18n="services.detail.wedding.lead">Najlepši dan zaslužuje savršenu kulinarsku priču.</p>
-                            <p data-i18n="services.detail.wedding.p1">Od koktela dobrodošlice do svadbene večere – stvaramo doživljaj koji će gosti pamtiti.</p>
-                            
-                            <h3 class="service-detail-subtitle" data-i18n="services.detail.wedding.includes">Šta obuhvata:</h3>
-                            <ul class="service-detail-list">
-                                <li data-i18n="services.detail.wedding.item1">Kokteli dobrodošlice i apetiti</li>
-                                <li data-i18n="services.detail.wedding.item2">Personalizovani vjenčani meni</li>
-                                <li data-i18n="services.detail.wedding.item3">Degustacione večere</li>
-                                <li data-i18n="services.detail.wedding.item4">Dizajn i prezentacija stola</li>
-                            </ul>
-                        </div>
-                        <div class="service-detail-image">
-                            <img src="https://images.unsplash.com/photo-1519671845924-1fd18db430b8?w=800&q=80" 
-                                 alt="Elegant wedding catering table" 
-                                 loading="lazy">
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Service 4 -->
-                <article class="service-detail" id="degustacioni-meniji">
-                    <div class="service-detail-content">
-                        <div class="service-detail-text">
-                            <h2 class="service-detail-title" data-i18n="services.detail.tasting.title">Degustacioni meniji</h2>
-                            <p class="service-detail-lead" data-i18n="services.detail.tasting.lead">Kulinarski putevi koji otkrivaju priče i ukuse.</p>
-                            <p data-i18n="services.detail.tasting.p1">Kreiramo degustacione večere koje vode goste kroz niz pažljivo odabranih jela – svako sa svojom pričom.</p>
-                            
-                            <h3 class="service-detail-subtitle" data-i18n="services.detail.tasting.includes">Šta obuhvata:</h3>
-                            <ul class="service-detail-list">
-                                <li data-i18n="services.detail.tasting.item1">Višeservna degustaciona jela</li>
-                                <li data-i18n="services.detail.tasting.item2">Tematski stolovi</li>
-                                <li data-i18n="services.detail.tasting.item3">Priče o jelima i sastojcima</li>
-                                <li data-i18n="services.detail.tasting.item4">Wine pairing opcije</li>
-                            </ul>
-                        </div>
-                        <div class="service-detail-image">
-                            <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=800&q=80" 
-                                 alt="Gourmet tasting menu dish" 
-                                 loading="lazy">
-                        </div>
-                    </div>
-                </article>
-            </div>
-        </section>
-
-        <!-- How We Work -->
-        <section class="section work-process">
-            <div class="container">
-                <h2 class="section-title" data-i18n="services.work.title">Kako radimo</h2>
-                
-                <div class="process-steps">
-                    <article class="process-step">
-                        <div class="step-number">01</div>
-                        <h3 class="step-title" data-i18n="services.work.step1.title">Inicijalni razgovor</h3>
-                        <p class="step-text" data-i18n="services.work.step1.text">Konsultacija o vašoj viziji, broju gostiju i specifičnim potrebama.</p>
+                <div class="offer-category-head">
+                    <h2 data-i18n="services.offers.kids.title">Dečiji rođendani</h2>
+                    <p data-i18n="services.offers.kids.lead">Tri varijante posluženja u skladu sa tipom proslave i brojem mališana i odraslih.</p>
+                </div>
+                <div class="package-grid">
+                    <article class="package-card">
+                        <h3 data-i18n="services.offers.kids.brunch.title">Brunch (doručak)</h3>
+                        <ul>
+                            <li data-i18n="services.offers.kids.brunch.1">Kiflice, gibanica, projice</li>
+                            <li data-i18n="services.offers.kids.brunch.2">Punjena barena jaja</li>
+                            <li data-i18n="services.offers.kids.brunch.3">Uštipci</li>
+                            <li data-i18n="services.offers.kids.brunch.4">Spanać-šunka rolat</li>
+                            <li data-i18n="services.offers.kids.brunch.5">Urnebes</li>
+                            <li data-i18n="services.offers.kids.brunch.6">Selekcija sireva i suhomesnatih proizvoda</li>
+                            <li data-i18n="services.offers.kids.brunch.7">Mini ćabatice sa pestom i pršutom</li>
+                            <li data-i18n="services.offers.kids.brunch.8">Kanapei sa namazom od spanaća, sira i pečenice</li>
+                            <li data-i18n="services.offers.kids.brunch.9">Voće, povrće i orašasti plodovi</li>
+                        </ul>
                     </article>
-                    
-                    <article class="process-step">
-                        <div class="step-number">02</div>
-                        <h3 class="step-title" data-i18n="services.work.step2.title">Kreiranje predloga</h3>
-                        <p class="step-text" data-i18n="services.work.step2.text">Dizajniramo prilagođeni meni i detaljan plan sa transparentnom cenom.</p>
+                    <article class="package-card">
+                        <h3>Basic</h3>
+                        <ul>
+                            <li data-i18n="services.offers.kids.basic.1">Mix roštilja (ćevapi, uštipci, kobasica, rolovana piletina) + veggies</li>
+                            <li data-i18n="services.offers.kids.basic.2">Kiflice, gibanica, somuni</li>
+                            <li data-i18n="services.offers.kids.basic.3">Mix salata</li>
+                            <li data-i18n="services.offers.kids.basic.4">Urnebes kuglice</li>
+                            <li data-i18n="services.offers.kids.basic.5">Plata suhomesnatih proizvoda i sireva</li>
+                        </ul>
                     </article>
-                    
-                    <article class="process-step">
-                        <div class="step-number">03</div>
-                        <h3 class="step-title" data-i18n="services.work.step3.title">Realizacija</h3>
-                        <p class="step-text" data-i18n="services.work.step3.text">Dostavljamo sve na vreme, serviramo sa pažnjom i ostajemo dostupni.</p>
+                    <article class="package-card package-card-featured">
+                        <h3>Standard</h3>
+                        <ul>
+                            <li data-i18n="services.offers.kids.standard.1">Mix roštilja (ćevapi, uštipci, kobasica, rolovana piletina) + veggies</li>
+                            <li data-i18n="services.offers.kids.standard.2">Kiflice, gibanica, somuni</li>
+                            <li data-i18n="services.offers.kids.standard.3">Spanać-šunka rolat</li>
+                            <li data-i18n="services.offers.kids.standard.4">Mix kanapea i brusketa</li>
+                            <li data-i18n="services.offers.kids.standard.5">Urnebes kuglice</li>
+                            <li data-i18n="services.offers.kids.standard.6">Mix salata</li>
+                            <li data-i18n="services.offers.kids.standard.7">Pileća salata sa narom i kikirikijem</li>
+                            <li data-i18n="services.offers.kids.standard.8">Plata suhomesnatih proizvoda i plata sireva</li>
+                            <li data-i18n="services.offers.kids.standard.9">Voće, povrće i orašasti plodovi</li>
+                        </ul>
                     </article>
                 </div>
             </div>
         </section>
 
-        <!-- CTA Section -->
-        <section class="section cta-secondary">
+        <section class="section offers-gallery section-reveal" aria-label="Atmosfera događaja">
+            <div class="container offers-gallery-grid">
+                <img src="assets/NASE%20USLUGE/59760.jpg" alt="Posluženje za proslavu" loading="lazy">
+                <img src="assets/NASE%20USLUGE/59762.jpg" alt="Detalj dekoracije i posluženja" loading="lazy">
+                <img src="assets/NASE%20USLUGE/59768.jpg" alt="Premium događaj" loading="lazy">
+            </div>
+        </section>
+
+        <section class="section offer-category section-reveal" id="layers-of-feast">
             <div class="container">
-                <div class="cta-content">
-                    <h2 class="cta-title" data-i18n="services.cta.title">Razgovarajmo o Vašem događaju</h2>
-                    <p class="cta-text" data-i18n="services.cta.text">Bez obaveze. Samo otvorena konverzacija o Vama, Vašoj viziji i načinu na koji možemo pomoći.</p>
-                    <a href="kontakt.html" class="btn btn-primary" data-i18n="cta.button">Pošaljite upit</a>
+                <div class="offer-category-head">
+                    <h2 data-i18n="services.offers.layers.title">Layers of Feast</h2>
+                    <p data-i18n="services.offers.layers.lead">Za veće proslave, event-ove, slave i ostale svečanosti sa kompletnim servisom.</p>
                 </div>
+                <div class="package-grid">
+                    <article class="package-card">
+                        <h3>Soft</h3>
+                        <ul>
+                            <li data-i18n="services.offers.layers.soft.1">Domaće kiflice, somuni</li>
+                            <li data-i18n="services.offers.layers.soft.2">Mix kanapea i brusketa</li>
+                            <li data-i18n="services.offers.layers.soft.3">Urnebes kuglice</li>
+                            <li data-i18n="services.offers.layers.soft.4">Plata suhomesnatih proizvoda i sireva</li>
+                            <li data-i18n="services.offers.layers.soft.5">Grčka i sezonska salata</li>
+                            <li data-i18n="services.offers.layers.soft.6">Mix roštilja (ćevapi, uštipci, kobasica, rolovana piletina) + veggies</li>
+                            <li data-i18n="services.offers.layers.soft.7">Voće, povrće i orašasti plodovi</li>
+                        </ul>
+                    </article>
+                    <article class="package-card">
+                        <h3>Bold</h3>
+                        <ul>
+                            <li data-i18n="services.offers.layers.bold.1">Domaće kiflice, somuni, gibanica</li>
+                            <li data-i18n="services.offers.layers.bold.2">Mix kanapea i brusketa</li>
+                            <li data-i18n="services.offers.layers.bold.3">Urnebes i susam kuglice</li>
+                            <li data-i18n="services.offers.layers.bold.4">Plata suhomesnatih proizvoda i sireva</li>
+                            <li data-i18n="services.offers.layers.bold.5">Grčka i sezonska salata</li>
+                            <li data-i18n="services.offers.layers.bold.6">Pileća salata</li>
+                            <li data-i18n="services.offers.layers.bold.7">Mix roštilja + veggies</li>
+                            <li data-i18n="services.offers.layers.bold.8">Svinjski file u sosu</li>
+                            <li data-i18n="services.offers.layers.bold.9">Voće, povrće i orašasti plodovi</li>
+                        </ul>
+                    </article>
+                    <article class="package-card package-card-featured">
+                        <h3>Prime</h3>
+                        <ul>
+                            <li data-i18n="services.offers.layers.prime.1">Domaće kiflice, somuni, gibanica</li>
+                            <li data-i18n="services.offers.layers.prime.2">Mix kanapea i brusketa</li>
+                            <li data-i18n="services.offers.layers.prime.3">Urnebes i susam kuglice</li>
+                            <li data-i18n="services.offers.layers.prime.4">Spanać-šunka rolat</li>
+                            <li data-i18n="services.offers.layers.prime.5">Plata suhomesnatih proizvoda i sireva</li>
+                            <li data-i18n="services.offers.layers.prime.6">Grčka, pileća i salata po izboru</li>
+                            <li data-i18n="services.offers.layers.prime.7">Teletina ispod sača</li>
+                            <li data-i18n="services.offers.layers.prime.8">Dimljena svinjska rebra ispod sača (ili sarma sa svinjskim rebrima)</li>
+                            <li data-i18n="services.offers.layers.prime.9">Krompir sač</li>
+                            <li data-i18n="services.offers.layers.prime.10">Voće, povrće i orašasti plodovi</li>
+                        </ul>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section inquiry-section section-reveal" id="upit-usluge">
+            <div class="container inquiry-wrap">
+                <div class="inquiry-head">
+                    <h2 data-i18n="services.inquiry.title">Pošaljite upit</h2>
+                    <p data-i18n="services.inquiry.intro">Recite nam šta vam treba i pripremićemo predlog prema vašem događaju.</p>
+                </div>
+                <form class="inquiry-form" action="mailto:info@maiteacatering.rs" method="post" enctype="text/plain">
+                    <label><span data-i18n="services.inquiry.fullname">Ime i prezime</span>
+                        <input type="text" name="Ime i prezime" required>
+                    </label>
+                    <label><span data-i18n="services.inquiry.email">Email</span>
+                        <input type="email" name="Email" required>
+                    </label>
+                    <label><span data-i18n="services.inquiry.phone">Telefon</span>
+                        <input type="tel" name="Telefon" required>
+                    </label>
+                    <label><span data-i18n="services.inquiry.eventType">Tip proslave</span>
+                        <select name="Tip proslave" required>
+                            <option value="" selected disabled data-i18n="services.inquiry.select">Izaberite</option>
+                            <option value="Centerfeast Finger Food" data-i18n="services.inquiry.event.centerfeast">Centerfeast (Finger Food)</option>
+                            <option value="Deciji rodjendani" data-i18n="services.inquiry.event.kids">Dečiji rođendani</option>
+                            <option value="Layers of Feast" data-i18n="services.inquiry.event.layers">Layers of Feast</option>
+                            <option value="Drugo" data-i18n="services.inquiry.event.other">Drugo</option>
+                        </select>
+                    </label>
+                    <label><span data-i18n="services.inquiry.package">Paket</span>
+                        <select name="Paket" required>
+                            <option value="" selected disabled data-i18n="services.inquiry.selectPackage">Izaberite paket</option>
+                            <option value="Soft">Soft</option>
+                            <option value="Bold">Bold</option>
+                            <option value="Prime">Prime</option>
+                            <option value="Brunch">Brunch</option>
+                            <option value="Basic">Basic</option>
+                            <option value="Standard">Standard</option>
+                        </select>
+                    </label>
+                    <label><span data-i18n="services.inquiry.guests">Broj gostiju</span>
+                        <input type="number" name="Broj gostiju" min="10" step="1" required>
+                    </label>
+                    <label><span data-i18n="services.inquiry.date">Datum događaja</span>
+                        <input type="date" name="Datum događaja">
+                    </label>
+                    <label><span data-i18n="services.inquiry.location">Lokacija</span>
+                        <input type="text" name="Lokacija događaja">
+                    </label>
+                    <label class="inquiry-full"><span data-i18n="services.inquiry.notes">Dodatne napomene</span>
+                        <textarea name="Napomene" rows="5" data-i18n-placeholder="services.inquiry.notes.placeholder" placeholder="Npr. alergeni, tip posluženja, posebne želje..."></textarea>
+                    </label>
+                    <button type="submit" class="btn btn-primary inquiry-submit" data-i18n="services.inquiry.submit">Pošaljite upit</button>
+                </form>
             </div>
         </section>
     </main>
@@ -276,8 +313,9 @@
             <div class="footer-content">
                 <!-- Footer Info -->
                 <div class="footer-section">
-                    <span class="wordmark">MAITEA</span>
-                    <p class="footer-tagline" data-i18n="footer.tagline">Umetnički ketering</p>
+                    <span class="wordmark footer-wordmark-image-wrap">
+                        <img src="assets/logo/maitea-logo-clean.png" class="footer-logo-image" width="1129" height="303" alt="MAITEA">
+                    </span>
                     <p class="footer-brand-statement" data-i18n="footer.brand.statement">Estetika · Ukus · Pouzdanost</p>
                     
                     <!-- Social Media Links -->
@@ -294,9 +332,6 @@
                         </a>
                     </div>
                     
-                    <div class="footer-cta">
-                        <a href="kontakt.html#contact-form" class="btn" data-i18n="footer.cta">Pošaljite upit</a>
-                    </div>
                 </div>
                 
                 <!-- Footer Links -->
@@ -316,14 +351,17 @@
                     <h3 class="footer-title" data-i18n="footer.contact.title">Kontakt</h3>
                     <ul class="footer-contact">
                         <li><a href="tel:+38162210102">062 210 102</a></li>
-                        <li><a href="mailto:info@maitea.rs">info@maitea.rs</a></li>
+                        <li><a href="mailto:info@maiteacatering.rs">info@maiteacatering.rs</a></li>
                         <li>Beograd, Srbija</li>
                     </ul>
                 </div>
             </div>
             
             <div class="footer-bottom">
-                <p>&copy; 2026 MAITEA. <span data-i18n="footer.copyright">Sva prava zadržana</span> <span class="footer-separator">·</span> <span data-i18n="footer.design.credit">Dizajn i izrada:</span> <a href="https://pansoft.rs" target="_blank" rel="noopener">Pansoft</a></p>
+                <p>
+                    <span class="footer-copyline">&copy; 2026 MAITEA. <span data-i18n="footer.copyright">Sva prava zadržana</span></span>
+                    <span class="footer-creditline"><span data-i18n="footer.design.credit">Dizajn i izrada:</span> <a href="https://pansoft.rs" target="_blank" rel="noopener">Pansoft</a></span>
+                </p>
             </div>
         </div>
     </footer>

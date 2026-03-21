@@ -1,12 +1,12 @@
 /**
- * MAITEA — UNIFIED PREMIUM POLISH
+ * MAITEA - UNIFIED PREMIUM POLISH
  * Loads LAST to resolve cascade conflicts and unify the visual experience.
  * 
  * Principles:
  * - Editorial, not flashy
  * - Consistent typography scale (design-system tokens)
  * - One shadow system, one timing system
- * - Sharp, editorial border-radius (2–4px) — not rounded/bubbly
+ * - Sharp, editorial border-radius (2-4px) - not rounded/bubbly
  * - Footer readability fixed on mobile
  * - Subtle animations that feel natural
  * - NO gratuitous effects
@@ -14,11 +14,35 @@
 
 
 /* ============================================
-   1. TYPOGRAPHY — UNIFIED SCALE
-   Settle all competing sizes into one coherent system
+   1. TYPOGRAPHY - UNIFIED SCALE
+   
+   Modular Scale: Major Third (1.25)
+   Base: 16px (1rem)
+   
+   Scale steps:
+   --text-xs:    0.75rem   (12px) - legal, captions
+   --text-sm:    0.8125rem (13px) - labels, metadata 
+   --text-base:  0.9375rem (15px) - body text
+   --text-md:    1rem      (16px) - lead body
+   --text-lg:    1.125rem  (18px) - card titles, emphasis
+   --heading-4:  clamp(1.25rem, 2.5vw, 1.5rem)    - H4
+   --heading-3:  clamp(1.5rem, 3.5vw, 1.875rem)   - H3
+   --heading-2:  clamp(1.75rem, 4vw, 2.375rem)    - H2
+   --heading-1:  clamp(2rem, 5vw, 3rem)            - H1
+   --display:    clamp(2.5rem, 6vw, 3.75rem)       - Hero
+   
+   Line-heights:
+   Headings: 1.15-1.25
+   Body:     1.6-1.7
+   Tight:    1.35 (cards)
+   
+   Letter-spacing:
+   Headings: -0.02em to -0.01em (tighter)
+   Body:     0 (neutral)
+   Labels:   0.04em-0.1em (wider)
 ============================================ */
 
-/* Page titles (h1 on subpages) — clean, authoritative */
+/* Page titles (h1 on subpages) - clean, authoritative */
 .page-title {
     font-family: 'Raleway', serif !important;
     font-size: clamp(2rem, 5vw, 3rem) !important;
@@ -33,19 +57,19 @@
 .page-intro,
 .page-subtitle {
     font-family: 'Manrope', sans-serif !important;
-    font-size: clamp(1rem, 2.5vw, 1.125rem) !important;
+    font-size: clamp(0.9375rem, 2vw, 1.0625rem) !important;
     font-weight: 400 !important;
-    line-height: 1.65 !important;
+    line-height: 1.7 !important;
     color: #5a5a5a !important;
-    max-width: 55ch !important;
+    max-width: 52ch !important;
 }
 
-/* Section titles (h2) — consistent across all pages */
+/* Section titles (h2) - consistent across all pages */
 .section-title {
     font-family: 'Raleway', serif !important;
-    font-size: clamp(1.75rem, 4vw, 2.5rem) !important;
+    font-size: clamp(1.75rem, 4vw, 2.375rem) !important;
     font-weight: 300 !important;
-    letter-spacing: -0.01em !important;
+    letter-spacing: -0.015em !important;
     line-height: 1.2 !important;
     color: #1a1a1a !important;
     margin-bottom: 2rem !important;
@@ -56,10 +80,10 @@
     display: none !important;
 }
 
-/* Service detail titles */
+/* Service detail titles - H2 level, slightly smaller than section */
 .service-detail-title {
     font-family: 'Raleway', serif !important;
-    font-size: clamp(1.5rem, 3.5vw, 2rem) !important;
+    font-size: clamp(1.5rem, 3.5vw, 1.875rem) !important;
     font-weight: 300 !important;
     letter-spacing: -0.01em !important;
     line-height: 1.25 !important;
@@ -67,7 +91,7 @@
     margin-bottom: 1rem !important;
 }
 
-/* Service detail subtitle */
+/* Service detail subtitle - label style */
 .service-detail-subtitle {
     font-family: 'Manrope', sans-serif !important;
     font-size: 0.8125rem !important;
@@ -84,12 +108,13 @@
 .section-intro,
 .lead-text,
 .opening-paragraph {
-    font-size: clamp(1rem, 2vw, 1.0625rem) !important;
+    font-size: clamp(0.9375rem, 1.8vw, 1.0625rem) !important;
     line-height: 1.7 !important;
     color: #3a3a3a !important;
+    max-width: 60ch !important;
 }
 
-/* Card titles — consistent weight and size */
+/* Card titles - H4 level, consistent */
 .service-title,
 .value-title,
 .contact-card-title {
@@ -97,22 +122,28 @@
     font-size: 1.125rem !important;
     font-weight: 400 !important;
     letter-spacing: 0 !important;
-    line-height: 1.35 !important;
+    line-height: 1.3 !important;
     color: #1a1a1a !important;
     margin-bottom: 0.625rem !important;
 }
 
-/* Body text in cards */
+/* Body text in cards - unified size */
 .service-text,
 .value-text,
-.contact-card-text,
-.contact-card-note {
+.contact-card-text {
     font-size: 0.9375rem !important;
     line-height: 1.65 !important;
     color: #5a5a5a !important;
 }
 
-/* Step numbers — clean, not oversized */
+/* Card notes - slightly muted */
+.contact-card-note {
+    font-size: 0.8125rem !important;
+    line-height: 1.6 !important;
+    color: #7a7a7a !important;
+}
+
+/* Step numbers - editorial accent */
 .step-number {
     font-family: 'Raleway', serif !important;
     font-size: 1.75rem !important;
@@ -123,7 +154,7 @@
     letter-spacing: -0.02em !important;
 }
 
-/* Step titles */
+/* Step titles - same level as card titles */
 .step-title {
     font-family: 'Raleway', serif !important;
     font-size: 1.125rem !important;
@@ -133,37 +164,79 @@
     letter-spacing: 0 !important;
 }
 
-/* Step body text */
+/* Step body text - same as card body */
 .step-text {
     font-size: 0.9375rem !important;
     line-height: 1.65 !important;
     color: #5a5a5a !important;
 }
 
-/* CTA section titles */
+/* CTA section titles - same scale as section-title */
 .cta-title {
     font-family: 'Raleway', serif !important;
-    font-size: clamp(1.75rem, 4vw, 2.5rem) !important;
+    font-size: clamp(1.75rem, 4vw, 2.375rem) !important;
     font-weight: 300 !important;
-    letter-spacing: -0.01em !important;
+    letter-spacing: -0.015em !important;
     line-height: 1.3 !important;
     color: #faf8f5 !important;
     margin-bottom: 2rem !important;
     text-wrap: balance !important;
 }
 
-/* CTA body */
+/* CTA body - readable, not too small */
 .cta-text {
-    font-size: 1rem !important;
-    line-height: 1.65 !important;
+    font-size: 0.9375rem !important;
+    line-height: 1.7 !important;
     color: rgba(250, 248, 245, 0.65) !important;
     max-width: 50ch !important;
     margin: 0 auto 2.5rem !important;
 }
 
+/* Hero headline - display level, consistent scale */
+.hero-headline {
+    font-family: 'Raleway', serif !important;
+    font-size: clamp(2.25rem, 6vw, 3.5rem) !important;
+    font-weight: 200 !important;
+    letter-spacing: -0.025em !important;
+    line-height: 1.12 !important;
+}
+
+/* Hero descriptor - body-lg level */
+.hero-descriptor {
+    font-size: clamp(0.9375rem, 2vw, 1.0625rem) !important;
+    font-weight: 400 !important;
+    line-height: 1.7 !important;
+}
+
+/* Hero CTA - consistent button typography */
+.btn-hero {
+    font-family: 'Manrope', sans-serif !important;
+    font-size: 0.8125rem !important;
+    font-weight: 500 !important;
+    letter-spacing: 0.08em !important;
+    text-transform: uppercase !important;
+}
+
+/* Brand eyebrow - label style */
+.brand-signature {
+    font-size: 0.75rem !important;
+    font-weight: 400 !important;
+    letter-spacing: 0.2em !important;
+    text-transform: uppercase !important;
+}
+
+/* Philosophy statement titles - display accent */
+.statement-title {
+    font-family: 'Raleway', serif !important;
+    font-size: clamp(1.75rem, 4.5vw, 2.5rem) !important;
+    font-weight: 300 !important;
+    letter-spacing: 0.01em !important;
+    line-height: 1.2 !important;
+}
+
 
 /* ============================================
-   2. SPACING — CONSISTENT RHYTHM
+   2. SPACING - CONSISTENT RHYTHM
    Vertical flow should breathe evenly
 ============================================ */
 
@@ -185,7 +258,7 @@
     }
 }
 
-/* Sections — consistent vertical spacing */
+/* Sections - consistent vertical spacing */
 .section {
     padding: 4rem 0 !important;
 }
@@ -202,7 +275,7 @@
     }
 }
 
-/* CTA sections — premium dark treatment */
+/* CTA sections - premium dark treatment */
 .cta-final,
 .cta-secondary {
     padding: 5rem 0 !important;
@@ -254,7 +327,7 @@
 
 
 /* ============================================
-   3. SHADOWS — ONE REFINED SYSTEM
+   3. SHADOWS - ONE REFINED SYSTEM
    Minimal, 2-layer: editorial not bubbly
 ============================================ */
 
@@ -274,7 +347,7 @@
     transform: translateY(-2px) !important;
 }
 
-/* Cards — consistent styling */
+/* Cards - consistent styling */
 .service-card,
 .value-item,
 .contact-card {
@@ -292,7 +365,7 @@
     }
 }
 
-/* Process steps — no card feel, editorial look */
+/* Process steps - no card feel, editorial look */
 .process-step {
     background: transparent !important;
     border: none !important;
@@ -335,7 +408,25 @@
     }
 }
 
-/* Gallery items — editorial, sharp */
+/* Gallery section titles - consistent with section-title */
+.gallery-section-title {
+    font-family: 'Raleway', serif !important;
+    font-size: clamp(1.5rem, 3.5vw, 1.875rem) !important;
+    font-weight: 300 !important;
+    letter-spacing: 0.02em !important;
+    line-height: 1.2 !important;
+    color: #1a1a1a !important;
+}
+
+.gallery-section-subtitle {
+    font-size: 0.8125rem !important;
+    font-weight: 500 !important;
+    color: #d4af37 !important;
+    letter-spacing: 0.06em !important;
+    text-transform: uppercase !important;
+}
+
+/* Gallery items - editorial, sharp */
 .gallery-item {
     border-radius: 2px !important;
     overflow: hidden !important;
@@ -358,7 +449,7 @@
 
 
 /* ============================================
-   4. BUTTONS — UNIFIED CTA SYSTEM
+   4. BUTTONS - UNIFIED CTA SYSTEM
    Refined, not glossy
 ============================================ */
 
@@ -377,7 +468,7 @@
     justify-content: center !important;
 }
 
-/* Kill the shimmer effect — too AI-looking */
+/* Kill the shimmer effect - too AI-looking */
 .btn::before {
     display: none !important;
 }
@@ -426,16 +517,16 @@
 
 
 /* ============================================
-   5. TRANSITIONS & ANIMATIONS — SUBTLE
+   5. TRANSITIONS & ANIMATIONS - SUBTLE
    Only 3 durations, 1 easing curve
 ============================================ */
 
-/* Links — clean underline transition */
+/* Links - clean underline transition */
 a {
     transition: color 0.2s ease !important;
 }
 
-/* Nav links — minimal */
+/* Nav links - minimal */
 .nav-link {
     transition: color 0.2s ease, opacity 0.2s ease !important;
 }
@@ -447,12 +538,12 @@ a {
     transform: translateY(-2px) !important;
 }
 
-/* Section reveal — gentle fade in */
+/* Section reveal - gentle fade in */
 .section-reveal {
     opacity: 1 !important;
 }
 
-/* Image hover on gallery — subtle zoom */
+/* Image hover on gallery - subtle zoom */
 .gallery-image-wrapper img {
     transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
 }
@@ -463,7 +554,7 @@ a {
 
 
 /* ============================================
-   6. FOOTER — READABILITY FIX (CRITICAL)
+   6. FOOTER - READABILITY FIX (CRITICAL)
    Ensure light text on dark background
 ============================================ */
 
@@ -481,6 +572,43 @@ a {
     color: #e8e6e2 !important;
 }
 
+.footer-section:first-child {
+    text-align: center !important;
+    align-items: center;
+}
+
+.footer-section:first-child .wordmark.footer-wordmark-image-wrap {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0.5rem !important;
+    margin-left: 0;
+    transform: none;
+}
+
+.footer-content,
+.footer-section {
+    text-align: center !important;
+    align-items: center !important;
+}
+
+.footer-brand-statement,
+.footer-links,
+.footer-contact,
+.footer-links li,
+.footer-contact li {
+    text-align: center !important;
+}
+
+.footer-social {
+    justify-content: center !important;
+}
+
+.footer .footer-logo-image {
+    opacity: 0.92;
+    filter: brightness(1.12) saturate(0.82);
+}
+
 .footer-tagline {
     color: rgba(232, 230, 226, 0.65) !important;
 }
@@ -495,8 +623,33 @@ a {
     color: rgba(232, 230, 226, 0.6) !important;
     font-size: 0.75rem !important;
     font-weight: 500 !important;
-    letter-spacing: 0.12em !important;
+    letter-spacing: 0.1em !important;
     text-transform: uppercase !important;
+}
+
+@media (max-width: 767px) {
+    .footer-section:first-child {
+        text-align: center !important;
+        align-items: center;
+    }
+
+    .footer-section:first-child .wordmark.footer-wordmark-image-wrap {
+        display: flex !important;
+        justify-content: center;
+        align-self: center;
+        margin-bottom: 0.4rem !important;
+        margin-left: 0;
+        transform: none;
+    }
+
+    .footer .footer-logo-image {
+        height: 32px !important;
+        width: auto !important;
+    }
+}
+
+.footer-cta {
+    display: none !important;
 }
 
 .footer-links a,
@@ -540,6 +693,22 @@ a {
     color: #e8e6e2 !important;
     transform: none !important;
     box-shadow: none !important;
+}
+
+@media (max-width: 768px) {
+    .footer-cta {
+        width: 100% !important;
+        align-self: stretch !important;
+        display: flex !important;
+        justify-content: center !important;
+    }
+
+    .footer-cta .btn {
+        display: inline-flex !important;
+        justify-content: center !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
 }
 
 /* Footer social icons */
@@ -643,7 +812,7 @@ a {
     opacity: 0.7 !important;
 }
 
-/* Form inputs — editorial, clean */
+/* Form inputs - editorial, clean */
 .form-input,
 .form-textarea {
     font-family: 'Manrope', sans-serif !important;
@@ -692,7 +861,7 @@ a {
     }
 }
 
-/* Service detail sections — alternating layout */
+/* Service detail sections - alternating layout */
 .service-detail {
     padding: 3rem 0 !important;
     border-bottom: 1px solid rgba(26, 26, 26, 0.06) !important;
@@ -722,12 +891,12 @@ a {
     padding-left: 1.25rem !important;
     margin-bottom: 0.5rem !important;
     font-size: 0.9375rem !important;
-    line-height: 1.6 !important;
+    line-height: 1.65 !important;
     color: #3a3a3a !important;
 }
 
 .service-detail-list li::before {
-    content: '—' !important;
+    content: '-' !important;
     position: absolute !important;
     left: 0 !important;
     color: #d4af37 !important;
@@ -760,7 +929,7 @@ a {
         max-width: 380px !important;
     }
     
-    /* Service cards — single column */
+    /* Service cards - single column */
     .services-grid {
         grid-template-columns: 1fr !important;
         max-width: 480px !important;
@@ -774,11 +943,39 @@ a {
         max-width: 340px !important;
         margin: 0 auto !important;
     }
+
+    /* Hero text - mobile-optimized sizes */
+    .hero-headline {
+        font-size: clamp(2rem, 9vw, 2.75rem) !important;
+        line-height: 1.12 !important;
+        letter-spacing: -0.02em !important;
+    }
+
+    .hero-descriptor {
+        font-size: 0.9375rem !important;
+        line-height: 1.6 !important;
+    }
+
+    .btn-hero {
+        font-size: 0.8125rem !important;
+        letter-spacing: 0.08em !important;
+    }
+
+    .brand-signature {
+        font-size: 0.6875rem !important;
+        letter-spacing: 0.18em !important;
+    }
+
+    /* Statement title - compact mobile */
+    .statement-title {
+        font-size: 1.25rem !important;
+        line-height: 1.3 !important;
+    }
 }
 
 
 /* ============================================
-   9. MOBILE INDEX PAGE — OVERRIDES
+   9. MOBILE INDEX PAGE - OVERRIDES
    Fix .section-title being made too small by
    index-mobile-luxury.css
 ============================================ */
@@ -793,9 +990,9 @@ a {
     .about-story .section-title,
     .approach-section .section-title,
     .contact-form-section .section-title {
-        font-size: clamp(1.75rem, 4vw, 2.5rem) !important;
+        font-size: clamp(1.75rem, 4vw, 2.375rem) !important;
         font-weight: 300 !important;
-        letter-spacing: -0.01em !important;
+        letter-spacing: -0.015em !important;
         text-transform: none !important;
         color: #1a1a1a !important;
     }
@@ -811,7 +1008,7 @@ a {
         border-radius: 2px !important;
     }
     
-    /* Philosophy pills — keep but refine */
+    /* Philosophy pills - keep but refine */
     .statement-title {
         border-radius: 2px !important;
     }
@@ -824,24 +1021,26 @@ a {
 
 .concept-title {
     font-family: 'Raleway', serif !important;
-    font-size: clamp(1.5rem, 3.5vw, 2rem) !important;
+    font-size: clamp(1.5rem, 3.5vw, 1.875rem) !important;
     font-weight: 300 !important;
-    letter-spacing: 0.04em !important;
+    letter-spacing: 0.02em !important;
+    line-height: 1.2 !important;
     color: #1a1a1a !important;
 }
 
 .concept-subtitle {
-    font-size: 0.9375rem !important;
-    font-weight: 400 !important;
+    font-size: 0.8125rem !important;
+    font-weight: 500 !important;
     color: #d4af37 !important;
-    letter-spacing: 0.02em !important;
-    margin-bottom: 1rem !important;
+    letter-spacing: 0.06em !important;
+    text-transform: uppercase !important;
+    margin-bottom: 1.25rem !important;
 }
 
 .concept-description {
     font-size: 0.9375rem !important;
     line-height: 1.7 !important;
-    color: #3a3a3a !important;
+    color: #5a5a5a !important;
 }
 
 .concept-link {
@@ -863,7 +1062,7 @@ a {
     border-radius: 3px !important;
 }
 
-/* Concepts intro — editorial premium */
+/* Concepts intro - editorial premium */
 .concepts-intro {
     position: relative !important;
     padding: 4.5rem 0 3.5rem !important;
@@ -899,9 +1098,10 @@ a {
 
 .concepts-intro-title {
     font-family: 'Raleway', serif !important;
-    font-size: clamp(1.75rem, 4vw, 2.5rem) !important;
+    font-size: clamp(1.75rem, 4vw, 2.375rem) !important;
     font-weight: 300 !important;
-    letter-spacing: 0.02em !important;
+    letter-spacing: -0.01em !important;
+    line-height: 1.2 !important;
     color: #1a1a1a !important;
     margin-bottom: 1.25rem !important;
     text-wrap: balance !important;
@@ -909,8 +1109,8 @@ a {
 
 .concepts-intro-text {
     font-size: 0.9375rem !important;
-    line-height: 1.8 !important;
-    color: #6a6a6a !important;
+    line-height: 1.7 !important;
+    color: #5a5a5a !important;
     max-width: 600px !important;
     margin: 0 auto !important;
     text-wrap: balance !important;

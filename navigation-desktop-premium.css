@@ -23,7 +23,20 @@
     
     /* Logo - Left Aligned */
     .logo {
+        display: inline-flex;
+        align-items: center;
+        line-height: 0;
         transition: opacity 0.15s ease-out;
+    }
+
+    .logo-image {
+        display: block;
+        width: auto;
+        height: 46px;
+    }
+
+    .footer-logo-image {
+        height: 46px;
     }
     
     .logo:hover {

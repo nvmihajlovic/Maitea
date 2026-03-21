@@ -1,11 +1,11 @@
-# MAITEA Footer — 10/10 Editorial Polish
+# MAITEA Footer - 10/10 Editorial Polish
 ## Design Rationale & Spacing Guide
 
 ---
 
 ## **Design Philosophy**
 
-The footer is a **quiet signature** — it should feel like the calm ending of a premium editorial piece, not a loud call to action. Every spacing decision prioritizes:
+The footer is a **quiet signature** - it should feel like the calm ending of a premium editorial piece, not a loud call to action. Every spacing decision prioritizes:
 
 - **Breathing room** over density
 - **Visual grouping** over uniform gaps
@@ -14,7 +14,7 @@ The footer is a **quiet signature** — it should feel like the calm ending of a
 
 ---
 
-## **PART 1: Desktop Brand Section — Breathing Room**
+## **PART 1: Desktop Brand Section - Breathing Room**
 
 ### **Problem Solved**
 The left column (brand section) felt visually crowded with uniform spacing between all elements. Social icons appeared glued to text.
@@ -54,7 +54,7 @@ Estetika, ukus i pouzdanost    ← Brand statement (editorial voice)
 
 ---
 
-## **PART 2: Social Icons — Subtle & Detached**
+## **PART 2: Social Icons - Subtle & Detached**
 
 ### **Problem Solved**
 Social icons felt too prominent and "promotional" rather than elegant and optional.
@@ -69,7 +69,7 @@ Social icons felt too prominent and "promotional" rather than elegant and option
 
 **Hover State:**
 - Color: **Soft golden lift** (`rgba(212, 175, 55, 0.72)`)
-- NOT full saturation gold — stays refined
+- NOT full saturation gold - stays refined
 - Transition: **280ms** slow ease (editorial pace)
 
 **No Scale, No Bounce, No Shadows**
@@ -104,7 +104,7 @@ Social icons felt too prominent and "promotional" rather than elegant and option
 
 ---
 
-## **PART 3: Micro-Interactions — "Felt, Not Seen"**
+## **PART 3: Micro-Interactions - "Felt, Not Seen"**
 
 ### **Problem Solved**
 Hover effects felt either too aggressive or nonexistent.
@@ -125,10 +125,10 @@ Hover effects felt either too aggressive or nonexistent.
 #### **Pansoft Credit**
 - Default: 56% opacity
 - Hover: **Soft golden tint** (68% opacity gold)
-- NOT full gold — stays understated
+- NOT full gold - stays understated
 
 ### **Timing Philosophy**
-All transitions are **240-280ms** — slow enough to feel refined, fast enough to feel responsive.
+All transitions are **240-280ms** - slow enough to feel refined, fast enough to feel responsive.
 
 **No:**
 - Transforms >3%
@@ -138,7 +138,7 @@ All transitions are **240-280ms** — slow enough to feel refined, fast enough t
 
 ---
 
-## **PART 4: Mobile — Airy & Calm**
+## **PART 4: Mobile - Airy & Calm**
 
 ### **Problem Solved**
 Mobile footer felt cramped and dense, with sections stacked tightly.
@@ -243,7 +243,7 @@ Creating visual hierarchy through opacity, not size:
 ### **✓ Visual Grouping**
 - [ ] Brand section has 3 clear groups (wordmark+tagline / statement / social)
 - [ ] Social icons feel detached via separator + padding
-- [ ] No uniform spacing — group-based rhythm
+- [ ] No uniform spacing - group-based rhythm
 
 ### **✓ Social Icons**
 - [ ] Default opacity is subdued (38%)
@@ -283,7 +283,7 @@ Creating visual hierarchy through opacity, not size:
 > **"The footer should be the last thing people see,  
 > but the first thing they remember subconsciously."**
 
-It's not about what you add — it's about what you remove and how you space what remains.
+It's not about what you add - it's about what you remove and how you space what remains.
 
 ---
 

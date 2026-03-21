@@ -30,13 +30,13 @@
     filter: blur(6px);
 }
 
-/* Active slide — sharp and visible */
+/* Active slide - sharp and visible */
 .hero-slide-active {
     opacity: 1;
     filter: blur(0px);
 }
 
-/* Slide leaving — add class via JS for blur-out */
+/* Slide leaving - add class via JS for blur-out */
 .hero-slide-leaving {
     opacity: 0;
     filter: blur(8px);
@@ -45,16 +45,15 @@
         filter 1.6s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Images — full cover with premium filter */
+/* Images - full cover with premium filter */
 .hero-slide-img {
     position: absolute;
-    top: 0;
-    left: 0;
+    inset: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: center;
-    transform: scale(1.02); /* Slight overscale to hide blur edges */
+    object-position: center center;
+    transform: scale(1.05);
 
     /* Premium editorial filter */
     filter:
@@ -66,19 +65,19 @@
 
 /* Vary focal points for each slide */
 .hero-slide:nth-child(2) .hero-slide-img {
-    object-position: center 30%;
-}
-
-.hero-slide:nth-child(3) .hero-slide-img {
-    object-position: center 40%;
-}
-
-.hero-slide:nth-child(4) .hero-slide-img {
     object-position: center 35%;
 }
 
+.hero-slide:nth-child(3) .hero-slide-img {
+    object-position: center 45%;
+}
+
+.hero-slide:nth-child(4) .hero-slide-img {
+    object-position: center 40%;
+}
+
 /* ========================================
-   OVERLAY — Dark gradient for readability
+   OVERLAY - Dark gradient for readability
    ======================================== */
 
 .hero-slider-overlay {
@@ -88,13 +87,13 @@
     pointer-events: none;
 
     background:
-        /* Radial vignette — darker edges */
+        /* Radial vignette - darker edges */
         radial-gradient(
             ellipse at center,
             rgba(26, 26, 26, 0.05) 0%,
             rgba(26, 26, 26, 0.30) 100%
         ),
-        /* Vertical gradient — stronger top and bottom */
+        /* Vertical gradient - stronger top and bottom */
         linear-gradient(
             to bottom,
             rgba(26, 26, 26, 0.20) 0%,
@@ -114,7 +113,7 @@
 }
 
 /* ========================================
-   TEXT ON SLIDER — white, readable
+   TEXT ON SLIDER - white, readable
    ======================================== */
 
 .hero .brand-signature {
@@ -134,7 +133,7 @@
     text-shadow: 0 1px 4px rgba(0, 0, 0, 0.25);
 }
 
-/* CTA button — gold accent */
+/* CTA button - gold accent */
 .hero .btn-hero {
     background: var(--gold, #d4af37) !important;
     color: #1a1a1a !important;
@@ -177,27 +176,27 @@
 
 @media (max-width: 768px) {
     .hero-slide-img {
-        /* Darker on mobile for small-screen readability */
+        /* Slightly darker on mobile for text readability */
         filter:
-            saturate(0.35)
-            brightness(0.45)
-            contrast(1.15)
-            sepia(0.10);
+            saturate(0.50)
+            brightness(0.58)
+            contrast(1.10)
+            sepia(0.08);
     }
 
     .hero-slider-overlay {
         background:
             radial-gradient(
                 ellipse at center,
-                rgba(26, 26, 26, 0.18) 0%,
-                rgba(26, 26, 26, 0.50) 100%
+                rgba(26, 26, 26, 0.10) 0%,
+                rgba(26, 26, 26, 0.30) 100%
             ),
             linear-gradient(
                 to bottom,
-                rgba(26, 26, 26, 0.35) 0%,
-                rgba(26, 26, 26, 0.12) 35%,
-                rgba(26, 26, 26, 0.12) 65%,
-                rgba(26, 26, 26, 0.40) 100%
+                rgba(26, 26, 26, 0.25) 0%,
+                rgba(26, 26, 26, 0.06) 35%,
+                rgba(26, 26, 26, 0.06) 65%,
+                rgba(26, 26, 26, 0.30) 100%
             );
     }
 
@@ -219,10 +218,10 @@
 @media (max-width: 430px) {
     .hero-slide-img {
         filter:
-            saturate(0.30)
-            brightness(0.42)
-            contrast(1.18)
-            sepia(0.08);
+            saturate(0.45)
+            brightness(0.55)
+            contrast(1.12)
+            sepia(0.06);
     }
 }
 
@@ -241,7 +240,7 @@
 }
 
 /* ========================================
-   REDUCED MOTION — instant switch, no blur
+   REDUCED MOTION - instant switch, no blur
    ======================================== */
 
 @media (prefers-reduced-motion: reduce) {

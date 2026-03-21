@@ -220,6 +220,15 @@ a:focus-visible {
 
 .logo {
     z-index: 101;
+    display: inline-flex;
+    align-items: center;
+    line-height: 0;
+}
+
+.logo-image {
+    display: block;
+    width: auto;
+    height: 36px;
 }
 
 /* Mobile Navigation Toggle */
@@ -968,6 +977,16 @@ a:focus-visible {
 .footer .wordmark {
     color: #faf8f5;
     font-size: 1.25rem;
+}
+
+.footer-wordmark-image-wrap {
+    line-height: 0;
+}
+
+.footer-logo-image {
+    display: block;
+    width: auto;
+    height: 36px;
 }
 
 .footer-content {

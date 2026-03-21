@@ -1,0 +1,379 @@
+/* Premium offers layout for usluge.html */
+
+.offers-intro.section {
+    padding: clamp(2.4rem, 5vw, 4rem) 0 clamp(1.3rem, 3vw, 2rem) !important;
+    position: relative;
+}
+
+.offers-intro .container {
+    max-width: 980px;
+}
+
+.offers-intro::after {
+    content: '';
+    display: block;
+    width: 74px;
+    height: 1px;
+    margin: 1.45rem auto 0;
+    background: linear-gradient(90deg, transparent 0%, rgba(212, 175, 55, 0.62) 50%, transparent 100%);
+}
+
+.offers-intro-text {
+    max-width: 830px;
+    margin: 0 auto 0.75rem;
+    text-align: center;
+    font-size: 1.03rem;
+    line-height: 1.8;
+    color: #3f3f3f;
+}
+
+.offers-intro-note {
+    max-width: 830px;
+    text-align: center;
+    font-size: 0.88rem;
+    letter-spacing: 0.03em;
+    color: #7a7a7a;
+    margin: 0 auto;
+}
+
+.offers-gallery.section {
+    padding: clamp(1.2rem, 2.5vw, 2rem) 0 clamp(2.2rem, 4vw, 3.4rem) !important;
+}
+
+.offers-gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 0.95rem;
+}
+
+.offers-gallery-grid img {
+    width: 100%;
+    height: 270px;
+    object-fit: cover;
+    display: block;
+    border-radius: 3px;
+}
+
+.offer-category.section {
+    padding: clamp(2.4rem, 4vw, 3.8rem) 0 !important;
+}
+
+.offer-category + .offer-category {
+    border-top: 1px solid rgba(212, 175, 55, 0.11);
+}
+
+.offer-category-head {
+    margin-bottom: 1.8rem;
+    max-width: 740px;
+}
+
+.offer-category-head h2 {
+    font-family: 'Raleway', sans-serif;
+    font-size: clamp(1.5rem, 3vw, 2.2rem);
+    font-weight: 300;
+    line-height: 1.2;
+    margin: 0 0 0.6rem;
+    color: #1a1a1a;
+}
+
+.offer-category-head p {
+    margin: 0;
+    color: #5e5e5e;
+    line-height: 1.7;
+}
+
+.package-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.15rem;
+}
+
+.package-card {
+    border: 1px solid rgba(26, 26, 26, 0.1);
+    border-top: 2px solid rgba(26, 26, 26, 0.2);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.94) 0%, rgba(250, 248, 245, 0.88) 100%);
+    padding: 1.2rem 1.2rem 1.1rem;
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    transition: transform 0.24s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.24s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.24s ease;
+}
+
+.package-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 34px rgba(0, 0, 0, 0.07);
+    border-color: rgba(212, 175, 55, 0.26);
+}
+
+.package-card h3 {
+    margin: 0 0 0.75rem;
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 400;
+    letter-spacing: 0.02em;
+    color: #1a1a1a;
+}
+
+.package-card ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.package-card li {
+    position: relative;
+    padding-left: 1rem;
+    margin-bottom: 0.5rem;
+    line-height: 1.6;
+    color: #3e3e3e;
+    font-size: 0.95rem;
+}
+
+.package-card li::before {
+    content: '';
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    position: absolute;
+    left: 0;
+    top: 0.66em;
+    background: rgba(212, 175, 55, 0.9);
+}
+
+.package-card-featured {
+    border-color: rgba(212, 175, 55, 0.4);
+    border-top-color: rgba(212, 175, 55, 0.82);
+    background: linear-gradient(180deg, rgba(212, 175, 55, 0.11) 0%, rgba(255, 255, 255, 0.95) 100%);
+    box-shadow: 0 10px 24px rgba(182, 145, 34, 0.14);
+    position: relative;
+}
+
+.package-card-featured::after {
+    content: 'PREPORUKA';
+    align-self: flex-start;
+    margin-top: 0.55rem;
+    padding: 0.3rem 0.72rem;
+    font-size: 0.64rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #6a5320;
+    background: linear-gradient(180deg, rgba(255, 250, 236, 0.98) 0%, rgba(244, 232, 190, 0.98) 100%);
+    border: 1px solid rgba(212, 175, 55, 0.5);
+    border-radius: 999px;
+    box-shadow: 0 6px 14px rgba(120, 96, 34, 0.15);
+}
+
+html[lang='en'] .package-card-featured::after {
+    content: 'RECOMMENDED';
+}
+
+.inquiry-section.section {
+    padding: clamp(3rem, 5vw, 4.8rem) 0 clamp(4rem, 7vw, 6rem) !important;
+}
+
+.inquiry-wrap {
+    border: 1px solid rgba(212, 175, 55, 0.25);
+    border-top: 2px solid rgba(212, 175, 55, 0.5);
+    background: linear-gradient(180deg, rgba(250, 248, 245, 0.96) 0%, rgba(250, 248, 245, 0.88) 100%);
+    padding: 1.45rem;
+}
+
+.inquiry-head h2 {
+    margin: 0 0 0.5rem;
+    font-family: 'Raleway', sans-serif;
+    font-size: clamp(1.65rem, 3.2vw, 2.25rem);
+    font-weight: 300;
+    color: #1a1a1a;
+}
+
+.inquiry-head p {
+    margin: 0 0 1.3rem;
+    color: #5d5d5d;
+    line-height: 1.7;
+}
+
+.inquiry-form {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.95rem;
+}
+
+.inquiry-form label {
+    display: block;
+    font-size: 0.82rem;
+    color: #454545;
+    letter-spacing: 0.03em;
+}
+
+.inquiry-form input,
+.inquiry-form select,
+.inquiry-form textarea {
+    width: 100%;
+    margin-top: 0.35rem;
+    border: 1px solid rgba(26, 26, 26, 0.16);
+    background: #fff;
+    padding: 0.72rem 0.8rem;
+    color: #1a1a1a;
+    font-family: 'Manrope', sans-serif;
+    font-size: 0.95rem;
+}
+
+.inquiry-form input:focus,
+.inquiry-form select:focus,
+.inquiry-form textarea:focus {
+    outline: 1px solid rgba(212, 175, 55, 0.5);
+    border-color: rgba(212, 175, 55, 0.5);
+}
+
+.inquiry-full {
+    grid-column: 1 / -1;
+}
+
+.inquiry-submit {
+    grid-column: 1 / -1;
+    justify-self: start;
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
+@media (max-width: 1023px) {
+    .offers-gallery-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .offers-gallery-grid img {
+        height: 220px;
+    }
+
+    .package-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 640px) {
+    .offers-intro.section {
+        padding-top: 2.4rem !important;
+        padding-bottom: 2rem !important;
+    }
+
+    .offers-intro-text,
+    .offers-intro-note {
+        text-align: center;
+    }
+
+    .offers-intro::after {
+        margin-top: 1rem;
+        margin-left: 0;
+    }
+
+    .offers-gallery-grid {
+        grid-template-columns: 1fr;
+        gap: 0.9rem;
+    }
+
+    .offers-gallery-grid img {
+        height: 235px;
+    }
+
+    .offer-category.section {
+        padding: 3.9rem 0 !important;
+    }
+
+    .offer-category + .offer-category {
+        margin-top: 0.55rem;
+    }
+
+    .offer-category-head {
+        margin-bottom: 1.7rem;
+    }
+
+    .offer-category-head p {
+        font-size: 0.96rem;
+        line-height: 1.75;
+    }
+
+    .offer-category .package-grid {
+        gap: 1.45rem !important;
+    }
+
+    .package-card {
+        padding: 1.35rem 1.1rem 1.3rem;
+    }
+
+    .package-card h3 {
+        font-size: 1.1rem;
+        margin-bottom: 1rem;
+    }
+
+    .package-card li {
+        margin-bottom: 0.72rem;
+        line-height: 1.68;
+    }
+
+    .inquiry-wrap {
+        padding: 1.45rem;
+    }
+
+    .inquiry-form {
+        grid-template-columns: 1fr;
+        gap: 1.3rem;
+    }
+
+    .inquiry-head p {
+        margin-bottom: 2.1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .offers-gallery.section {
+        padding-top: 1.9rem !important;
+        padding-bottom: 3.2rem !important;
+    }
+
+    .offers-gallery.section + .offer-category.section {
+        padding-top: 4.2rem !important;
+    }
+
+    .offer-category.section + .offers-gallery.section {
+        padding-top: 2.2rem !important;
+    }
+
+    .inquiry-section.section {
+        padding-top: 3.9rem !important;
+        padding-bottom: 5.2rem !important;
+    }
+}
+
+@media (max-width: 380px) {
+    .offers-intro.section {
+        padding-top: 2.7rem !important;
+        padding-bottom: 2.3rem !important;
+    }
+
+    .offer-category.section {
+        padding-top: 4.2rem !important;
+        padding-bottom: 4.2rem !important;
+    }
+
+    .offer-category .package-grid {
+        gap: 1.6rem !important;
+    }
+
+    .offer-category-head {
+        margin-bottom: 1.95rem;
+    }
+
+    .package-card {
+        padding: 1.5rem 1.15rem 1.4rem;
+    }
+
+    .inquiry-section.section {
+        padding-top: 4.2rem !important;
+        padding-bottom: 5.5rem !important;
+    }
+
+    .inquiry-form {
+        gap: 1.4rem;
+    }
+}

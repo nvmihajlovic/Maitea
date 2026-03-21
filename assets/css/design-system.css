@@ -1,6 +1,6 @@
 /* ============================================
-   MAITEA DESIGN SYSTEM — 10/10 MICRO-POLISH
-   Premium catering brand — minimalist, editorial, luxury
+   MAITEA DESIGN SYSTEM - 10/10 MICRO-POLISH
+   Premium catering brand - minimalist, editorial, luxury
    ============================================ */
 
 /* ========================================
@@ -243,7 +243,7 @@ small, .text-sm {
 
 
 /* ========================================
-   CTA BUTTON SYSTEM — Premium, Disciplined
+   CTA BUTTON SYSTEM - Premium, Disciplined
    All variants share exact same dimensions
    ======================================== */
 
@@ -429,7 +429,7 @@ small, .text-sm {
 }
 
 /* ========================================
-   CARDS — Subtle Borders + Shadows
+   CARDS - Subtle Borders + Shadows
    ======================================== */
 
 .card,
@@ -493,7 +493,7 @@ small, .text-sm {
     max-width: var(--measure-narrow);
 }
 
-/* Service Link — Underline Reveal */
+/* Service Link - Underline Reveal */
 .service-link {
     font-weight: var(--weight-medium);
     color: var(--color-text);
@@ -648,7 +648,7 @@ a:focus-visible {
 }
 
 /* ========================================
-   ANIMATIONS — Reveal on Scroll
+   ANIMATIONS - Reveal on Scroll
    ======================================== */
 
 @keyframes fadeInUp {
