@@ -114,26 +114,26 @@ textarea,
 }
 
 .footer-content .footer-section:first-child {
-    align-items: flex-start !important;
-    text-align: left !important;
+    align-items: center !important;
+    text-align: center !important;
 }
 
 .footer-content .footer-section:first-child .wordmark.footer-wordmark-image-wrap {
     display: flex !important;
-    justify-content: flex-start !important;
+    justify-content: center !important;
     align-items: center !important;
-    align-self: flex-start !important;
+    align-self: center !important;
     width: 100% !important;
     margin-left: 0 !important;
 }
 
 .footer-content .footer-section:first-child .footer-logo-image {
-    margin-left: -8px !important;
+    margin-left: 0 !important;
 }
 
 .footer-content .footer-section:first-child .footer-brand-statement,
 .footer-content .footer-section:first-child .footer-tagline {
-    text-align: left !important;
+    text-align: center !important;
 }
 
 .footer-content .footer-section:first-child .footer-brand-statement {
@@ -147,7 +147,7 @@ textarea,
 }
 
 .footer-content .footer-section:first-child .footer-social {
-    justify-content: flex-start !important;
+    justify-content: center !important;
 }
 
 @media (min-width: 1024px) {
@@ -233,23 +233,23 @@ textarea,
 /* Stable mobile philosophy row: never overflow, never stack */
 @media (max-width: 768px) {
     .footer-content .footer-section:first-child {
-        align-items: flex-start !important;
-        text-align: left !important;
+        align-items: center !important;
+        text-align: center !important;
     }
 
     .footer-content .footer-section:first-child .wordmark.footer-wordmark-image-wrap {
-        justify-content: flex-start !important;
-        align-self: flex-start !important;
+        justify-content: center !important;
+        align-self: center !important;
         width: 100% !important;
     }
 
     .footer-content .footer-section:first-child .footer-brand-statement,
     .footer-content .footer-section:first-child .footer-tagline {
-        text-align: left !important;
+        text-align: center !important;
     }
 
     .footer-content .footer-section:first-child .footer-social {
-        justify-content: flex-start !important;
+        justify-content: center !important;
     }
 
     .footer-content {

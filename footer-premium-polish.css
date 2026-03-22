@@ -206,12 +206,22 @@
         font-size: 0.75rem; /* Maintain refined size on mobile */
     }
 
+    /* Brand section mobile - centered */
+    .footer-section:first-child {
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer-brand-statement {
+        max-width: 100%;
+    }
+
     /* Social icons mobile - clean spacing */
     .footer-social {
         border-top: none;
         padding-top: 0;
         margin-top: 0;
-        justify-content: flex-start;
+        justify-content: center;
     }
 
     /* Mobile CTA - generous touch target */
