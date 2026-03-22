@@ -301,9 +301,15 @@ const i18n = {
         'contact.form.message.placeholder': 'Opišite ukratko vaš događaj...',
         'contact.form.message.autofill': 'Pozdrav,\n\nInteresuje me Vaša ponuda ketering usluga i želeo/želela bih da saznam više informacija.\n\nPlaniram događaj i želeo/želela bih da razgovaramo o mogućnostima, meniju i cenama.\n\nHvala unapred na odgovoru!',
         'contact.form.submit': 'Pošaljite upit',
+        'contact.form.sending': 'Slanje u toku...',
         'contact.form.success': 'Hvala! Vaša poruka je uspešno poslata. Kontaktiraćemo vas uskoro.',
+        'contact.form.error.submit': 'Došlo je do greške pri slanju. Pokušajte ponovo za par minuta.',
         'contact.form.error.required': 'Ovo polje je obavezno',
         'contact.form.error.email': 'Unesite validnu email adresu',
+
+        'services.inquiry.sending': 'Slanje u toku...',
+        'services.inquiry.success': 'Hvala! Upit je uspešno poslat. Javićemo vam se uskoro.',
+        'services.inquiry.error.submit': 'Došlo je do greške pri slanju upita. Pokušajte ponovo za par minuta.',
     },
     
     en: {
@@ -598,9 +604,15 @@ const i18n = {
         'contact.form.message.placeholder': 'Briefly describe your event...',
         'contact.form.message.autofill': 'Hello,\n\nI am interested in your catering services and would like to learn more.\n\nI am planning an event and would like to discuss options, menu, and pricing.\n\nThank you in advance for your response!',
         'contact.form.submit': 'Send Inquiry',
+        'contact.form.sending': 'Sending...',
         'contact.form.success': 'Thank you! Your message has been sent successfully. We\'ll contact you soon.',
+        'contact.form.error.submit': 'There was an error while sending. Please try again in a few minutes.',
         'contact.form.error.required': 'This field is required',
         'contact.form.error.email': 'Please enter a valid email address',
+
+        'services.inquiry.sending': 'Sending...',
+        'services.inquiry.success': 'Thank you! Your inquiry has been sent successfully. We will contact you soon.',
+        'services.inquiry.error.submit': 'There was an error while sending your inquiry. Please try again in a few minutes.',
     }
 };
 
@@ -795,6 +807,77 @@ function initLazyImages() {
 // CONTACT FORM VALIDATION
 // ============================================
 
+function getFormspreeEndpoint(form) {
+    const dataEndpoint = (form?.dataset?.formspreeEndpoint || '').trim();
+    const actionEndpoint = (form?.getAttribute('action') || '').trim();
+
+    if (dataEndpoint && !dataEndpoint.includes('REPLACE_WITH_FORM_ID')) {
+        return dataEndpoint;
+    }
+
+    if (actionEndpoint && !actionEndpoint.includes('REPLACE_WITH_FORM_ID')) {
+        return actionEndpoint;
+    }
+
+    return '';
+}
+
+async function submitFormToFormspree(form, extraFields = {}) {
+    const endpoint = getFormspreeEndpoint(form);
+
+    if (!endpoint) {
+        throw new Error('Formspree endpoint nije podešen.');
+    }
+
+    const formData = new FormData(form);
+    Object.entries(extraFields).forEach(([key, value]) => {
+        formData.set(key, value);
+    });
+
+    const response = await fetch(endpoint, {
+        method: 'POST',
+        body: formData,
+        headers: {
+            'Accept': 'application/json'
+        }
+    });
+
+    if (!response.ok) {
+        let details = '';
+        try {
+            const payload = await response.json();
+            if (payload?.errors?.length) {
+                details = payload.errors.map(item => item.message).join(' ');
+            }
+        } catch (_) {
+            details = '';
+        }
+
+        throw new Error(details || 'Formspree request failed');
+    }
+
+    return response;
+}
+
+function setFormStatus(statusElement, message, type) {
+    if (!statusElement) return;
+
+    statusElement.textContent = message;
+    statusElement.classList.remove('is-success', 'is-error', 'is-visible');
+
+    if (!message) {
+        return;
+    }
+
+    if (type === 'success') {
+        statusElement.classList.add('is-success');
+    } else if (type === 'error') {
+        statusElement.classList.add('is-error');
+    }
+
+    statusElement.classList.add('is-visible');
+}
+
 function initContactForm() {
     const form = document.getElementById('contactForm');
     
@@ -809,6 +892,8 @@ function initContactForm() {
     const messageError = document.getElementById('messageError');
     
     const formSuccess = document.getElementById('formSuccess');
+    const submitButton = form.querySelector('button[type="submit"]');
+    const defaultSubmitLabel = submitButton ? submitButton.textContent : '';
     
     function validateField(input, errorElement, validationType = 'required') {
         const value = input.value.trim();
@@ -864,24 +949,86 @@ function initContactForm() {
     });
     
     // Handle form submission
-    form.addEventListener('submit', (e) => {
+    form.addEventListener('submit', async (e) => {
         e.preventDefault();
         
         if (!validateForm()) {
             return;
         }
-        
-        // Show success message
-        formSuccess.classList.add('show');
-        form.reset();
-        
-        // Hide success message after 5 seconds
-        setTimeout(() => {
-            formSuccess.classList.remove('show');
-        }, 5000);
-        
-        // Scroll to success message
-        formSuccess.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+
+        if (submitButton) {
+            submitButton.disabled = true;
+            submitButton.textContent = i18n[currentLanguage]['contact.form.sending'];
+        }
+
+        try {
+            await submitFormToFormspree(form, {
+                page: window.location.pathname,
+                language: currentLanguage
+            });
+
+            formSuccess.classList.add('show');
+            formSuccess.querySelector('p').textContent = i18n[currentLanguage]['contact.form.success'];
+            form.reset();
+
+            setTimeout(() => {
+                formSuccess.classList.remove('show');
+            }, 5000);
+
+            formSuccess.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        } catch (error) {
+            formSuccess.classList.add('show');
+            formSuccess.querySelector('p').textContent = i18n[currentLanguage]['contact.form.error.submit'];
+            formSuccess.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        } finally {
+            if (submitButton) {
+                submitButton.disabled = false;
+                submitButton.textContent = i18n[currentLanguage]['contact.form.submit'] || defaultSubmitLabel;
+            }
+        }
+    });
+}
+
+function initServicesInquiryForm() {
+    const form = document.getElementById('servicesInquiryForm');
+    if (!form) return;
+
+    const statusElement = document.getElementById('servicesFormStatus');
+    const submitButton = form.querySelector('button[type="submit"]');
+    const defaultSubmitLabel = submitButton ? submitButton.textContent : '';
+
+    form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+
+        if (!form.checkValidity()) {
+            form.reportValidity();
+            return;
+        }
+
+        setFormStatus(statusElement, i18n[currentLanguage]['services.inquiry.sending'], null);
+
+        if (submitButton) {
+            submitButton.disabled = true;
+            submitButton.textContent = i18n[currentLanguage]['services.inquiry.sending'];
+        }
+
+        try {
+            await submitFormToFormspree(form, {
+                page: window.location.pathname,
+                language: currentLanguage
+            });
+
+            setFormStatus(statusElement, i18n[currentLanguage]['services.inquiry.success'], 'success');
+
+            form.reset();
+        } catch (error) {
+            setFormStatus(statusElement, i18n[currentLanguage]['services.inquiry.error.submit'], 'error');
+        } finally {
+            if (submitButton) {
+                submitButton.disabled = false;
+                submitButton.textContent = i18n[currentLanguage]['services.inquiry.submit'] || defaultSubmitLabel;
+            }
+        }
     });
 }
 
@@ -1028,6 +1175,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Initialize form validation
     initContactForm();
+    initServicesInquiryForm();
     
     // Initialize smooth scroll
     initSmoothScroll();

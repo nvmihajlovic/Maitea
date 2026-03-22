@@ -237,6 +237,26 @@ html[lang='en'] .package-card-featured::after {
     padding-right: 2rem;
 }
 
+.form-status {
+    grid-column: 1 / -1;
+    margin: 0.2rem 0 0;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    display: none;
+}
+
+.form-status.is-visible {
+    display: block;
+}
+
+.form-status.is-success {
+    color: #1f6a39;
+}
+
+.form-status.is-error {
+    color: #9f2d2d;
+}
+
 @media (max-width: 1023px) {
     .offers-gallery-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));

@@ -259,7 +259,9 @@
                     <h2 data-i18n="services.inquiry.title">Pošaljite upit</h2>
                     <p data-i18n="services.inquiry.intro">Recite nam šta vam treba i pripremićemo predlog prema vašem događaju.</p>
                 </div>
-                <form class="inquiry-form" action="mailto:info@maiteacatering.rs" method="post" enctype="text/plain">
+                <form class="inquiry-form" id="servicesInquiryForm" method="POST" data-formspree-endpoint="https://formspree.io/f/REPLACE_WITH_FORM_ID">
+                    <input type="hidden" name="_subject" value="MAITEA upit za usluge">
+                    <input type="hidden" name="form_source" value="Usluge stranica">
                     <label><span data-i18n="services.inquiry.fullname">Ime i prezime</span>
                         <input type="text" name="Ime i prezime" required>
                     </label>
@@ -302,6 +304,7 @@
                         <textarea name="Napomene" rows="5" data-i18n-placeholder="services.inquiry.notes.placeholder" placeholder="Npr. alergeni, tip posluženja, posebne želje..."></textarea>
                     </label>
                     <button type="submit" class="btn btn-primary inquiry-submit" data-i18n="services.inquiry.submit">Pošaljite upit</button>
+                    <p class="form-status" id="servicesFormStatus" role="status" aria-live="polite"></p>
                 </form>
             </div>
         </section>

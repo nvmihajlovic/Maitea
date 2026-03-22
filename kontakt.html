@@ -112,7 +112,9 @@
                     <h2 class="section-title" data-i18n="contact.form.title">Pošaljite upit</h2>
                     <p class="section-intro" data-i18n="contact.form.intro">Popunite formu i kontaktiraćemo Vas u najkraćem roku.</p>
                     
-                    <form class="contact-form" id="contactForm" novalidate>
+                    <form class="contact-form" id="contactForm" method="POST" data-formspree-endpoint="https://formspree.io/f/REPLACE_WITH_FORM_ID" novalidate>
+                        <input type="hidden" name="_subject" value="MAITEA kontakt forma">
+                        <input type="hidden" name="form_source" value="Kontakt stranica">
                         <!-- Name Field -->
                         <div class="form-group">
                             <label for="name" class="form-label" data-i18n="contact.form.name.label">Ime i prezime *</label>
