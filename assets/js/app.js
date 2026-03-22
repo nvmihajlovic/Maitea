@@ -67,7 +67,7 @@ const i18n = {
         'clients.intro': 'Veruju nam vodeće kompanije i pojedinci koji cene kvalitet.',
         
         // CTA
-        'cta.title': 'Spremni za nezaboravan događaj?<br>Razgovarajmo o Vašoj ideji.',
+            'cta.title': 'Spremni za nezaboravan događaj? <br>Razgovarajmo o Vašoj ideji.',
         'cta.text': 'Kontaktirajte nas i počnimo sa planiranjem.',
         'cta.button': 'Pošaljite upit',
         
@@ -370,7 +370,7 @@ const i18n = {
         'clients.intro': 'Leading companies and individuals who value quality trust us.',
         
         // CTA
-        'cta.title': 'Ready for an unforgettable event?<br>Let\'s talk about your idea.',
+            'cta.title': 'Ready for an unforgettable event? <br>Let\'s talk about your idea.',
         'cta.text': 'Contact us and let\'s start planning.',
         'cta.button': 'Send Inquiry',
         

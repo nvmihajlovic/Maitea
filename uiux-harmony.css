@@ -321,7 +321,7 @@ textarea,
         flex-wrap: nowrap !important;
         justify-content: center !important;
         align-items: center !important;
-        gap: clamp(0.7rem, 3vw, 1.15rem) !important;
+        gap: clamp(0.45rem, 2vw, 0.85rem) !important;
     }
 
     .philosophy-statements .statement {
@@ -331,7 +331,7 @@ textarea,
     }
 
     .philosophy-statements .statement-title {
-        font-size: clamp(0.92rem, 3.1vw, 1.05rem) !important;
+        font-size: clamp(1.1rem, 3.55vw, 1.26rem) !important;
         line-height: 1.25 !important;
         letter-spacing: -0.01em !important;
         white-space: nowrap !important;
@@ -384,6 +384,134 @@ textarea,
     .inquiry-form,
     .contact-form {
         gap: clamp(0.9rem, 2.8vw, 1.2rem) !important;
+    }
+}
+
+/* Unified CTA system across pages */
+.cta-final,
+.cta-secondary {
+    padding: clamp(4.5rem, 8vw, 6rem) 0 !important;
+    text-align: center !important;
+    background: linear-gradient(160deg, #1a1a1a 0%, #242424 40%, #1e1e1e 100%) !important;
+    position: relative !important;
+    overflow: hidden !important;
+}
+
+.cta-final::before,
+.cta-secondary::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(circle at 18% 20%, rgba(212, 175, 55, 0.12), transparent 34%),
+        radial-gradient(circle at 82% 72%, rgba(255, 255, 255, 0.05), transparent 28%);
+    pointer-events: none;
+}
+
+.cta-final .container,
+.cta-secondary .container {
+    position: relative !important;
+    z-index: 1 !important;
+}
+
+.cta-final .cta-content,
+.cta-secondary .cta-content {
+    max-width: 44rem !important;
+    margin: 0 auto !important;
+    padding: 0 1.5rem !important;
+    text-align: center !important;
+    background: transparent !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+}
+
+.cta-final .cta-title,
+.cta-secondary .cta-title {
+    font-size: clamp(1.9rem, 4vw, 2.8rem) !important;
+    line-height: 1.2 !important;
+    letter-spacing: -0.02em !important;
+    font-weight: 300 !important;
+    color: #faf8f5 !important;
+    margin: 0 0 1rem !important;
+}
+
+.cta-final .cta-text,
+.cta-secondary .cta-text {
+    max-width: 34ch !important;
+    margin: 0 auto 2rem !important;
+    font-size: clamp(1rem, 1.2vw, 1.08rem) !important;
+    line-height: 1.75 !important;
+    font-weight: 300 !important;
+    color: rgba(250, 248, 245, 0.8) !important;
+}
+
+.cta-final .btn,
+.cta-secondary .btn,
+.cta-final .btn-primary,
+.cta-secondary .btn-primary,
+.cta-final .btn-large,
+.cta-secondary .btn-large {
+    min-width: min(100%, 21.25rem) !important;
+    min-height: 3.25rem !important;
+    padding: 1rem 2.75rem !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    background: transparent !important;
+    color: #d4af37 !important;
+    border: 1px solid rgba(212, 175, 55, 0.5) !important;
+    border-radius: 0.875rem !important;
+    box-shadow: none !important;
+    letter-spacing: 0.12em !important;
+}
+
+.cta-final .btn:hover,
+.cta-secondary .btn:hover,
+.cta-final .btn-primary:hover,
+.cta-secondary .btn-primary:hover,
+.cta-final .btn-large:hover,
+.cta-secondary .btn-large:hover {
+    background: #d4af37 !important;
+    color: #1a1a1a !important;
+    border-color: #d4af37 !important;
+    transform: translateY(-1px) !important;
+    box-shadow: 0 6px 22px rgba(212, 175, 55, 0.18) !important;
+}
+
+@media (max-width: 768px) {
+    .cta-final,
+    .cta-secondary {
+        padding: 4.5rem 0 !important;
+    }
+
+    .cta-final .cta-content,
+    .cta-secondary .cta-content {
+        max-width: 26rem !important;
+        padding: 0 1.25rem !important;
+    }
+
+    .cta-final .cta-title,
+    .cta-secondary .cta-title {
+        font-size: clamp(1.7rem, 7vw, 2.2rem) !important;
+        margin-bottom: 0.9rem !important;
+    }
+
+    .cta-final .cta-text,
+    .cta-secondary .cta-text {
+        max-width: 30ch !important;
+        font-size: 1rem !important;
+        line-height: 1.7 !important;
+        margin-bottom: 1.75rem !important;
+    }
+
+    .cta-final .btn,
+    .cta-secondary .btn,
+    .cta-final .btn-primary,
+    .cta-secondary .btn-primary,
+    .cta-final .btn-large,
+    .cta-secondary .btn-large {
+        width: min(100%, 21.25rem) !important;
     }
 }
 
