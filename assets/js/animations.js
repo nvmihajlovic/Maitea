@@ -120,36 +120,16 @@ class SmoothScroll {
 }
 
 /**
- * Lazy Loading za slike
+ * Lazy Loading za slike - DISABLED (iskljuceno zbog treperenja)
  */
 class LazyImageLoader {
     constructor() {
-        this.images = document.querySelectorAll('img[data-src]');
-        this.init();
-    }
-    
-    init() {
-        if ('IntersectionObserver' in window) {
-            const imageObserver = new IntersectionObserver((entries, observer) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        const img = entry.target;
-                        img.src = img.dataset.src;
-                        img.classList.add('loaded');
-                        observer.unobserve(img);
-                    }
-                });
-            }, {
-                rootMargin: '50px 0px' // Učitaj 50px pre nego što uđe u viewport
-            });
-            
-            this.images.forEach(img => imageObserver.observe(img));
-        } else {
-            // Fallback za stare browsere
-            this.images.forEach(img => {
-                img.src = img.dataset.src;
-            });
-        }
+        // Lazy loading iskljucen
+        // Odmah ucitaj sve slike sa data-src
+        document.querySelectorAll('img[data-src]').forEach(img => {
+            img.src = img.dataset.src;
+            img.classList.add('loaded');
+        });
     }
 }
 

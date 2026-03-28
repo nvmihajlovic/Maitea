@@ -457,7 +457,8 @@
     }
     
     .cta-title br {
-        display: none !important; /* Single line on mobile */
+        display: inline !important;
+        line-height: 1.3 !important;
     }
     
     /* Primary button - consistent with hero */

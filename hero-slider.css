@@ -23,26 +23,23 @@
     position: absolute;
     inset: 0;
     opacity: 0;
-    will-change: opacity, filter;
-    transition:
-        opacity 2s cubic-bezier(0.4, 0, 0.2, 1),
-        filter 2s cubic-bezier(0.4, 0, 0.2, 1);
-    filter: blur(6px);
+    transition: opacity 1.2s ease;
 }
 
-/* Active slide - sharp and visible */
+/* Active slide */
 .hero-slide-active {
     opacity: 1;
-    filter: blur(0px);
 }
 
-/* Slide leaving - add class via JS for blur-out */
+/* Slide leaving */
 .hero-slide-leaving {
     opacity: 0;
-    filter: blur(8px);
-    transition:
-        opacity 1.6s cubic-bezier(0.4, 0, 0.2, 1),
-        filter 1.6s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: opacity 1.2s ease;
+}
+
+/* Prevent transition on initial load */
+.hero-slide-no-transition {
+    transition: none !important;
 }
 
 /* Images - full cover with premium filter */
@@ -244,17 +241,8 @@
    ======================================== */
 
 @media (prefers-reduced-motion: reduce) {
-    .hero-slide {
-        transition: opacity 0.3s ease;
-        filter: none;
-    }
-
-    .hero-slide-active {
-        filter: none;
-    }
-
+    .hero-slide,
     .hero-slide-leaving {
-        transition: opacity 0.3s ease;
-        filter: none;
+        transition: none;
     }
 }

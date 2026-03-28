@@ -1623,6 +1623,10 @@ textarea:focus-visible {
         gap: 5rem 4rem;
     }
     
+    .cta-title {
+        margin-bottom: 2.5rem;
+    }
+    
     .value-title {
         font-size: 1.5rem;
         letter-spacing: 0.25em;

@@ -67,7 +67,7 @@ const i18n = {
         'clients.intro': 'Veruju nam vodeće kompanije i pojedinci koji cene kvalitet.',
         
         // CTA
-            'cta.title': 'Spremni za nezaboravan događaj? <br>Razgovarajmo o Vašoj ideji.',
+            'cta.title': 'Spremni za nezaboravan događaj? Razgovarajmo o <br>Vašoj ideji.',
         'cta.text': 'Kontaktirajte nas i počnimo sa planiranjem.',
         'cta.button': 'Pošaljite upit',
         
@@ -129,7 +129,7 @@ const i18n = {
         
         // Services Page
         'services.page.title': 'Naše usluge',
-        'services.page.intro': 'Svaki događaj je jedinstven. Naša uloga je da vašu viziju prenesemo u stvarnost stilom: precizno, profesionalno i sa stilom.',
+        'services.page.intro': 'Svaki događaj je jedinstven. Naša uloga je da vašu viziju prenesemo u stvarnost sa stilom: tačno i profesionalno.',
         'services.detail.corporate.title': 'Korporativni eventi',
         'services.detail.corporate.lead': 'Profesionalan pristup za poslovne događaje koji ostavljaju trajan utisak.',
         'services.detail.corporate.p1': 'Od poslovnih doručaka i radnih ručkova do svečanih proslava - nudimo ketering koji odražava profesionalnost vašeg brenda.',
@@ -432,7 +432,7 @@ const i18n = {
         
         // Services Page
         'services.page.title': 'Our Services',
-        'services.page.intro': 'Every event is unique. Our role is to bring your vision to life with style: precise, professional, and with style.',
+        'services.page.intro': 'Every event is unique. Our role is to bring your vision to life with style: precisely and professionally.',
         'services.detail.corporate.title': 'Corporate Events',
         'services.detail.corporate.lead': 'Professional approach for business events that leave a lasting impression.',
         'services.detail.corporate.p1': 'From business breakfasts and working lunches to formal celebrations - we offer catering that reflects your brand\'s professionalism.',
@@ -790,16 +790,9 @@ function initSectionReveal() {
 // ============================================
 
 function initLazyImages() {
-    const images = document.querySelectorAll('img[loading="lazy"]');
-    
-    images.forEach(img => {
-        if (img.complete) {
-            img.classList.add('loaded');
-        } else {
-            img.addEventListener('load', () => {
-                img.classList.add('loaded');
-            });
-        }
+    // Lazy loading iskljucen - odmah prikazujemo sve slike
+    document.querySelectorAll('img').forEach(img => {
+        img.classList.add('loaded');
     });
 }
 
@@ -1119,21 +1112,29 @@ function initHeroSlider() {
     const total = slides.length;
     const interval = 6000; // 6 seconds per slide
 
+    // Make sure first slide is immediately visible with no transition
+    slides[0].classList.add('hero-slide-no-transition');
+    slides[0].classList.add('hero-slide-active');
+    // Re-enable transition after paint
+    requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+            slides[0].classList.remove('hero-slide-no-transition');
+        });
+    });
+
     function nextSlide() {
         const prev = current;
         current = (current + 1) % total;
 
-        // Blur-out the leaving slide
         slides[prev].classList.add('hero-slide-leaving');
         slides[prev].classList.remove('hero-slide-active');
 
-        // Blur-in the incoming slide
         slides[current].classList.add('hero-slide-active');
 
         // Clean up leaving class after transition completes
         setTimeout(() => {
             slides[prev].classList.remove('hero-slide-leaving');
-        }, 2000);
+        }, 1400);
     }
 
     // Start auto-rotation
