@@ -19,7 +19,7 @@ const i18n = {
         
         // Hero
         'hero.tagline': 'Umetnički ketering za nezaboravne trenutke',
-        'hero.headline': 'Gde estetika sreće ukus',
+        'hero.headline': 'Gde estetika<br class="hero-mobile-break"> sreće ukus',
         'hero.descriptor': 'Umetnički ketering za korporativne,<br>privatne i ekskluzivne događaje',
         'hero.text': 'Kreiramo kulinarska iskustva koja nadilaze očekivanja. Svaki detalj je osmišljen sa strašću i preciznošću.',
         'hero.cta': 'Zakažite konsultaciju',
