@@ -398,6 +398,15 @@ textarea,
     .contact-form {
         gap: clamp(0.9rem, 2.8vw, 1.2rem) !important;
     }
+
+    /* Tighten the handoff between philosophy row and concepts intro on phones. */
+    .philosophy-section {
+        padding-bottom: clamp(1.1rem, 3.4vw, 1.6rem) !important;
+    }
+
+    .concepts-intro {
+        padding-top: clamp(1.35rem, 4vw, 1.9rem) !important;
+    }
 }
 
 /* Unified CTA system across pages */

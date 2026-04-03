@@ -860,6 +860,10 @@
         margin-top: 1.5rem !important;
         text-align: center !important;
     }
+
+    .form-success.show {
+        display: block !important;
+    }
     
     .form-success p {
         font-size: 0.9375rem !important;

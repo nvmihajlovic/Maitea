@@ -121,6 +121,55 @@ a:hover, a:focus {
     opacity: 0.7;
 }
 
+/* Samsung S25 anti-flicker profile (layout-safe). */
+html.samsung-s25-fix {
+    scroll-behavior: auto !important;
+}
+
+html.samsung-s25-fix *,
+html.samsung-s25-fix *::before,
+html.samsung-s25-fix *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+}
+
+html.samsung-s25-fix .header,
+html.samsung-s25-fix .nav,
+html.samsung-s25-fix .lightbox,
+html.samsung-s25-fix .lightbox-overlay {
+    -webkit-backdrop-filter: none !important;
+    backdrop-filter: none !important;
+}
+
+html.samsung-s25-fix .hero-slide-img {
+    transform: none !important;
+    filter: saturate(0.74) brightness(0.74) contrast(1.02) !important;
+}
+
+html.samsung-s25-fix body::before {
+    display: none !important;
+}
+
+html.samsung-s25-fix .header {
+    position: sticky !important;
+    top: 0 !important;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+}
+
+html.samsung-s25-fix .hero-slider,
+html.samsung-s25-fix .hero-slide,
+html.samsung-s25-fix .hero-slider-overlay,
+html.samsung-s25-fix .hero-slide-img {
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+html.samsung-s25-fix .hero-slider-overlay {
+    background: rgba(26, 26, 26, 0.14) !important;
+}
+
 a:focus-visible {
     outline: 2px solid #d4af37;
     outline-offset: 4px;

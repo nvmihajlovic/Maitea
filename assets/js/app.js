@@ -800,34 +800,12 @@ function initLazyImages() {
 // CONTACT FORM VALIDATION
 // ============================================
 
-function getFormspreeEndpoint(form) {
-    const dataEndpoint = (form?.dataset?.formspreeEndpoint || '').trim();
-    const actionEndpoint = (form?.getAttribute('action') || '').trim();
+const MAIL_ENDPOINT = 'mail.php';
 
-    if (dataEndpoint && !dataEndpoint.includes('REPLACE_WITH_FORM_ID')) {
-        return dataEndpoint;
-    }
-
-    if (actionEndpoint && !actionEndpoint.includes('REPLACE_WITH_FORM_ID')) {
-        return actionEndpoint;
-    }
-
-    return '';
-}
-
-async function submitFormToFormspree(form, extraFields = {}) {
-    const endpoint = getFormspreeEndpoint(form);
-
-    if (!endpoint) {
-        throw new Error('Formspree endpoint nije podešen.');
-    }
-
+async function submitFormToWeb3Forms(form) {
     const formData = new FormData(form);
-    Object.entries(extraFields).forEach(([key, value]) => {
-        formData.set(key, value);
-    });
 
-    const response = await fetch(endpoint, {
+    const response = await fetch(MAIL_ENDPOINT, {
         method: 'POST',
         body: formData,
         headers: {
@@ -835,21 +813,13 @@ async function submitFormToFormspree(form, extraFields = {}) {
         }
     });
 
-    if (!response.ok) {
-        let details = '';
-        try {
-            const payload = await response.json();
-            if (payload?.errors?.length) {
-                details = payload.errors.map(item => item.message).join(' ');
-            }
-        } catch (_) {
-            details = '';
-        }
+    const data = await response.json();
 
-        throw new Error(details || 'Formspree request failed');
+    if (!response.ok || !data.success) {
+        throw new Error(data.message || 'Greška pri slanju poruke');
     }
 
-    return response;
+    return data;
 }
 
 function setFormStatus(statusElement, message, type) {
@@ -955,10 +925,7 @@ function initContactForm() {
         }
 
         try {
-            await submitFormToFormspree(form, {
-                page: window.location.pathname,
-                language: currentLanguage
-            });
+            await submitFormToWeb3Forms(form);
 
             formSuccess.classList.add('show');
             formSuccess.querySelector('p').textContent = i18n[currentLanguage]['contact.form.success'];
@@ -968,11 +935,11 @@ function initContactForm() {
                 formSuccess.classList.remove('show');
             }, 5000);
 
-            formSuccess.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            formSuccess.scrollIntoView({ behavior: getPreferredScrollBehavior(), block: 'nearest' });
         } catch (error) {
             formSuccess.classList.add('show');
             formSuccess.querySelector('p').textContent = i18n[currentLanguage]['contact.form.error.submit'];
-            formSuccess.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            formSuccess.scrollIntoView({ behavior: getPreferredScrollBehavior(), block: 'nearest' });
         } finally {
             if (submitButton) {
                 submitButton.disabled = false;
@@ -1006,10 +973,7 @@ function initServicesInquiryForm() {
         }
 
         try {
-            await submitFormToFormspree(form, {
-                page: window.location.pathname,
-                language: currentLanguage
-            });
+            await submitFormToWeb3Forms(form);
 
             setFormStatus(statusElement, i18n[currentLanguage]['services.inquiry.success'], 'success');
 
@@ -1030,6 +994,10 @@ function initServicesInquiryForm() {
 // ============================================
 
 function initSmoothScroll() {
+    if (isSamsungS25StabilityMode()) {
+        return;
+    }
+
     const links = document.querySelectorAll('a[href^="#"]');
     
     links.forEach(link => {
@@ -1053,6 +1021,10 @@ function initSmoothScroll() {
 // ============================================
 
 function initScrollReveal() {
+    if (isSamsungS25StabilityMode()) {
+        return;
+    }
+
     const observerOptions = {
         root: null,
         rootMargin: '0px',
@@ -1084,6 +1056,11 @@ function initHeaderScroll() {
     const header = document.querySelector('.header');
     if (!header) return;
 
+    if (isSamsungS25StabilityMode()) {
+        header.classList.remove('scrolled');
+        return;
+    }
+
     let lastScroll = 0;
     const scrollThreshold = 100;
 
@@ -1097,7 +1074,7 @@ function initHeaderScroll() {
         }
 
         lastScroll = currentScroll;
-    });
+    }, { passive: true });
 }
 
 // ============================================
@@ -1107,6 +1084,7 @@ function initHeaderScroll() {
 function initHeroSlider() {
     const slides = document.querySelectorAll('.hero-slide');
     if (slides.length < 2) return;
+    const isStabilityMode = isSamsungS25StabilityMode();
 
     let current = 0;
     const total = slides.length;
@@ -1121,6 +1099,11 @@ function initHeroSlider() {
             slides[0].classList.remove('hero-slide-no-transition');
         });
     });
+
+    // Keep the first hero frame static in stability mode to prevent scroll-time flicker.
+    if (isStabilityMode) {
+        return;
+    }
 
     function nextSlide() {
         const prev = current;
@@ -1156,10 +1139,43 @@ function initHeroSlider() {
 }
 
 // ============================================
+// DEVICE-SPECIFIC STABILITY FIXES
+// ============================================
+
+function applyDeviceStabilityFixes() {
+    const root = document.documentElement;
+    const ua = navigator.userAgent || '';
+    const vendor = navigator.vendor || '';
+
+    const hasSamsungFingerprint = /Samsung|SM-|SAMSUNG/i.test(ua) || /Samsung/i.test(vendor);
+    const isSamsungAndroid = hasSamsungFingerprint && /Android/i.test(ua);
+    const isS25UltraFromUA = /SM-S938|Galaxy\s*S25\s*Ultra|S25\s*Ultra/i.test(ua);
+
+    const search = new URLSearchParams(window.location.search);
+    const forceStabilityMode = search.get('safeMode') === '1';
+    const disableStabilityMode = search.get('safeMode') === '0';
+
+    if (!disableStabilityMode && (forceStabilityMode || isS25UltraFromUA || isSamsungAndroid)) {
+        root.classList.add('samsung-s25-fix');
+    }
+}
+
+function isSamsungS25StabilityMode() {
+    return document.documentElement.classList.contains('samsung-s25-fix');
+}
+
+function getPreferredScrollBehavior() {
+    return isSamsungS25StabilityMode() ? 'auto' : 'smooth';
+}
+
+// ============================================
 // INITIALIZE ON PAGE LOAD
 // ============================================
 
 document.addEventListener('DOMContentLoaded', () => {
+    // Apply model-specific stability switches before UI animation setup.
+    applyDeviceStabilityFixes();
+
     // Initialize i18n
     translatePage();
     initLanguageSwitcher();
@@ -1202,6 +1218,11 @@ function initBackToTop() {
     const btn = document.getElementById('backToTop');
     if (!btn) return;
 
+    if (isSamsungS25StabilityMode()) {
+        btn.classList.remove('visible');
+        return;
+    }
+
     window.addEventListener('scroll', () => {
         if (window.scrollY > 400) {
             btn.classList.add('visible');
@@ -1211,7 +1232,7 @@ function initBackToTop() {
     }, { passive: true });
 
     btn.addEventListener('click', () => {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+        window.scrollTo({ top: 0, behavior: getPreferredScrollBehavior() });
     });
 }
 
@@ -1222,6 +1243,10 @@ function initBackToTop() {
 function initGalleryLightbox() {
     const lightbox = document.getElementById('gallery-lightbox');
     if (!lightbox) return;
+
+    if (isSamsungS25StabilityMode()) {
+        return;
+    }
 
     const lightboxImage = lightbox.querySelector('.lightbox-image');
     const closeBtn = lightbox.querySelector('.lightbox-close');
@@ -1328,7 +1353,7 @@ function initContactFormAutoFill() {
                 const formSection = document.getElementById('contact-form');
                 if (formSection) {
                     formSection.scrollIntoView({ 
-                        behavior: 'smooth', 
+                        behavior: getPreferredScrollBehavior(), 
                         block: 'start' 
                     });
                     
