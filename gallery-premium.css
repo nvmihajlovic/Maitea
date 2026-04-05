@@ -370,7 +370,7 @@
 @media (max-width: 767px) {
     .gallery-grid {
         grid-template-columns: 1fr;
-        gap: 32px;
+        gap: 8px;
     }
 
     .gallery-container {
@@ -378,7 +378,15 @@
     }
 
     .gallery-section {
-        padding: 4rem 0 4.5rem;
+        padding: 2rem 0 2rem;
+    }
+
+    .gallery-section + .gallery-section {
+        padding-top: 1rem;
+    }
+
+    .gallery-section-header {
+        margin-bottom: 1.25rem;
     }
 
     .gallery-item {
@@ -645,11 +653,11 @@
         margin-bottom: 40px !important;
     }
     
-    /* Larger "breathing" space every 3rd image */
+    /* Equal spacing - no extra gap after 3rd image */
     .gallery-item:nth-child(3),
     .gallery-item:nth-child(6),
     .gallery-item:nth-child(9) {
-        margin-bottom: 56px !important;
+        margin-bottom: 40px !important;
     }
     
     /* Last item - no bottom margin */
@@ -988,7 +996,7 @@
     .gallery-item:nth-child(3),
     .gallery-item:nth-child(6),
     .gallery-item:nth-child(9) {
-        margin-bottom: 66px !important;
+        margin-bottom: 48px !important;
     }
 
     .cta-final {

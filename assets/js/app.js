@@ -20,7 +20,7 @@ const i18n = {
         // Hero
         'hero.tagline': 'Umetnički ketering za nezaboravne trenutke',
         'hero.headline': 'Gde estetika<br class="hero-mobile-break"> sreće ukus',
-        'hero.descriptor': 'Umetnički ketering za korporativne,<br>privatne i ekskluzivne događaje',
+        'hero.descriptor': 'Dobrodošli u MAITEA svet.<br>Ketering koji pretvara sto u scenu, a hranu u nezaboravno iskustvo.',
         'hero.text': 'Kreiramo kulinarska iskustva koja nadilaze očekivanja. Svaki detalj je osmišljen sa strašću i preciznošću.',
         'hero.cta': 'Zakažite konsultaciju',
         'hero.cta.book': 'Rezervišite',
@@ -92,7 +92,7 @@ const i18n = {
         
         // Concepts (index.html)
         'concepts.intro.title': 'Dva koncepta. Jedan cilj.',
-        'concepts.intro.text': 'MAITEA je umetnički ketering koji pretvara sto u scenu, a hranu u doživljaj.<br>Kroz dva pažljivo osmišljena koncepta, svako slavlje dobija svoju atmosferu, ritam i karakter.',
+        'concepts.intro.text': 'MAITEA je ketering koji dolazi u dva jedinstvena koncepta, osmišljena da svako slavlje pretvore u doživljaj.<br>Svako slavlje dobija svoju atmosferu, ritam i karakter.',
         'concepts.centerfeast.title': 'CENTERFEAST',
         'concepts.centerfeast.subtitle': 'Sto koji postaje centar okupljanja',
         'concepts.centerfeast.p1': 'CENTERFEAST je sto prekriven pažljivo aranžiranom hranom na pek papiru, gde se boje, mirisi, ukusi i teksture spajaju u malo umetničko delo.',
@@ -323,7 +323,7 @@ const i18n = {
         // Hero
         'hero.tagline': 'Artistic catering for unforgettable moments',
         'hero.headline': 'Where aesthetics<br>meet taste',
-        'hero.descriptor': 'Artistic catering for corporate,<br>private and exclusive events',
+        'hero.descriptor': 'Welcome to the MAITEA world.<br>Catering that turns the table into a stage, and food into an unforgettable experience.',
         'hero.text': 'We create culinary experiences that exceed expectations. Every detail is crafted with passion and precision.',
         'hero.cta': 'Schedule Consultation',
         'hero.cta.book': 'Book Now',
@@ -395,7 +395,7 @@ const i18n = {
         
         // Concepts (index.html)
         'concepts.intro.title': 'Two concepts. One goal.',
-        'concepts.intro.text': 'MAITEA is artistic catering that turns the table into a stage, and food into an experience.<br>Through two carefully designed concepts, every celebration gets its own atmosphere, rhythm and character.',
+        'concepts.intro.text': 'MAITEA is catering that comes in two unique concepts, designed to turn every celebration into an experience.<br>Every celebration gets its own atmosphere, rhythm and character.',
         'concepts.centerfeast.title': 'CENTERFEAST',
         'concepts.centerfeast.subtitle': 'The table becomes the center of gathering',
         'concepts.centerfeast.p1': 'CENTERFEAST is a table covered with carefully arranged food on parchment paper, where colors, aromas, flavors and textures come together in a small work of art.',
